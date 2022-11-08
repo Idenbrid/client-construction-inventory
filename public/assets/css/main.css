@@ -4,14 +4,17 @@
     font-family: NotoSansJP-Black;
     src: url(../css/fonts/NotoSansJP-Black.ttf);
 }
+
 @font-face {
     font-family: NotoSansJP-Bold;
     src: url(../css/fonts/NotoSansJP-Bold.ttf);
 }
+
 @font-face {
     font-family: NotoSansJP-Light;
     src: url(../css/fonts/NotoSansJP-Light.ttf);
 }
+
 @font-face {
     font-family: NotoSansJP-Regular;
     src: url(../css/fonts/NotoSansJP-Regular.ttf);
@@ -21,23 +24,27 @@
     font-family: NotoSansJP-Medium;
     src: url(../css/fonts/NotoSansJP-Medium.ttf);
 }
+
 @font-face {
     font-family: NotoSansJP-Thin;
     src: url(../css/fonts/NotoSansJP-Thin.ttf);
 }
+
 /* custom date icon css start  */
 .date input::-webkit-inner-spin-button,
 .date input::-webkit-clear-button {
-  display: none;
-} 
-.date input::-webkit-calendar-picker-indicator{ 
-  background-image: url(/assets/images/calendr.png);
+    display: none;
+}
+
+.date input::-webkit-calendar-picker-indicator {
+    background-image: url(/assets/images/calendr.png);
 }
 
 /* custom date icon css end */
-.main-navbar{
+.main-navbar {
     margin-left: auto;
 }
+
 .list-group-item-dk {
     color: #F4DA83;
     font-size: 14px;
@@ -175,7 +182,7 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     font-family: NotoSansJP-Regular;
     width: 33%;
     display: flex;
-    align-items:center;
+    align-items: center;
 }
 
 .order-reg-h2 {
@@ -201,14 +208,14 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     height: 37px;
     border-radius: 4px;
     border: 1px solid #0000001F;
-    padding:0px 10px;
+    padding: 0px 10px;
 }
 
 .form-control {
     border: 1px solid #0000001F;
     border-radius: 4px;
     height: 37px;
-    width: 219px!important;
+    width: 219px !important;
 }
 
 .btn-submit {
@@ -216,15 +223,17 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     height: 42px;
     border-radius: 2px;
     background-color: #BEA000;
-    border:1px solid #BEA000;
+    border: 1px solid #BEA000;
     color: #fff;
     font-size: 16px;
     margin-top: 30px;
 }
-.form-fields  select::-ms-expand {
+
+.form-fields select::-ms-expand {
     display: none;
-  }
-  .form-fields select {
+}
+
+.form-fields select {
     display: inline-block;
     box-sizing: border-box;
     padding: 0.5em 2em 0.5em 0.5em;
@@ -239,71 +248,124 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     background-image: linear-gradient(45deg, transparent 50%, #BEA000 50%), linear-gradient(135deg, #BEA000 50%, transparent 50%);
     background-position: right 15px top 1em, right 10px top 1em;
     background-size: 5px 5px, 5px 5px;
-  }
-  .nav-items .nav-link{
-        color: #fff;
-        font-family: NotoSansJP-Light;
-        font-size: 12px;
-  }
-  .nav-items .nav-link:after{
+}
+
+.nav-items .nav-link {
+    color: #fff;
+    font-family: NotoSansJP-Light;
+    font-size: 12px;
+}
+
+.nav-items .nav-link:after {
     display: none;
-  }
-  .nav-items .dropdown-item i{
+}
+
+.nav-items .dropdown-item i {
     color: #BEA000;
-  }
-  .order-register-form{
+}
+
+.order-register-form {
     max-width: 800px;
     margin: auto;
-  }
-  /* table design */
-  .table-card{
+}
+
+/* table design */
+.table-card {
     padding: 15px 0px;
     background-color: #fff;
     border-radius: 4px;
     box-shadow: 0px 3px 6px #00000029;
-  }
-  .table-card thead{
+}
+
+.table-card thead {
     background: #000;
     color: #fff;
-  }
-  .table-card  .dataTables_length,.table-card  .dataTables_info{
-    padding: 0px 10px;
-  }
-  .table-card .dataTables_filter{
-    padding: 0px 10px;
-  }
-  .custom-table-list td:nth-child(even) {
-    background-color: #F5F5F5;
-  }
-  tr:nth-child(even) {
-    background-color: transparent!important;
-  }
+}
 
-  @media screen and (max-width: 920px) and (min-width:769px) {
-    .order-reg-card{
+.table-card .dataTables_length,
+.table-card .dataTables_info {
+    padding: 0px 10px;
+}
+
+.table-card .dataTables_filter {
+    padding: 0px 10px;
+}
+
+.custom-table-list td:nth-child(even) {
+    background-color: #F5F5F5;
+}
+
+tr:nth-child(even) {
+    background-color: transparent !important;
+}
+.btn-rev-del{
+    display: inline-flex;
+    margin-left: 20px;
+}
+.table-card td{
+    font-size: 12px;
+
+}
+.delivery-btn:hover{
+    color: #fff;
+    text-decoration: none;
+}
+.delivery-btn {
+    width: 58px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #BEA000;
+    color: #fff;
+    border-radius: 2px;
+    margin-right: 4px;
+}
+.revision-btn:hover {
+    color: #fff;
+    text-decoration: none;
+}
+.revision-btn {
+    width: 58px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    color: #fff;
+    border-radius: 2px;
+    margin-right: 4px;
+}
+@media screen and (max-width: 920px) and (min-width:769px) {
+    .order-reg-card {
         padding: 48px 15px;
     }
-    .register-label{
+
+    .register-label {
         width: 45%;
         font-size: 12px;
     }
-    .switch-btns{
+
+    .switch-btns {
         margin-right: 10px;
     }
-    .form-fields select{
+
+    .form-fields select {
         width: 180px;
     }
-    .form-control{
-        width: 180px!important;
+
+    .form-control {
+        width: 180px !important;
     }
-  }
+}
+
 @media (min-width: 768px) {
 
     #sidebar-wrapper {
         margin-left: 0;
         border-right: 4px solid;
         border-image: linear-gradient(180deg, #4E3000 0%, #D6CDA2 17%, #987B3A 34%, #E0CDA2 49%, #836343 73%, #E6C466 100%) 1 100%;
-       display: block;
+        display: block;
     }
 
     #page-content-wrapper {
@@ -327,12 +389,15 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
         width: 110px;
         margin-right: 5px;
     }
-    .form-fields select{
+
+    .form-fields select {
         width: 100%;
     }
-    .form-control{
-        width: 100%!important;
+
+    .form-control {
+        width: 100% !important;
     }
+
     .form-fields {
         flex-direction: column;
     }

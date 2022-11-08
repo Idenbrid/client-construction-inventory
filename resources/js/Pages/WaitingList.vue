@@ -2,7 +2,7 @@
     <!-- Page content-->
     <div class="container-fluid p-0">
         <div class="main-content main-content-bg">
-            <h1 class="content-h1 mt-4">2.　納品待ち一覧</h1>
+            <h1 class="content-h1">2.　納品待ち一覧</h1>
             <div class="table-card">
                 <table id="table_id" class="display custom-table-list">
                     <thead>
@@ -16,7 +16,7 @@
                             <th>数量</th>
                             <th>ジョブ番号</th>
                             <th>現場名</th>
-                            <th></th>
+                       
                         </tr>
                     </thead>
                     <tbody>
@@ -28,34 +28,15 @@
                             <td>テキストテ...</td>
                             <td>123456789…</td>
                             <td>123456789…</td>
-                            <td>Row 1 Data 2</td>
-                            <td>Row 1 Data 2</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>2022/12/24</td>
-                            <td>小田切健太郎</td>
-                            <td>テキストテ...</td>
-                            <td>テキストテ...</td>
-                            <td>テキストテ...</td>
                             <td>123456789…</td>
-                            <td>123456789…</td>
-                            <td>Row 1 Data 2</td>
-                            <td>Row 1 Data 2</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>2022/12/24</td>
-                            <td>小田切健太郎</td>
-                            <td>テキストテ...</td>
-                            <td>テキストテ...</td>
-                            <td>テキストテ...</td>
-                            <td>123456789…</td>
-                            <td>123456789…</td>
-                            <td>Row 1 Data 2</td>
-                            <td>Row 1 Data 2</td>
-                            <td></td>
-                        </tr>
+                            <td>Rテキストテ…
+                                <div class="btn-rev-del">
+                            <a type="submit" class="delivery-btn" value="登録">納品</a>
+                            <a type="submit" class="revision-btn" value="登録">修正</a>
+                        </div>
+                        </td>
+                            
+                       </tr>
 
                     </tbody>
                 </table>
@@ -80,7 +61,7 @@
                             },
                             {
                                 name: 'phone',
-                                width: 768
+                                width: 320
                             }
                         ]
                     },

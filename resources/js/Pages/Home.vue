@@ -189,9 +189,4 @@
         </div>
     </div>
 </template>
-<style>
-::-webkit-calendar-picker-indicator {
 
-   
-  
-}</style>
