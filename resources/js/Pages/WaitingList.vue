@@ -2,7 +2,7 @@
     <!-- Page content-->
     <div class="container-fluid p-0">
         <div class="main-content main-content-bg">
-            <h1 class="content-h1 mt-4">2.　納品待ち一覧</h1>
+            <h1 class="content-h1">2.　納品待ち一覧</h1>
             <div class="table-card">
                 <table id="table_id" class="display custom-table-list">
                     <thead>
