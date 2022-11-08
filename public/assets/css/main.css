@@ -1,0 +1,315 @@
+:root {}
+
+@font-face {
+    font-family: NotoSansJP-Black;
+    src: url(../css/fonts/NotoSansJP-Black.ttf);
+}
+@font-face {
+    font-family: NotoSansJP-Bold;
+    src: url(../css/fonts/NotoSansJP-Bold.ttf);
+}
+@font-face {
+    font-family: NotoSansJP-Light;
+    src: url(../css/fonts/NotoSansJP-Light.ttf);
+}
+@font-face {
+    font-family: NotoSansJP-Regular;
+    src: url(../css/fonts/NotoSansJP-Regular.ttf);
+}
+
+@font-face {
+    font-family: NotoSansJP-Medium;
+    src: url(../css/fonts/NotoSansJP-Medium.ttf);
+}
+@font-face {
+    font-family: NotoSansJP-Thin;
+    src: url(../css/fonts/NotoSansJP-Thin.ttf);
+}
+.main-navbar{
+    margin-left: auto;
+}
+.list-group-item-dk {
+    color: #F4DA83;
+    font-size: 14px;
+    font-family: NotoSansJP-Medium;
+    text-decoration: none;
+    padding: 14px 40px;
+}
+
+.list-group-item-dk:hover {
+    color: #F4DA83;
+    text-decoration: none;
+}
+
+.main-content {
+    padding: 24px;
+    height: 100vh;
+}
+
+.order-reg-card {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 3px 6px #00000029;
+    padding: 48px;
+}
+
+.main-content-bg {
+    background-image: url('../images/bg-img.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.sidebar {
+    background-color: #000;
+
+}
+
+body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
+    margin-left: 0;
+}
+
+#wrapper {
+    overflow-x: hidden;
+}
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    transition: margin 0.25s ease-out;
+    border: 0px;
+    display: none;
+
+}
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 2.875rem 1.25rem 31px;
+    font-size: 16px;
+    font-family: NotoSansJP-Bold;
+    color: #fff;
+}
+
+#sidebar-wrapper .sidebar-heading svg {
+    width: 24px;
+}
+
+#sidebar-wrapper .list-group {
+    width: 13.8rem;
+}
+
+.top-navbar {
+    background: transparent linear-gradient(270deg, #4E3000 0%, #E0CDA2 53%, #CBB372 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+}
+
+#page-content-wrapper {
+    min-width: 100vw;
+}
+
+.content-h1 {
+    color: #fff;
+    font-size: 20px;
+    font-family: NotoSansJP-Bold;
+    margin-bottom: 12px;
+}
+
+.on-radio-btn {
+    background-color: #EAE2BB;
+    color: #424242;
+}
+
+.off-radio-btn {
+    background-color: #EAEAEA;
+    color: #424242;
+}
+
+.on-radio-btn,
+.off-radio-btn {
+    border: none;
+    border-radius: 5px;
+    padding: 0px;
+    width: 56px;
+    height: 30px;
+    font-size: 12px;
+    font-family: NotoSansJP-Medium;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.kind-radio-btn:hover {
+    color: #fff;
+}
+
+.btn-check:checked+.on-radio-btn {
+    color: #fff;
+    background-color: #BEA000;
+}
+
+.btn-check:checked+.off-radio-btn {
+    color: #fff;
+    background-color: #000;
+}
+
+.switch-btns {
+    display: flex;
+    width: 160px;
+    justify-content: center;
+    margin-right: 30px;
+}
+
+.register-label {
+    font-size: 16px;
+    font-family: NotoSansJP-Regular;
+    width: 33%;
+    display: flex;
+    align-items:center;
+}
+
+.order-reg-h2 {
+    font-family: NotoSansJP-Regular;
+    font-size: 16px;
+    color: #000;
+}
+
+.switch-div {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.form-fields {
+    width: 100%;
+    display: flex;
+
+}
+
+.form-fields select {
+    width: 219px;
+    height: 37px;
+    border-radius: 4px;
+    border: 1px solid #0000001F;
+    padding:0px 10px;
+}
+
+.form-control {
+    border: 1px solid #0000001F;
+    border-radius: 4px;
+    height: 37px;
+    width: 219px!important;
+}
+
+.btn-submit {
+    width: 98px;
+    height: 42px;
+    border-radius: 2px;
+    background-color: #BEA000;
+    border:1px solid #BEA000;
+    color: #fff;
+    font-size: 16px;
+    margin-top: 30px;
+}
+select::-ms-expand {
+    display: none;
+  }
+  select {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0.5em 2em 0.5em 0.5em;
+    border: 1px solid #eee;
+    font: inherit;
+    line-height: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(45deg, transparent 50%, #BEA000 50%), linear-gradient(135deg, #BEA000 50%, transparent 50%);
+    background-position: right 15px top 1em, right 10px top 1em;
+    background-size: 5px 5px, 5px 5px;
+  }
+  .nav-items .nav-link{
+        color: #fff;
+        font-family: NotoSansJP-Light;
+        font-size: 12px;
+  }
+  .nav-items .nav-link:after{
+    display: none;
+  }
+  .nav-items .dropdown-item i{
+    color: #BEA000;
+  }
+  .order-register-form{
+    max-width: 800px;
+    margin: auto;
+  }
+  @media screen and (max-width: 920px) and (min-width:769px) {
+    .order-reg-card{
+        padding: 48px 15px;
+    }
+    .register-label{
+        width: 45%;
+        font-size: 12px;
+    }
+    .switch-btns{
+        margin-right: 10px;
+    }
+    .form-fields select{
+        width: 180px;
+    }
+    .form-control{
+        width: 180px!important;
+    }
+  }
+@media (min-width: 768px) {
+
+    #sidebar-wrapper {
+        margin-left: 0;
+        border-right: 4px solid;
+        border-image: linear-gradient(180deg, #4E3000 0%, #D6CDA2 17%, #987B3A 34%, #E0CDA2 49%, #836343 73%, #E6C466 100%) 1 100%;
+       display: block;
+    }
+
+    #page-content-wrapper {
+        min-width: 0;
+        width: 100%;
+    }
+
+    body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
+        margin-left: -15rem;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .order-reg-card {
+        padding: 30px 15px;
+    }
+
+    .switch-btns {
+        flex-direction: column;
+        width: 110px;
+        margin-right: 5px;
+    }
+    .form-fields select{
+        width: 100%;
+    }
+    .form-control{
+        width: 100%!important;
+    }
+    .form-fields {
+        flex-direction: column;
+    }
+
+    .register-label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .on-radio-btn,
+    .off-radio-btn {
+        width: 71px;
+        height: 42px;
+    }
+}
