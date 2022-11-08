@@ -210,10 +210,10 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     font-size: 16px;
     margin-top: 30px;
 }
-select::-ms-expand {
+.form-fields  select::-ms-expand {
     display: none;
   }
-  select {
+  .form-fields select {
     display: inline-block;
     box-sizing: border-box;
     padding: 0.5em 2em 0.5em 0.5em;
@@ -243,6 +243,29 @@ select::-ms-expand {
   .order-register-form{
     max-width: 800px;
     margin: auto;
+  }
+  /* table design */
+  .table-card{
+    padding: 15px 0px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 3px 6px #00000029;
+  }
+  .table-card thead{
+    background: #000;
+    color: #fff;
+  }
+  .table-card  .dataTables_length,.table-card  .dataTables_info{
+    padding: 0px 10px;
+  }
+  .table-card .dataTables_filter{
+    padding: 0px 10px;
+  }
+  .custom-table-list td:nth-child(even) {
+    background-color: #F5F5F5;
+  }
+  tr:nth-child(even) {
+    background-color: transparent!important;
   }
   @media screen and (max-width: 920px) and (min-width:769px) {
     .order-reg-card{

@@ -8,7 +8,7 @@ WEBSITE
 Routes
 */
 const Home = () => import('../Pages/Home.vue');
-
+const WaitingList = () => import('../Pages/WaitingList.vue');
 const Login = () => import('../Components/Login.vue');
 
 
@@ -25,7 +25,14 @@ export const routes = [
             title: "Home"
         }
     },
-   
+    {
+        name: 'WaitingList',
+        path: '/waiting-list',
+        component: WaitingList,
+        meta: {
+            title: "WaitingList"
+        }
+    },
     {
         name: 'Login',
         path: '/login',
