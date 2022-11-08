@@ -2,7 +2,7 @@
     <!-- Page content-->
     <div class="container-fluid p-0">
         <div class="main-content main-content-bg">
-            <h1 class="content-h1 mt-4">1.　発注登録</h1>
+            <h1 class="content-h1">1.　発注登録</h1>
             <div class="order-reg-card">
 
                 <form class="order-register-form">
@@ -74,9 +74,11 @@
                                         </div>
                                     </li>
 
-                                    <li class="form-fields">
-                                        <div class="register-label">生年月日（カレンダー）</div><input type="date" id="date"
-                                            name="datebirth" class="form-control">
+                                    <li class="form-fields ">
+                                        <div class="register-label">生年月日（カレンダー）</div>
+                                        <div class="date">
+                                            <input type="date" id="date" name="datebirth" class="form-control">
+                                        </div>
                                     </li>
                                 </ul>
                                 <ul class="switch-div">
@@ -187,3 +189,9 @@
         </div>
     </div>
 </template>
+<style>
+::-webkit-calendar-picker-indicator {
+
+   
+  
+}</style>

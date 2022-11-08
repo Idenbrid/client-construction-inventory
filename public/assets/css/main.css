@@ -25,6 +25,16 @@
     font-family: NotoSansJP-Thin;
     src: url(../css/fonts/NotoSansJP-Thin.ttf);
 }
+/* custom date icon css start  */
+.date input::-webkit-inner-spin-button,
+.date input::-webkit-clear-button {
+  display: none;
+} 
+.date input::-webkit-calendar-picker-indicator{ 
+  background-image: url(/assets/images/calendr.png);
+}
+
+/* custom date icon css end */
 .main-navbar{
     margin-left: auto;
 }
@@ -50,7 +60,7 @@
     background-color: #fff;
     border-radius: 4px;
     box-shadow: 0px 3px 6px #00000029;
-    padding: 48px;
+    padding: 40px 48px 48px 48px;
 }
 
 .main-content-bg {
@@ -99,6 +109,7 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 .top-navbar {
     background: transparent linear-gradient(270deg, #4E3000 0%, #E0CDA2 53%, #CBB372 100%) 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
+    padding: 3.5px 15px !important;
 }
 
 #page-content-wrapper {
@@ -244,6 +255,7 @@ select::-ms-expand {
     max-width: 800px;
     margin: auto;
   }
+
   @media screen and (max-width: 920px) and (min-width:769px) {
     .order-reg-card{
         padding: 48px 15px;
