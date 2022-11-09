@@ -74,6 +74,8 @@
     background-image: url('../images/bg-img.png');
     background-position: center;
     background-size: cover;
+    /* width: 100%;
+    height: 100vh; */
 }
 
 .sidebar {
@@ -240,7 +242,7 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     display: inline-block;
     box-sizing: border-box;
     padding: 0.5em 2em 0.5em 0.5em;
-    border: 1px solid #eee;
+    /* border: 1px solid #eee; */
     font: inherit;
     line-height: inherit;
     -webkit-appearance: none;
@@ -252,7 +254,9 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     background-position: right 15px top 1em, right 10px top 1em;
     background-size: 5px 5px, 5px 5px;
 }
-
+ input[type=radio]{
+    display: none;
+}
 .nav-items .nav-link {
     color: #fff;
     font-family: NotoSansJP-Light;
