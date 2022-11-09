@@ -33,7 +33,7 @@
                                     <li class="form-fields">
                                         <div class="register-label align-items-center">JOB番号（選択）</div>
 
-                                        <select name="cars" id="cars">
+                                        <select class="input-border" name="cars" id="cars">
                                             <option value="volvo">Volvo</option>
                                             <option value="saab">Saab</option>
                                             <option value="opel">Opel</option>
@@ -56,8 +56,9 @@
                                     </li>
 
                                     <li class="form-fields">
-                                        <div class="register-label">現場名（自動入力）</div> <input type="text" id="fname"
-                                            name="fname" placeholder="テキスト" class="form-control">
+                                        <div class="register-label">現場名（自動入力）</div> 
+                                        <input type="text" id="fname"
+                                            name="fname" placeholder="テキスト" class="form-control input-border">
                                     </li>
                                 </ul>
                                 <ul class="switch-div">
@@ -97,7 +98,7 @@
 
                                     <li class="form-fields">
                                         <div class="register-label">発注者（選択）</div>
-                                        <select name="cars" id="cars">
+                                        <select class="input-border" name="cars" id="cars">
                                             <option value="volvo">Volvo</option>
                                             <option value="saab">Saab</option>
                                             <option value="opel">Opel</option>
@@ -121,7 +122,7 @@
 
                                     <li class="form-fields">
                                         <div class="register-label">分類（選択）</div>
-                                        <select name="cars" id="cars">
+                                        <select class="input-border" name="cars" id="cars">
                                             <option value="volvo">Volvo</option>
                                             <option value="saab">Saab</option>
                                             <option value="opel">Opel</option>
@@ -145,7 +146,7 @@
 
                                     <li class="form-fields">
                                         <div class="register-label">品名（選択）</div>
-                                        <select name="cars" id="cars">
+                                        <select class="input-border" name="cars" id="cars">
                                             <option value="volvo">Volvo</option>
                                             <option value="saab">Saab</option>
                                             <option value="opel">Opel</option>
@@ -160,7 +161,7 @@
 
                                     <li class="form-fields">
                                         <div class="register-label">型番（選択）</div>
-                                        <select name="cars" id="cars">
+                                        <select class="input-border" name="cars" id="cars">
                                             <option value="volvo">Volvo</option>
                                             <option value="saab">Saab</option>
                                             <option value="opel">Opel</option>
@@ -173,8 +174,8 @@
 
                                     </li>
                                     <li class="form-fields">
-                                        <div class="register-label" bis_skin_checked="1">数量（数字入力）</div> <input
-                                            type="text" id="fname" name="fname" placeholder="テキスト" class="form-control">
+                                        <div class="register-label" bis_skin_checked="1">数量（数字入力）</div> 
+                                        <input type="text" id="fname" name="fname" placeholder="テキスト" class="form-control input-border">
                                     </li>
                                 </ul>
                             </div>
