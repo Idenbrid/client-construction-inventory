@@ -1,10 +1,10 @@
 <template>
   <header>
-     <nav class="navbar navbar-expand-lg top-navbar">
+     <nav class=" top-navbar">
                     <div class="container-fluid">
                       
                         <div class="main-navbar" id="main-navbar">
-                            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                            <ul class="custom-top-nav-navbar ms-auto mt-2 mt-lg-0">
                                 <li class="nav-items dropdown">
                                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-expanded="false">ログイン中</a>
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">

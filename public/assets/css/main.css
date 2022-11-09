@@ -44,6 +44,11 @@
 .main-navbar {
     margin-left: auto;
 }
+#top-navbar {
+    position: absolute;
+    /* float: none; */
+    margin-left: auto;
+}
 
 .list-group-item-dk {
     color: #F4DA83;
@@ -122,8 +127,26 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     background: transparent linear-gradient(270deg, #4E3000 0%, #E0CDA2 53%, #CBB372 100%) 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
     padding: 3.5px 15px !important;
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
 }
-
+.custom-top-nav-navbar{
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: row;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    justify-content: right;
+}
 #page-content-wrapper {
     min-width: 100vw;
 }
