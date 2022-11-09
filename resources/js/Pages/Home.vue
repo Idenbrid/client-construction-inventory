@@ -56,9 +56,9 @@
                                     </li>
 
                                     <li class="form-fields">
-                                        <div class="register-label">現場名（自動入力）</div> 
-                                        <input type="text" id="fname"
-                                            name="fname" placeholder="テキスト" class="form-control input-border">
+                                        <div class="register-label">現場名（自動入力）</div>
+                                        <input type="text" id="fname" name="fname" placeholder="テキスト"
+                                            class="form-control input-border">
                                     </li>
                                 </ul>
                                 <ul class="switch-div">
@@ -78,7 +78,8 @@
                                     <li class="form-fields ">
                                         <div class="register-label">生年月日（カレンダー）</div>
                                         <div class="date">
-                                            <input type="date" id="date" name="datebirth" class="form-control">
+                                            <input type="date" id="date" name="datebirth"
+                                                class="form-control input-border">
                                         </div>
                                     </li>
                                 </ul>
@@ -174,8 +175,9 @@
 
                                     </li>
                                     <li class="form-fields">
-                                        <div class="register-label" bis_skin_checked="1">数量（数字入力）</div> 
-                                        <input type="text" id="fname" name="fname" placeholder="テキスト" class="form-control input-border">
+                                        <div class="register-label" bis_skin_checked="1">数量（数字入力）</div>
+                                        <input type="text" id="fname" name="fname" placeholder="テキスト"
+                                            class="form-control input-border">
                                     </li>
                                 </ul>
                             </div>
@@ -190,4 +192,3 @@
         </div>
     </div>
 </template>
-

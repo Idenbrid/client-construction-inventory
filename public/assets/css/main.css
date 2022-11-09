@@ -16,7 +16,7 @@
     --golden-sand:#E6C466;
     --dark-ood:#836343;
 }
-
+/* 
 @font-face {
     font-family: NotoSansJP-Black;
     src: url(../css/fonts/NotoSansJP-Black.ttf);
@@ -45,7 +45,33 @@
 @font-face {
     font-family: NotoSansJP-Thin;
     src: url(../css/fonts/NotoSansJP-Thin.ttf);
-}
+} 
+*/
+
+@font-face {
+    font-family: NotoSansJP-Black;
+    src: url(../css/fonts/googlefonts/NotoSansJP-Black.otf);
+} 
+@font-face {
+    font-family: NotoSansJP-Bold;
+    src: url(../css/fonts/googlefonts/NotoSansJP-Bold.otf);
+} 
+@font-face {
+    font-family: NotoSansJP-Light;
+    src: url(../css/fonts/googlefonts/NotoSansJP-Light.otf);
+} 
+@font-face {
+    font-family: NotoSansJP-Medium;
+    src: url(../css/fonts/googlefonts/NotoSansJP-Medium.otf);
+} 
+@font-face {
+    font-family: NotoSansJP-Regular;
+    src: url(../css/fonts/googlefonts/NotoSansJP-Regular.otf);
+} 
+@font-face {
+    font-family: NotoSansJP-Thin;
+    src: url(../css/fonts/googlefonts/NotoSansJP-Thin.otf);
+} 
 
 /* custom date icon css start  */
 .date input::-webkit-inner-spin-button,
@@ -87,7 +113,7 @@ opacity: 0.3;
 .list-group-item-dk {
     color: var(--primary);
     font-size: 14px;
-    font-family: NotoSansJP-Medium;
+    font-family:NotoSansJP-Regular;
     text-decoration: none;
     padding: 14px 0px 14px 48px;
 }
@@ -511,8 +537,17 @@ display: none;
         .content-h1 , .order-reg-h2{
             text-align: center;
         }
-        .form-fields select{
+        .form-fields select , .input-border{
             height: 48px;
         }
+        .main-content {
+            height: 100%;
+        }
        
+}
+@media only screen and (max-width:375px){
+    .main-content {
+        padding: 15px;
+    }
+
 }
