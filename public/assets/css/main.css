@@ -393,16 +393,21 @@ tr:nth-child(even) {
     border-radius: 2px;
     border:1px solid #BEA000; 
 }
+.footer-nav-item{
+    margin: 12px 0px;
+}
 .footer-nav-tab {
     background-color: var(--black);
     width: 100%;
-    padding: 10px 5px;
+    padding: 17px 0px;
+}
+.footer-nav-section{
+display: none;
 }
 .footer-links {
-    font-size: 12px;
+    font-size: 16px;
     color: var(--white);
-    padding: 0px 5px;
-    font-family: SourceHanSansJP-Regular;
+    padding: 0px 15px;
 }
 @media screen and (max-width: 920px) and (min-width:769px) {
     .order-reg-card {
@@ -428,7 +433,7 @@ tr:nth-child(even) {
 }
 
 @media (min-width: 768px) {
-
+   
     #sidebar-wrapper {
         margin-left: 0;
         border-right: 4px solid;
@@ -448,6 +453,9 @@ tr:nth-child(even) {
 }
 
 @media screen and (max-width: 768px) {
+    .footer-nav-section{
+        display: block;
+    }
     .order-reg-card {
         padding: 30px 15px;
     }
