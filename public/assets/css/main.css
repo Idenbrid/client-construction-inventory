@@ -1,4 +1,21 @@
-:root {}
+:root {
+    --primary:#F4DA83;
+    --secondary:#BEA000;
+    --whisper:#EAEAEA;
+    --half-colonial-white: #EAE2BB;
+    --bakers-chocolate:#4E3000;
+    --raffia:#E0CDA2;
+    --putty:#CBB372;
+    --black:#000000;
+    --white:#FFFFFF;
+    --black-russian:#000029;
+    --dark-gray:#A5A5A5;
+    --charcoal:#424242;
+    --new-midnight-Blue:#00009A;
+    --tahuna-sands:#D6CDA2;
+    --golden-sand:#E6C466;
+    --dark-ood:#836343;
+}
 
 @font-face {
     font-family: NotoSansJP-Black;
@@ -51,7 +68,7 @@
 }
 
 .list-group-item-dk {
-    color: #F4DA83;
+    color: var(--primary);
     font-size: 14px;
     font-family: NotoSansJP-Medium;
     text-decoration: none;
@@ -59,7 +76,7 @@
 }
 
 .list-group-item-dk:hover {
-    color: #F4DA83;
+    color:  var(--primary);
     text-decoration: none;
 }
 
@@ -71,7 +88,7 @@
 .order-reg-card {
     background-color: #fff;
     border-radius: 4px;
-    box-shadow: 0px 3px 6px #00000029;
+    box-shadow: 0px 3px 6px var(--black)29;
     padding: 40px 48px 48px 48px;
 }
 
@@ -124,7 +141,7 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 }
 
 .top-navbar {
-    background: transparent linear-gradient(270deg, #4E3000 0%, #E0CDA2 53%, #CBB372 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(270deg, var( --bakers-chocolate) 0%, var( --raffia) 53%, var( --putty) 100%) 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
     padding: 3.5px 15px !important;
     position: relative;
@@ -159,13 +176,13 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 }
 
 .on-radio-btn {
-    background-color: #EAE2BB;
-    color: #424242;
+    background-color: var(--half-colonial-white);
+    color: var(--charcoal);
 }
 
 .off-radio-btn {
-    background-color: #EAEAEA;
-    color: #424242;
+    background-color: var( --whisper);
+    color: var(--charcoal);
 }
 
 .on-radio-btn,
@@ -190,7 +207,7 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 
 .btn-check:checked+.on-radio-btn {
     color: #fff;
-    background-color: #BEA000;
+    background-color: var(--secondary);
 }
 
 .btn-check:checked+.off-radio-btn {
@@ -211,6 +228,7 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     width: 33%;
     display: flex;
     align-items: center;
+    color: var(--black);
 }
 
 .order-reg-h2 {
@@ -250,8 +268,8 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     width: 98px;
     height: 42px;
     border-radius: 2px;
-    background-color: #BEA000;
-    border: 1px solid #BEA000;
+    background-color: var(--secondary);
+    border: 1px solid var(--secondary);
     color: #fff;
     font-size: 16px;
     margin-top: 30px;
@@ -273,7 +291,7 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     -ms-appearance: none;
     appearance: none;
     background-repeat: no-repeat;
-    background-image: linear-gradient(45deg, transparent 50%, #BEA000 50%), linear-gradient(135deg, #BEA000 50%, transparent 50%);
+    background-image: linear-gradient(45deg, transparent 50%, var(--secondary) 50%), linear-gradient(135deg, var(--secondary) 50%, transparent 50%);
     background-position: right 15px top 1em, right 10px top 1em;
     background-size: 5px 5px, 5px 5px;
 }
@@ -284,6 +302,7 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     color: #fff;
     font-family: NotoSansJP-Light;
     font-size: 12px;
+    padding: 0.5rem;
 }
 
 .nav-items .nav-link:after {
@@ -291,7 +310,7 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 }
 
 .nav-items .dropdown-item i {
-    color: #BEA000;
+    color: var(--secondary);
 }
 
 .order-register-form {
@@ -346,7 +365,7 @@ tr:nth-child(even) {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: #BEA000;
+    background: var(--secondary);
     color: #fff;
     border-radius: 2px;
     margin-right: 4px;
@@ -405,7 +424,7 @@ tr:nth-child(even) {
     #sidebar-wrapper {
         margin-left: 0;
         border-right: 4px solid;
-        border-image: linear-gradient(180deg, #4E3000 0%, #D6CDA2 17%, #987B3A 34%, #E0CDA2 49%, #836343 73%, #E6C466 100%) 1 100%;
+        border-image: linear-gradient(180deg, var( --bakers-chocolate) 0%, var(--tahuna-sands) 17%, #987B3A 34%, var( --raffia) 49%,  var(--dark-ood) 73%,  var(--golden-sand) 100%) 1 100%;
         display: block;
     }
 
