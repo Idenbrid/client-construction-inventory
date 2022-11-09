@@ -8,7 +8,7 @@
                 <form class="order-register-form">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-12 p-0">
                                 <ul class="switch-div">
                                     <li class="switch-btns">
                                         <h2 class="order-reg-h2"> 入力内容固定</h2>
