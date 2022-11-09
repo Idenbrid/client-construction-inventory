@@ -366,6 +366,17 @@ tr:nth-child(even) {
     border-radius: 2px;
     margin-right: 4px;
 }
+.complete-btn{
+    background-color: #BEA000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 98px;
+    height: 42px;
+    border-radius: 2px;
+    border:1px solid #BEA000; 
+}
 @media screen and (max-width: 920px) and (min-width:769px) {
     .order-reg-card {
         padding: 48px 15px;
