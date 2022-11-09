@@ -134,6 +134,12 @@ opacity: 0.3;
     box-shadow: 0px 3px 6px var(--black);
     padding: 40px 48px 48px 48px;
 }
+.account-reg-content{
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 3px 6px var(--black);
+    padding: 40px 48px 48px 80px;
+}
 
 .main-content-bg {
     background-image: url('../images/bg-img.png');
@@ -425,6 +431,20 @@ tr:nth-child(even) {
     border-radius: 2px;
     margin-right: 4px;
 }
+/* ACCOUNT REGISTRATION CSS STARt  */
+.accout-reg-input input{
+    height: 37px;
+    width: 219px;
+}
+.account-input-content{
+    gap: 30px;
+    margin-bottom: 13px;
+}
+.account-reg-buttons{
+    display: inline-flex;
+    gap: 9px;
+}
+/* ACCOUNT REGISTRATION CSS STARt  */
 .complete-btn{
     background-color: #BEA000;
     color: #fff;

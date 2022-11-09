@@ -9,6 +9,7 @@ Routes
 */
 const Home = () => import('../Pages/Home.vue');
 const WaitingList = () => import('../Pages/WaitingList.vue');
+const Registration = () => import('../Pages/Registration.vue');
 const Login = () => import('../Components/Login.vue');
 
 
@@ -31,6 +32,14 @@ export const routes = [
         component: WaitingList,
         meta: {
             title: "WaitingList"
+        }
+    },
+    {
+        name: 'Registration',
+        path: '/account-registration',
+        component: Registration,
+        meta: {
+            title: "Registration"
         }
     },
     {
