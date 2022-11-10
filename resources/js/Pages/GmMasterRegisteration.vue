@@ -173,12 +173,12 @@
     }
 
     .master-reg-form {
-        width: 23%;
+        width: 40%;
         margin-right: 15px;
     }
 
     .table-col {
-        max-width: 600px;
+       width:50%;
     }
 
     .gmaccount-reg-content {
