@@ -1,21 +1,22 @@
 :root {
-    --primary:#F4DA83;
-    --secondary:#BEA000;
-    --whisper:#EAEAEA;
+    --primary: #F4DA83;
+    --secondary: #BEA000;
+    --whisper: #EAEAEA;
     --half-colonial-white: #EAE2BB;
-    --bakers-chocolate:#4E3000;
-    --raffia:#E0CDA2;
-    --putty:#CBB372;
-    --black:#000000;
-    --white:#FFFFFF;
-    --black-russian:#000029;
-    --dark-gray:#A5A5A5;
-    --charcoal:#424242;
-    --new-midnight-Blue:#00009A;
-    --tahuna-sands:#D6CDA2;
-    --golden-sand:#E6C466;
-    --dark-ood:#836343;
+    --bakers-chocolate: #4E3000;
+    --raffia: #E0CDA2;
+    --putty: #CBB372;
+    --black: #000000;
+    --white: #FFFFFF;
+    --black-russian: #000029;
+    --dark-gray: #A5A5A5;
+    --charcoal: #424242;
+    --new-midnight-Blue: #00009A;
+    --tahuna-sands: #D6CDA2;
+    --golden-sand: #E6C466;
+    --dark-ood: #836343;
 }
+
 /* 
 @font-face {
     font-family: NotoSansJP-Black;
@@ -51,37 +52,51 @@
 @font-face {
     font-family: NotoSansJP-Black;
     src: url(../css/fonts/googlefonts/NotoSansJP-Black.otf);
-} 
+}
+
 @font-face {
     font-family: NotoSansJP-Bold;
     src: url(../css/fonts/googlefonts/NotoSansJP-Bold.otf);
-} 
+}
+
 @font-face {
     font-family: NotoSansJP-Light;
     src: url(../css/fonts/googlefonts/NotoSansJP-Light.otf);
-} 
+}
+
 @font-face {
     font-family: NotoSansJP-Medium;
     src: url(../css/fonts/googlefonts/NotoSansJP-Medium.otf);
-} 
+}
+
 @font-face {
     font-family: NotoSansJP-Regular;
     src: url(../css/fonts/googlefonts/NotoSansJP-Regular.otf);
-} 
+}
+
 @font-face {
     font-family: NotoSansJP-Thin;
     src: url(../css/fonts/googlefonts/NotoSansJP-Thin.otf);
-} 
-/* login */
-/*//////////////////////////////////////////////////////////////////
-[ login ]*/
+}
+
+/* ***************** LOGIN CSS START ********************** */
+
+.wrap-input100 .label-input100 {
+    font-family: NotoSansJP-Medium;
+    font-size: 14px;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+/* ***************** LOGIN CSS END ********************** */
 .limiter {
     width: 100%;
     margin: 0 auto;
-  }
-  
-  .container-login100 {
-    width: 100%;  
+}
+
+.container-login100 {
+    width: 100%;
     min-height: 100vh;
     display: -webkit-box;
     display: -webkit-flex;
@@ -95,9 +110,9 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-  }
-  
-  .wrap-login100 {
+}
+
+.wrap-login100 {
     width: 388px;
     height: 70vh;
     background: #fff;
@@ -108,17 +123,17 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 77px 15px 15px 15px;
-  }
-  
-  
-  /*------------------------------------------------------------------
+}
+
+
+/*------------------------------------------------------------------
   [ Form ]*/
-  
-  .login100-form {
+
+.login100-form {
     width: 100%;
-  }
-  
-  .login100-form-title {
+}
+
+.login100-form-title {
     display: block;
     font-family: Poppins-Bold;
     font-size: 39px;
@@ -126,53 +141,54 @@
     line-height: 1.2;
     text-align: center;
     padding-bottom: 49px;
-  }
-  
-  
-  
-  /*------------------------------------------------------------------
+}
+
+
+
+/*------------------------------------------------------------------
   [ Input ]*/
-  
-  .wrap-input100{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 23px;
-  }
-  
-  .label-input100 {
+
+.wrap-input100 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 23px;
+}
+
+.label-input100 {
     font-family: Poppins-Regular;
     font-size: 14px;
     color: #333333;
     margin-bottom: 3px;
-  
-   
-  }
-  
-  .input100 {
+
+
+}
+
+.input100 {
     border: 1px solid #A5A5A5;
     border-radius: 4px;
     background-color: #fff;
     width: 248px;
     height: 38px;
     padding: 10px;
-  }
-  
-  .lcm-logo{
+}
+
+.lcm-logo {
     width: 148px;
     height: 48px;
     display: flex;
     margin: auto;
-  }
-  /*---------------------------------------------*/
-  
-  
-  
-  
-  /*------------------------------------------------------------------
+}
+
+/*---------------------------------------------*/
+
+
+
+
+/*------------------------------------------------------------------
   [ Button ]*/
-  .container-login100-form-btn {
+.container-login100-form-btn {
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -181,34 +197,57 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 46px;
-  
-  }
-  
-  
-  /*//////////////////////////////////////////////////////////////////
+
+}
+
+
+/*//////////////////////////////////////////////////////////////////
   [ Responsive ]*/
-  
-  @media (max-width: 576px) {
+
+@media (max-width: 576px) {
     .wrap-login100 {
-      padding-left: 15px;
-      padding-right: 15px;
+        /* padding-left: 15px;
+        padding-right: 15px; */
+        padding:77px 46px 17px 46px;
     }
-  } 
-  
-  
-  .login-logo{
-      width: 196px;
-      margin: auto;
-      display: flex;
-  }
+    .input100{
+        width: 100%;
+    }
+    .wrap-input100{
+        align-items: flex-start;
+    }
+  .wrap-login100-form-btn{
+        width: 100%;
+    }
   .login100-form-btn{
+    width: 100% !important;
+    height: 42px !important;
+  }
+}
+@media only screen and (max-width:375px){
+    .wrap-login100{
+        padding:60px 15px 10px 15px;
+    }
+}
+
+
+.login-logo {
+    width: 196px;
+    margin: auto;
+    display: flex;
+}
+
+.login100-form-btn {
+    font-family: NotoSansJP-Medium;
     background-color: #BEA000;
     color: #fff;
     border-radius: 2px;
     font-size: 12px;
     width: 128px;
     height: 30px;
-  }
+    border: 1px solid #BEA000;
+}
+
 /* custom date icon css start  */
 .date input::-webkit-inner-spin-button,
 .date input::-webkit-clear-button {
@@ -223,20 +262,25 @@
 .main-navbar {
     margin-left: auto;
 }
+
 #top-navbar {
     position: absolute;
     /* float: none; */
     margin-left: auto;
 }
-.mbile-top-nav-setting{
-display: none;
+
+.mbile-top-nav-setting {
+    display: none;
 }
-.setting-toggle-end a:hover ,.setting-toggle-end a:active{
-background: #BEA000;
-color: var(--black);
-opacity: 0.3;
+
+.setting-toggle-end a:hover,
+.setting-toggle-end a:active {
+    background: #BEA000;
+    color: var(--black);
+    opacity: 0.3;
 }
-.setting-toggle{
+
+.setting-toggle {
     background-color: #ffff;
     width: 76px;
     height: 32px;
@@ -246,16 +290,17 @@ opacity: 0.3;
     align-items: center;
     color: black !important;
 }
+
 .list-group-item-dk {
     color: var(--primary);
     font-size: 14px;
-    font-family:NotoSansJP-Regular;
+    font-family: NotoSansJP-Regular;
     text-decoration: none;
     padding: 14px 0px 14px 48px;
 }
 
 .list-group-item-dk:hover {
-    color:  var(--primary);
+    color: var(--primary);
     text-decoration: none;
 }
 
@@ -270,7 +315,8 @@ opacity: 0.3;
     box-shadow: 0px 3px 6px var(--black);
     padding: 40px 48px 48px 48px;
 }
-.account-reg-content{
+
+.account-reg-content {
     background-color: #fff;
     border-radius: 4px;
     box-shadow: 0px 3px 6px var(--black);
@@ -324,7 +370,7 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 }
 
 .top-navbar {
-    background: transparent linear-gradient(270deg, var( --bakers-chocolate) 0%, var( --raffia) 53%, var( --putty) 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(270deg, var(--bakers-chocolate) 0%, var(--raffia) 53%, var(--putty) 100%) 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
     padding: 3.5px 15px !important;
     position: relative;
@@ -338,7 +384,8 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     justify-content: space-between;
     padding: 0.5rem 1rem;
 }
-.custom-top-nav-navbar{
+
+.custom-top-nav-navbar {
     display: flex;
     -ms-flex-direction: column;
     flex-direction: row;
@@ -347,6 +394,7 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     list-style: none;
     justify-content: right;
 }
+
 #page-content-wrapper {
     min-width: 100vw;
 }
@@ -477,9 +525,11 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     background-position: right 15px top 1em, right 10px top 1em;
     background-size: 5px 5px, 5px 5px;
 }
- input[type=radio]{
+
+input[type=radio] {
     display: none;
 }
+
 .nav-items .nav-link {
     color: #fff;
     font-family: NotoSansJP-Light;
@@ -529,18 +579,22 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 tr:nth-child(even) {
     background-color: transparent !important;
 }
-.btn-rev-del{
+
+.btn-rev-del {
     display: inline-flex;
     margin-left: 20px;
 }
-.table-card td{
+
+.table-card td {
     font-size: 12px;
 
 }
-.delivery-btn:hover{
+
+.delivery-btn:hover {
     color: #fff;
     text-decoration: none;
 }
+
 .delivery-btn {
     width: 58px;
     height: 30px;
@@ -552,10 +606,12 @@ tr:nth-child(even) {
     border-radius: 2px;
     margin-right: 4px;
 }
+
 .revision-btn:hover {
     color: #fff;
     text-decoration: none;
 }
+
 .revision-btn {
     width: 58px;
     height: 30px;
@@ -567,6 +623,7 @@ tr:nth-child(even) {
     border-radius: 2px;
     margin-right: 4px;
 }
+
 /* ACCOUNT REGISTRATION CSS START  */
 
 
@@ -586,7 +643,7 @@ tr:nth-child(even) {
 
 /* ACCOUNT REGISTRATION CSS END  */
 
-.complete-btn{
+.complete-btn {
     background-color: #BEA000;
     color: #fff;
     display: flex;
@@ -595,24 +652,29 @@ tr:nth-child(even) {
     width: 98px;
     height: 42px;
     border-radius: 2px;
-    border:1px solid #BEA000; 
+    border: 1px solid #BEA000;
 }
-.footer-nav-item{
+
+.footer-nav-item {
     margin: 12px 0px;
 }
+
 .footer-nav-tab {
     background-color: var(--black);
     width: 100%;
     padding: 17px 0px;
 }
-.footer-nav-section{
-display: none;
+
+.footer-nav-section {
+    display: none;
 }
+
 .footer-links {
     font-size: 16px;
     color: var(--white);
     padding: 0px 15px;
 }
+
 @media screen and (max-width: 920px) and (min-width:769px) {
     .order-reg-card {
         padding: 48px 15px;
@@ -637,11 +699,11 @@ display: none;
 }
 
 @media (min-width: 768px) {
-   
+
     #sidebar-wrapper {
         margin-left: 0;
         border-right: 4px solid;
-        border-image: linear-gradient(180deg, var( --bakers-chocolate) 0%, var(--tahuna-sands) 17%, #987B3A 34%, var( --raffia) 49%,  var(--dark-ood) 73%,  var(--golden-sand) 100%) 1 100%;
+        border-image: linear-gradient(180deg, var(--bakers-chocolate) 0%, var(--tahuna-sands) 17%, #987B3A 34%, var(--raffia) 49%, var(--dark-ood) 73%, var(--golden-sand) 100%) 1 100%;
         display: block;
     }
 
@@ -657,9 +719,10 @@ display: none;
 }
 
 @media screen and (max-width: 768px) {
-    .footer-nav-section{
+    .footer-nav-section {
         display: block;
     }
+
     .order-reg-card {
         padding: 30px 8px;
     }
@@ -692,21 +755,28 @@ display: none;
         width: 71px;
         height: 42px;
     }
-    .mbile-top-nav-setting{
-        display: block;
-        }
-        .content-h1 , .order-reg-h2{
-            text-align: center;
-        }
-        .form-fields select , .input-border{
-            height: 48px;
-        }
-        .main-content {
-            height: 100%;
-        }
-        /* registrartion  */
 
-        /* .account-input-content{
+    .mbile-top-nav-setting {
+        display: block;
+    }
+
+    .content-h1,
+    .order-reg-h2 {
+        text-align: center;
+    }
+
+    .form-fields select,
+    .input-border {
+        height: 48px;
+    }
+
+    .main-content {
+        height: 100%;
+    }
+
+    /* registrartion  */
+
+    /* .account-input-content{
             gap: 0px;
             margin-bottom: 13px;
             flex-wrap: wrap;
