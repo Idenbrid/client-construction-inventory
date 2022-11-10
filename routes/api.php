@@ -19,8 +19,10 @@ Route::post('/login', [App\Http\Controllers\AuthenticationController::class, 'lo
 Route::middleware('auth:sanctum')->group(function () {
     Route::controller(AuthenticationController::class)->prefix('/user')->group(function () {
         Route::get('/logout', 'logout');
-        Route::post('/registration', 'registerUser');
+        Route::post('/register', 'register');
+        Route::post('/update', 'update');
         Route::get('/list', 'list');
+        Route::get('/delete/{user_id}', 'delete');
     });
 
 });

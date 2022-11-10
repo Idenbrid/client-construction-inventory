@@ -6,10 +6,11 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Validator;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthenticationController extends Controller
 {
-    public function registerUser(Request $request)
+    public function register(Request $request)
     {
         $attributeNames = [
             'user_name' => 'User Name',
@@ -22,7 +23,7 @@ class AuthenticationController extends Controller
 
         $rules = [
             'user_name' => 'required',
-            'login_id' => 'required|min:6|integer',
+            'login_id' => 'required|min:6|unique:users',
             'login_password' => 'required|min:6',
             'type' => 'required',
         ];
@@ -104,6 +105,44 @@ class AuthenticationController extends Controller
             }
         }
     }
+    public function update(Request $request)
+    {
+        $attributeNames = [
+            'user_name' => 'User Name',
+            'login_id' => 'Login ID',
+            'login_password' => 'Password',
+            'type' => 'Type',
+        ];
+
+        $messages = [];
+
+        $rules = [
+            'user_name' => 'required',
+            'login_id' => 'required',
+            'login_password' => $request->login_password ? 'min:6' : '',
+            'type' => 'required',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+        $validator->setAttributeNames($attributeNames);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'success' => false,
+                'errors' => $validator->errors(),
+            ]);
+        } else {
+            if($request->login_password){
+                $request->request->add([
+                    'password' => Hash::make($request->login_password),
+                ]);
+            }
+            User::find($request->id)->update($request->all());
+            return response()->json([
+                'success' => true,
+            ]);
+        }
+    }
     public function logout()
     {
         Auth::guard('web')->logout();
@@ -112,6 +151,18 @@ class AuthenticationController extends Controller
         ]);
     }
     public function list(){
-        return User::latest()->get();
+        return User::where('id', '!=', Auth::id())->latest()->get();
+    }
+    public function delete($id){
+        if($user = User::find($id)){
+            $user->delete();
+            return response()->json([
+                'success'   => true,
+            ]);
+        }else{
+            return response()->json([
+                'success'   => false,
+            ]);
+        }
     }
 }
