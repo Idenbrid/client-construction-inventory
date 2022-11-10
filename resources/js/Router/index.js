@@ -19,12 +19,12 @@ const PageNotFound = () => import('../Pages/PageNotFound.vue');
 export const routes = [
     // Website Routes
     {
-        name: 'Home',
-        path: '/',
-        component: Home,
+        name: 'Login',
+        path: '/login',
+        component: Login,
         meta: {
             auth: true,
-            title: "Home",
+            title: "Login",
         }
     },
     {
@@ -46,11 +46,11 @@ export const routes = [
         }
     },
     {
-        name: 'Login',
-        path: '/login',
-        component: Login,
+        name: 'Home',
+        path: '/order',
+        component: Home,
         meta: {
-            title: "Login"
+            title: "Home"
         }
     },
     {
