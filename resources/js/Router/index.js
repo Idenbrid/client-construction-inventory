@@ -20,7 +20,7 @@ export const routes = [
     // Website Routes
     {
         name: 'Login',
-        path: '/login',
+        path: '/',
         component: Login,
         meta: {
             auth: true,
