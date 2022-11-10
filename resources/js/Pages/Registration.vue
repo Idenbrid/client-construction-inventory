@@ -8,22 +8,18 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="registration-left-content">
-                                <div class="row">
-                                    <div class="d-flex align-items-center account-input-content">
-                                        <div class="account-reg-lablel"> 
-                                            <label for="">アカウント名</label>
-                                        </div>
-                                        <div class="accout-reg-input"> 
-                                            <input type="text" name="" id="" placeholder="テキスト">
-                                        </div>
+                                <div class="d-flex align-items-center account-input-content">
+                                    <div class="account-reg-lablel">
+                                        <label for="">アカウント名</label>
+                                    </div>
+                                    <div class="accout-reg-input">
+                                        <input type="text" name="" id="" placeholder="テキスト">
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="d-flex align-items-center account-input-content">
-                                        <div class="account-reg-lablel"> <label for="">アカウント名</label></div>
-                                        <div class="accout-reg-input"> 
-                                            <input type="text" name="" id="" placeholder="テキスト">
-                                        </div>
+                                <div class="d-flex align-items-center account-input-content">
+                                    <div class="account-reg-lablel"> <label for="">アカウント名</label></div>
+                                    <div class="accout-reg-input">
+                                        <input type="text" name="" id="" placeholder="テキスト">
                                     </div>
                                 </div>
                                 <div class="account-reg-buttons">
@@ -33,7 +29,6 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-
                         </div>
                     </div>
                 </div>

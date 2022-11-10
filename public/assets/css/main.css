@@ -431,8 +431,10 @@ tr:nth-child(even) {
     border-radius: 2px;
     margin-right: 4px;
 }
-/* ACCOUNT REGISTRATION CSS STARt  */
-.accout-reg-input input{
+/* ACCOUNT REGISTRATION CSS START  */
+
+
+/* .accout-reg-input input{
     height: 37px;
     width: 219px;
 }
@@ -441,10 +443,13 @@ tr:nth-child(even) {
     margin-bottom: 13px;
 }
 .account-reg-buttons{
-    display: inline-flex;
+    display: flex;
+    justify-content: end;
     gap: 9px;
-}
-/* ACCOUNT REGISTRATION CSS STARt  */
+} */
+
+/* ACCOUNT REGISTRATION CSS END  */
+
 .complete-btn{
     background-color: #BEA000;
     color: #fff;
@@ -563,11 +568,55 @@ display: none;
         .main-content {
             height: 100%;
         }
-       
+        /* registrartion  */
+
+        /* .account-input-content{
+            gap: 0px;
+            margin-bottom: 13px;
+            flex-wrap: wrap;
+        }  
+        .account-reg-content{
+            padding: 20px;
+        } */
 }
+
+/* @media screen and (max-width: 425px) and (min-width: 325px) {
+ 
+  }
+@media only screen and (max-width:425px){
+    .account-input-content {
+        gap: 22px;
+    }
+}
+
 @media only screen and (max-width:375px){
     .main-content {
         padding: 15px;
     }
-
+    .account-reg-content {
+        padding: 46px;
+    }
+    .accout-reg-input input{
+        height: 48px;
+        width: 249px;
+        padding: 12px 0px 12px 20px;
+    }
 }
+
+@media  screen and (max-width:320px){
+    .main-content {
+        padding: 20px;
+    }
+    .account-reg-content {
+        padding: 20px;
+    }
+    .accout-reg-input input {
+        height: 48px;
+        width: 240px;
+        padding: 12px 0px 12px 20px;
+    }
+    .account-reg-buttons{
+        display: flex;
+        justify-content: end;
+    }
+} */
