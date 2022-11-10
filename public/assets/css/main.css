@@ -635,7 +635,7 @@ tr:nth-child(even) {
 .footer-nav-tab {
     background-color: var(--black);
     width: 100%;
-    padding: 17px 0px;
+    padding: 18px;
 }
 
 .footer-nav-section {
@@ -643,9 +643,16 @@ tr:nth-child(even) {
 }
 
 .footer-links {
+    font-family: NotoSansJP-Regular;
     font-size: 16px;
     color: var(--white);
     padding: 0px 15px;
+    text-decoration: none;
+    transition: 0.3s all ;
+}
+.footer-links:hover , .footer-links:active{
+    color: #BEA000;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 920px) and (min-width:769px) {
