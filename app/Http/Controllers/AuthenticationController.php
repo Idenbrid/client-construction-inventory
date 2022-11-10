@@ -9,6 +9,43 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthenticationController extends Controller
 {
+    public function registerUser(Request $request)
+    {
+        $attributeNames = [
+            'user_name' => 'User Name',
+            'login_id' => 'Login ID',
+            'login_password' => 'Password',
+            'type' => 'Type',
+        ];
+
+        $messages = [];
+
+        $rules = [
+            'user_name' => 'required',
+            'login_id' => 'required|min:6|integer',
+            'login_password' => 'required|min:6',
+            'type' => 'required',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+        $validator->setAttributeNames($attributeNames);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'success' => false,
+                'errors' => $validator->errors(),
+            ]);
+        } else {
+            $request->request->add([
+                'password' => Hash::make($request->login_password),
+            ]);
+            $user = User::create($request->all());
+            return response()->json([
+                'success' => true,
+                'user' => Auth::user(),
+            ]);
+        }
+    }
     public function login(Request $request)
     {
         $attributeNames = [
@@ -66,5 +103,15 @@ class AuthenticationController extends Controller
                 ]);
             }
         }
+    }
+    public function logout()
+    {
+        Auth::guard('web')->logout();
+        return response()->json([
+            'success'   => true,
+        ]);
+    }
+    public function list(){
+        return User::latest()->get();
     }
 }

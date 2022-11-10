@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthenticationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,4 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::post('/login', [App\Http\Controllers\AuthenticationController::class, 'login']);
+ /* Authenticated Routes  **/
+Route::middleware('auth:sanctum')->group(function () {
+    Route::controller(AuthenticationController::class)->prefix('/user')->group(function () {
+        Route::get('/logout', 'logout');
+        Route::post('/registration', 'registerUser');
+        Route::get('/list', 'list');
+    });
 
+});
