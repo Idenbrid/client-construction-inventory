@@ -388,7 +388,15 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     background-color: var(--whisper);
     color: var(--charcoal);
 }
+.on-radio-btn-reg {
+    background-color: var(--half-colonial-white);
+    color: var(--charcoal);
+}
 
+.off-radio-btn-reg {
+    background-color: var(--whisper);
+    color: var(--charcoal);
+}
 .on-radio-btn,
 .off-radio-btn {
     border: none;
@@ -403,6 +411,30 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     align-items: center;
     cursor: pointer;
 
+}
+.on-radio-btn-reg,
+.off-radio-btn-reg {
+    border: none;
+    border-radius: 5px;
+    padding: 0px;
+    width: 76px;
+    height: 30px;
+    font-size: 12px;
+    font-family: NotoSansJP-Medium;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}
+.btn-check:checked+.on-radio-btn-reg {
+    color: #fff;
+    background-color: var(--secondary);
+}
+
+.btn-check:checked+.off-radio-btn-reg {
+    color: #fff;
+    background-color: #000;
 }
 
 .kind-radio-btn:hover {
@@ -424,6 +456,11 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     width: 160px;
     justify-content: center;
     margin-right: 30px;
+}
+
+.switch-btns-registration {
+    display: flex;
+    justify-content: start;
 }
 
 .register-label {
@@ -600,19 +637,20 @@ tr:nth-child(even) {
 /* ACCOUNT REGISTRATION CSS START  */
 
 
-/* .accout-reg-input input{
+.accout-reg-input input{
     height: 37px;
     width: 219px;
 }
 .account-input-content{
     gap: 30px;
     margin-bottom: 13px;
+    justify-content: space-between;
 }
 .account-reg-buttons{
     display: flex;
     justify-content: end;
     gap: 9px;
-} */
+} 
 
 /* ACCOUNT REGISTRATION CSS END  */
 
@@ -756,17 +794,17 @@ tr:nth-child(even) {
 
     /* registrartion  */
 
-    /* .account-input-content{
+    .account-input-content{
             gap: 0px;
             margin-bottom: 13px;
             flex-wrap: wrap;
         }  
         .account-reg-content{
             padding: 20px;
-        } */
+        }
 }
 
-/* @media screen and (max-width: 425px) and (min-width: 325px) {
+@media screen and (max-width: 425px) and (min-width: 325px) {
  
   }
 @media only screen and (max-width:425px){
@@ -805,7 +843,7 @@ tr:nth-child(even) {
         display: flex;
         justify-content: end;
     }
-} */
+}
 /*//////////////////////////////////////////////////////////////////
   [ Responsive ]*/
 
