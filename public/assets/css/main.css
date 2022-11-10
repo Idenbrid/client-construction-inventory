@@ -536,10 +536,17 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     background-size: 5px 5px, 5px 5px;
 }
 
-input[type=radio] {
+.switch-btns input[type=radio] {
     display: none;
 }
-
+.model-no-list{
+    display: flex;
+  
+}
+.model-no-list li{
+  
+    margin-right: 15px;
+}
 .nav-items .nav-link {
     color: #fff;
     font-family: NotoSansJP-Light;

@@ -10,6 +10,7 @@ Routes
 const Home = () => import('../Pages/Home.vue');
 const WaitingList = () => import('../Pages/WaitingList.vue');
 const Registration = () => import('../Pages/Registration.vue');
+const GmMasterRegistration = () => import('../Pages/GmMasterRegisteration.vue');
 const Login = () => import('../Components/Login.vue');
 
 
@@ -39,6 +40,15 @@ export const routes = [
         name: 'Registration',
         path: '/account-registration',
         component: Registration,
+        meta: {
+            auth: true,
+            title: "Registration"
+        }
+    },
+    {
+        name: 'GmMasterRegistration',
+        path: '/generated-material-master-registration',
+        component: GmMasterRegistration,
         meta: {
             auth: true,
             title: "Registration"
