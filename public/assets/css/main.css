@@ -644,7 +644,7 @@ tr:nth-child(even) {
 .account-input-content{
     gap: 30px;
     margin-bottom: 13px;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 .account-reg-buttons{
     display: flex;
