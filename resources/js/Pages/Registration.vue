@@ -83,7 +83,7 @@
                                     <td>{{user.user_name}}</td>
                                     <td>{{user.login_id}}</td>
                                     <td>
-                                        <a class="btn btn-danger btn-sm" @click="deleteUser(user.id)">削除</a>
+                                        <a class="btn" @click="deleteUser(user.id)"><i class="fa-solid fa-trash-can delete-icon"></i> </a>
                                         <a class="btn btn-primary btn-sm" @click="editUser(user)">edit</a>
                                     </td>
                                 </tr>
@@ -254,6 +254,12 @@
         font-size: 12px;
         text-align: center;
     }
-
+    .delete-icon{
+        color: red;
+        font-size: 16px;
+    }
+    .account-reg-lablel{
+        width: 96px;
+    }
     /* ****************** ACCOUNTS REGISTRATION CSS END ************* */
 </style>
