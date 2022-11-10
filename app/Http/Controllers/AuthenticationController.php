@@ -105,6 +105,44 @@ class AuthenticationController extends Controller
             }
         }
     }
+    public function update(Request $request)
+    {
+        $attributeNames = [
+            'user_name' => 'User Name',
+            'login_id' => 'Login ID',
+            'login_password' => 'Password',
+            'type' => 'Type',
+        ];
+
+        $messages = [];
+
+        $rules = [
+            'user_name' => 'required',
+            'login_id' => 'required',
+            'login_password' => $request->login_password ? 'min:6' : '',
+            'type' => 'required',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+        $validator->setAttributeNames($attributeNames);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'success' => false,
+                'errors' => $validator->errors(),
+            ]);
+        } else {
+            if($request->login_password){
+                $request->request->add([
+                    'password' => Hash::make($request->login_password),
+                ]);
+            }
+            User::find($request->id)->update($request->all());
+            return response()->json([
+                'success' => true,
+            ]);
+        }
+    }
     public function logout()
     {
         Auth::guard('web')->logout();

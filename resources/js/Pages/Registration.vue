@@ -64,7 +64,8 @@
                                     </ul>
                                 </div>
                                 <div class="account-reg-buttons">
-                                    <div><a class="btn btn-success" @click="handleRegister()">登録</a></div>
+                                    <div v-if="user.id == 0"><a class="btn btn-success" @click="handleRegister()">登録</a></div>
+                                    <div v-else><a class="btn btn-success" @click="handleUpdate()">update</a></div>
                                     <div><a class="btn btn-danger" @click="clear()">Clear</a></div>
                                 </div>
                             </div>
@@ -81,7 +82,10 @@
                                     <td>{{index+1}}</td>
                                     <td>{{user.user_name}}</td>
                                     <td>{{user.login_id}}</td>
-                                    <td><a class="btn btn-danger btn-sm" @click="deleteUser(user.id)">削除</a></td>
+                                    <td>
+                                        <a class="btn btn-danger btn-sm" @click="deleteUser(user.id)">削除</a>
+                                        <a class="btn btn-primary btn-sm" @click="editUser(user)">edit</a>
+                                    </td>
                                 </tr>
                             </table>
                         </div>
@@ -101,6 +105,7 @@
                     login_id: "",
                     login_password: "",
                     type: "normal",
+                    id: 0,
                 },
                 errors: [],
                 list: [],
@@ -110,6 +115,12 @@
             this.getList()
         },
         methods: {
+            editUser(item){
+                this.user.id = item.id;
+                this.user.login_id = item.login_id;
+                this.user.type = item.type;
+                this.user.user_name = item.user_name;
+            },
             handleRegister() {
                 Swal.fire({
                     text: 'Please Wait...',
@@ -124,16 +135,35 @@
                             this.errors = response.data.errors
                         } else {
                             Swal.close()
-                            this.user = {
-                                user_name: "",
-                                login_id: "",
-                                login_password: "",
-                                type: "normal",
-                            },
+                            this.clear()
                             this.errors = [];
                             Swal.fire({
                                 icon: 'success',
-                                title: 'User has been registered successfully...',
+                                title: 'User has been registered successfully.',
+                            })
+                            this.getList()
+                        }
+                    })
+            },
+            handleUpdate() {
+                Swal.fire({
+                    text: 'Please Wait...',
+                    didOpen: () => {
+                        Swal.showLoading()
+                    },
+                })
+                axios.post("/api/user/update", this.user)
+                    .then((response) => {
+                        if (response.data.success == false) {
+                            Swal.close()
+                            this.errors = response.data.errors
+                        } else {
+                            Swal.close()
+                            this.clear()
+                            this.errors = [];
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'User has been updated successfully...',
                             })
                             this.getList()
                         }
@@ -142,6 +172,7 @@
             clear() {
                 this.user = {
                     user_name: "",
+                    id: 0,
                     login_id: "",
                     login_password: "",
                     type: "normal",
