@@ -23,7 +23,8 @@ export const routes = [
         path: '/',
         component: Home,
         meta: {
-            title: "Home"
+            auth: true,
+            title: "Home",
         }
     },
     {
@@ -31,6 +32,7 @@ export const routes = [
         path: '/waiting-list',
         component: WaitingList,
         meta: {
+            auth: true,
             title: "WaitingList"
         }
     },
@@ -39,6 +41,7 @@ export const routes = [
         path: '/account-registration',
         component: Registration,
         meta: {
+            auth: true,
             title: "Registration"
         }
     },
@@ -63,17 +66,23 @@ const router = createRouter({
     routes: routes,
 });
 
-// router.beforeEach((to, from, next) => {
-//     document.title = to.meta.title
-//     if (to.matched.some((record) => record.meta.auth)) {
-//         if (isAuthenticated()) {
-//             next()
-//         } else {
-//             next("/login")
-//         }
-//     } else {
-//         next()
-//     }
-// })
+router.beforeEach((to, from, next) => {
+    document.title = to.meta.title
+    if (to.matched.some((record) => record.meta.auth)) {
+        if ($("meta[name='role']").attr("content") == "manager" || $("meta[name='role']").attr("content") == "normal") {
+            // console.log(to.matched.some((record) => record.meta.accessBy));
+            // if (to.matched.some((record) => record.meta.accessBy)) {
+            //     next()
+            // } else {
+            //     next()
+            // }
+            next()
+        } else {
+            next("/login")
+        }
+    } else {
+        next()
+    }
+})
 
 export default router;
