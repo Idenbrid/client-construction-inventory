@@ -201,34 +201,7 @@
 }
 
 
-/*//////////////////////////////////////////////////////////////////
-  [ Responsive ]*/
 
-@media (max-width: 576px) {
-    .wrap-login100 {
-        /* padding-left: 15px;
-        padding-right: 15px; */
-        padding:77px 46px 17px 46px;
-    }
-    .input100{
-        width: 100%;
-    }
-    .wrap-input100{
-        align-items: flex-start;
-    }
-  .wrap-login100-form-btn{
-        width: 100%;
-    }
-  .login100-form-btn{
-    width: 100% !important;
-    height: 42px !important;
-  }
-}
-@media only screen and (max-width:375px){
-    .wrap-login100{
-        padding:60px 15px 10px 15px;
-    }
-}
 
 
 .login-logo {
@@ -826,3 +799,31 @@ tr:nth-child(even) {
         justify-content: end;
     }
 } */
+/*//////////////////////////////////////////////////////////////////
+  [ Responsive ]*/
+
+  @media only screen and  (max-width: 576px) {
+    .wrap-login100 {
+        /* padding-left: 15px;
+        padding-right: 15px; */
+        padding:77px 46px 17px 46px;
+    }
+    .input100{
+        width: 100%;
+    }
+    .wrap-input100{
+        align-items: flex-start;
+    }
+  .wrap-login100-form-btn{
+        width: 100%;
+    }
+  .login100-form-btn{
+    width: 100% ;
+    height: 42px ;
+  }
+}
+@media only screen and (max-width:375px){
+    .wrap-login100{
+        padding:60px 15px 10px 15px;
+    }
+}
