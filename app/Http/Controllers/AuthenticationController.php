@@ -6,10 +6,11 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Validator;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthenticationController extends Controller
 {
-    public function registerUser(Request $request)
+    public function register(Request $request)
     {
         $attributeNames = [
             'user_name' => 'User Name',
@@ -22,7 +23,7 @@ class AuthenticationController extends Controller
 
         $rules = [
             'user_name' => 'required',
-            'login_id' => 'required|min:6|integer',
+            'login_id' => 'required|min:6|unique:users',
             'login_password' => 'required|min:6',
             'type' => 'required',
         ];
@@ -112,6 +113,18 @@ class AuthenticationController extends Controller
         ]);
     }
     public function list(){
-        return User::latest()->get();
+        return User::where('id', '!=', Auth::id())->latest()->get();
+    }
+    public function delete($id){
+        if($user = User::find($id)){
+            $user->delete();
+            return response()->json([
+                'success'   => true,
+            ]);
+        }else{
+            return response()->json([
+                'success'   => false,
+            ]);
+        }
     }
 }
