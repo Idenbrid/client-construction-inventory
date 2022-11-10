@@ -23,7 +23,6 @@ export const routes = [
         path: '/',
         component: Login,
         meta: {
-            auth: true,
             title: "Login",
         }
     },
@@ -50,6 +49,7 @@ export const routes = [
         path: '/order',
         component: Home,
         meta: {
+            auth: true,
             title: "Home"
         }
     },
@@ -78,7 +78,7 @@ router.beforeEach((to, from, next) => {
             // }
             next()
         } else {
-            next("/login")
+            next("/")
         }
     } else {
         next()
