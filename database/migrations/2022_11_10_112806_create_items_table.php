@@ -15,6 +15,14 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
+            $table->string('category');
+            $table->string('manufacturer');
+            $table->string('item_name');
+            $table->string('item_number');
+            $table->string('unit');
+            $table->integer('created_by')->nullable();
+            $table->integer('updated_by')->nullable();
+            $table->timestamp('deleted_by')->nullable();
             $table->timestamps();
         });
     }

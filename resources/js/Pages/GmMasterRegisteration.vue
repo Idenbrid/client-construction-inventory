@@ -10,13 +10,12 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="master-input-content">
-
                                         <label for="">分類</label>
                                     </div>
                                 </div>
                                 <div class="col-md-8">
                                     <div class="generated-reg-input">
-                                        <input type="text" name="" id="" placeholder="テキスト">
+                                        <input v-model="item.category" type="text" name="分類" id="分類" placeholder="テキスト">
                                     </div>
                                 </div>
                             </div>
@@ -29,7 +28,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="generated-reg-input">
-                                        <input type="text" name="" id="" placeholder="テキスト">
+                                        <input v-model="item.manufacturer" type="text" name="メーカー" id="メーカー" placeholder="テキスト">
                                     </div>
                                 </div>
                             </div>
@@ -42,7 +41,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="generated-reg-input">
-                                        <input type="text" name="" id="" placeholder="テキスト">
+                                        <input v-model="item.item_name" type="text" name="品名" id="品名" placeholder="テキスト">
                                     </div>
                                 </div>
                             </div>
@@ -55,59 +54,59 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="generated-reg-input">
-                                        <input type="text" name="" id="" placeholder="テキスト">
+                                        <input v-model="item.item_number" type="text" name="型番" id="型番" placeholder="テキスト">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="master-input-content">
-
-                                        <label for="">型番</label>
+                                        <label for="">単位</label>
                                     </div>
                                 </div>
                                 <div class="col-md-8">
                                     <ul class="model-no-list">
                                         <li>
                                             <div class="form-check">
-                                                <input type="radio" class="form-check-input" id="m" name="m" />
+                                                <input v-model="item.unit" type="radio" value="m" class="form-check-input" id="m" name="m" />
                                                 <label class="form-check-label" for="m">m</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input type="radio" class="form-check-input" id="book" name="book" />
+                                                <input v-model="item.unit" type="radio" value="本" class="form-check-input" id="book" name="book" />
                                                 <label class="form-check-label" for="book">本</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input type="radio" class="form-check-input" id="male" name="indivual" />
+                                                <input v-model="item.unit" type="radio" value="個" class="form-check-input" id="male" name="indivual" />
                                                 <label class="form-check-label" for="indivual">個</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input type="radio" class="form-check-input" id="box" name="box" />
+                                                <input v-model="item.unit" type="radio" value="箱" class="form-check-input" id="box" name="box" />
                                                 <label class="form-check-label" for="box">箱</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input type="radio" class="form-check-input" id="bag" name="bag" />
+                                                <input v-model="item.unit" type="radio" value="袋" class="form-check-input" id="bag" name="bag" />
                                                 <label class="form-check-label" for="bag">袋</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input type="radio" class="form-check-input" id="tower" name="tower" />
+                                                <input v-model="item.unit" type="radio" value="台" class="form-check-input" id="tower" name="tower" />
                                                 <label class="form-check-label" for="tower">台</label>
                                             </div>
                                         </li>
                                     </ul>
                                     <div class="account-reg-buttons mt-3">
-                                        <div><button class="register-btn">登録</button></div>
-                                        <div><button class="delete-btn">削除</button></div>
+                                        <div v-if="item.id == 0"><a class="btn btn-success" @click="handleSave()">登録</a></div>
+                                        <div v-else><a class="btn btn-success" @click="handleUpdate()">update</a></div>
+                                        <div><a class="btn btn-danger" @click="clear()">Clear</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -115,19 +114,23 @@
                         <div class="table-col">
                             <table class="registration-table">
                                 <tr>
-
+                                    <th>Sr.</th>
                                     <th>分類</th>
                                     <th>メーカー</th>
                                     <th>品名</th>
                                     <th>型番</th>
-                                    <th></th>
+                                    <th>Action</th>
                                 </tr>
-                                <tr>
-                                    <td>テキストテキスト…</td>
-                                    <td>テキストテキスト…</td>
-                                    <td>テキストテキスト…</td>
-                                    <td>123456789…</td>
-                                    <td><i class="fa fa-trash" aria-hidden="true"></i></td>
+                                <tr v-for="(item, index) in list" :key="index">
+                                    <td>{{index+1}}</td>
+                                    <td>{{item.category}}</td>
+                                    <td>{{item.manufacturer}}</td>
+                                    <td>{{item.item_name}}</td>
+                                    <td>{{item.item_number}}</td>
+                                    <td>
+                                        <a class="btn" @click="deleteItem(item.id)"><i class="fa-solid fa-trash-can delete-icon"></i> </a>
+                                        <a class="btn btn-primary btn-sm" @click="editItem(item)">edit</a>
+                                    </td>
                                 </tr>
                             </table>
                         </div>
@@ -139,8 +142,133 @@
 </template>
 
 <script>
+    import axios from "axios";
     export default {
-
+        data() {
+            return {
+                item: {
+                    category: '',
+                    manufacturer: '',
+                    item_name: '',
+                    item_number: '',
+                    unit: '',
+                    id: 0,
+                },
+                errors: [],
+                list: [],
+            }
+        },
+        created() {
+            this.getList()
+        },
+        methods: {
+            editItem(item){
+                this.item.id = item.id;
+                this.item.category = item.category;
+                this.item.manufacturer = item.manufacturer;
+                this.item.item_name = item.item_name;
+                this.item.item_number = item.item_number;
+                this.item.unit = item.unit;
+            },
+            handleSave() {
+                Swal.fire({
+                    text: 'Please Wait...',
+                    didOpen: () => {
+                        Swal.showLoading()
+                    },
+                })
+                axios.post("/api/item/save", this.item)
+                    .then((response) => {
+                        if (response.data.success == false) {
+                            Swal.close()
+                            this.errors = response.data.errors
+                        } else {
+                            Swal.close()
+                            this.clear()
+                            this.errors = [];
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Item has been registered successfully.',
+                            })
+                            this.getList()
+                        }
+                    })
+            },
+            handleUpdate() {
+                Swal.fire({
+                    text: 'Please Wait...',
+                    didOpen: () => {
+                        Swal.showLoading()
+                    },
+                })
+                axios.post("/api/item/update", this.item)
+                    .then((response) => {
+                        if (response.data.success == false) {
+                            Swal.close()
+                            this.errors = response.data.errors
+                        } else {
+                            Swal.close()
+                            this.clear()
+                            this.errors = [];
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Item has been updated successfully...',
+                            })
+                            this.getList()
+                        }
+                    })
+            },
+            clear() {
+                this.item = {
+                    category: '',
+                    manufacturer: '',
+                    item_name: '',
+                    item_number: '',
+                    unit: '',
+                    id: 0,
+                };
+                this.errors = [];
+            },
+            getList() {
+                axios.get("/api/item/list")
+                .then((response) => {
+                    this.list = response.data
+                })
+            },
+            deleteItem(id) {
+                Swal.fire({
+                    title: 'Are you sure?',
+                    text: "You won't be able to revert this!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        axios.get("/api/item/delete/" + id)
+                        .then((response) => {
+                            if(response.data.success == true){
+                                Swal.fire(
+                                    'Deleted!',
+                                    'Your data has been deleted.',
+                                    'success'
+                                )
+                                this.getList()
+                            }else{
+                                Swal.fire(
+                                    'Error!',   
+                                    'Item not found. Please reload the page and try agian. Thanks',
+                                    'error'
+                                )
+                            }
+                            
+                        })
+                    }
+                })
+                
+            },
+        },
     }
 </script>
 <style>

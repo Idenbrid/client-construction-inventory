@@ -21,7 +21,7 @@ return new class extends Migration
             $table->enum('type', ['manager', 'normal']);
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
-            $table->timestamp('deleted_by')->nullable();
+            $table->timestamp('deleted_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
