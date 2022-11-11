@@ -293,7 +293,7 @@
     background-color: #fff;
     border-radius: 4px;
     box-shadow: 0px 3px 6px var(--black);
-    padding: 40px 48px 48px 80px;
+    padding: 12px 0px 12px 80px;
 }
 
 .main-content-bg {
@@ -636,10 +636,14 @@ tr:nth-child(even) {
 
 /* ACCOUNT REGISTRATION CSS START  */
 
-
-.accout-reg-input input{
+.account-reg-input{
+width:59.38%;
+}
+.account-reg-input input{
     height: 37px;
     width: 219px;
+    width: 100%;
+    padding: 6.5px 16.5px;
 }
 .account-input-content{
     gap: 30px;
@@ -820,7 +824,7 @@ tr:nth-child(even) {
     .account-reg-content {
         padding: 46px;
     }
-    .accout-reg-input input{
+    .account-reg-input input{
         height: 48px;
         width: 249px;
         padding: 12px 0px 12px 20px;
@@ -834,7 +838,7 @@ tr:nth-child(even) {
     .account-reg-content {
         padding: 20px;
     }
-    .accout-reg-input input {
+    .account-reg-input input {
         height: 48px;
         width: 240px;
         padding: 12px 0px 12px 20px;

@@ -6,13 +6,13 @@
             <div class="account-reg-content">
                 <div class="conrainer">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-5">
                             <div class="registration-left-content">
                                 <div class="d-flex align-items-center account-input-content">
                                     <div class="account-reg-lablel">
                                         <label for="">アカウント名</label>
                                     </div>
-                                    <div class="accout-reg-input">
+                                    <div class="account-reg-input">
                                         <input type="text" name="user_name" v-model="user.user_name" placeholder="テキスト">
                                         <small>
                                             <span v-if="errors.user_name != null" class="text-danger float-left">
@@ -23,7 +23,7 @@
                                 </div>
                                 <div class="d-flex align-items-center  account-input-content">
                                     <div class="account-reg-lablel"> <label for="">アカウントID</label></div>
-                                    <div class="accout-reg-input">
+                                    <div class="account-reg-input">
                                         <input type="text" name="login_id" v-model="user.login_id" placeholder="テキスト">
                                         <small>
                                             <span v-if="errors.login_id != null" class="text-danger float-left">
@@ -36,7 +36,7 @@
                                     <div class="account-reg-lablel">
                                         <label for="">Password</label>
                                     </div>
-                                    <div class="accout-reg-input">
+                                    <div class="account-reg-input">
                                         <input type="password" name="password" v-model="user.login_password"
                                             placeholder="テキスト">
                                         <small>
@@ -64,13 +64,14 @@
                                     </ul>
                                 </div>
                                 <div class="account-reg-buttons">
-                                    <div v-if="user.id == 0"><a class="btn btn-success" @click="handleRegister()">登録</a></div>
+                                    <div v-if="user.id == 0"><a class="btn btn-success" @click="handleRegister()">登録</a>
+                                    </div>
                                     <div v-else><a class="btn btn-success" @click="handleUpdate()">update</a></div>
                                     <div><a class="btn btn-danger" @click="clear()">Clear</a></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-7 ">
                             <table class="registration-table">
                                 <tr>
                                     <th>#</th>
@@ -83,8 +84,10 @@
                                     <td>{{user.user_name}}</td>
                                     <td>{{user.login_id}}</td>
                                     <td>
-                                        <a class="btn" @click="deleteUser(user.id)"><i class="fa-solid fa-trash-can delete-icon"></i> </a>
-                                        <a class="btn btn-primary btn-sm" @click="editUser(user)">edit</a>
+                                        <a @click="deleteUser(user.id)"><i
+                                                class="fa-solid fa-trash-can delete-icon"></i> </a>
+                                        <a @click="editUser(user)"><i
+                                                class="fa-solid fa-pen-to-square edit-icon"></i></a>
                                     </td>
                                 </tr>
                             </table>
@@ -115,7 +118,7 @@
             this.getList()
         },
         methods: {
-            editUser(item){
+            editUser(item) {
                 this.user.id = item.id;
                 this.user.login_id = item.login_id;
                 this.user.type = item.type;
@@ -181,9 +184,9 @@
             },
             getList() {
                 axios.get("/api/user/list")
-                .then((response) => {
-                    this.list = response.data
-                })
+                    .then((response) => {
+                        this.list = response.data
+                    })
             },
             deleteUser(id) {
                 Swal.fire({
@@ -197,26 +200,26 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                         axios.get("/api/user/delete/" + id)
-                        .then((response) => {
-                            if(response.data.success == true){
-                                Swal.fire(
-                                    'Deleted!',
-                                    'Your data has been deleted.',
-                                    'success'
-                                )
-                                this.getList()
-                            }else{
-                                Swal.fire(
-                                    'Error!',   
-                                    'User not found. Please reload the page and try agian. Thanks',
-                                    'error'
-                                )
-                            }
-                            
-                        })
+                            .then((response) => {
+                                if (response.data.success == true) {
+                                    Swal.fire(
+                                        'Deleted!',
+                                        'Your data has been deleted.',
+                                        'success'
+                                    )
+                                    this.getList()
+                                } else {
+                                    Swal.fire(
+                                        'Error!',
+                                        'User not found. Please reload the page and try agian. Thanks',
+                                        'error'
+                                    )
+                                }
+
+                            })
                     }
                 })
-                
+
             },
         },
     }
@@ -254,12 +257,60 @@
         font-size: 12px;
         text-align: center;
     }
-    .delete-icon{
+
+    .delete-icon {
         color: red;
+        padding: 3px;
         font-size: 16px;
     }
-    .account-reg-lablel{
+
+    .account-reg-lablel {
         width: 96px;
     }
+
+    .edit-icon {
+        color: blue;
+        font-size: 16px;
+        padding: 3px;
+    }
+
+    @media only screen and (max-width:1024px) {
+        .account-reg-content {
+            padding: 40px 0px 48px 60px;
+        }
+
+        .account-reg-lablel label {
+            font-size: 13px;
+        }
+    }
+
+    @media only screen and (max-width:768px) {
+        .account-reg-content {
+            padding: 36px 0px 48px 15px;
+        }
+    }
+
+    @media only screen and (max-width:425px) {
+        .account-reg-input {
+            width: 100%;
+        }
+
+        .account-reg-content {
+            padding: 15px;
+        }
+    }
+
+    @media only screen and (max-width:375px) {}
+
+    @media only screen and (max-width:320px) {
+        .account-reg-input {
+            width: 100%;
+        }
+        .account-reg-content {
+            padding: 20px 15px;
+        }
+
+    }
+
     /* ****************** ACCOUNTS REGISTRATION CSS END ************* */
 </style>

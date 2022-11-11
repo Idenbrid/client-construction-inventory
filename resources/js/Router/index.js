@@ -10,6 +10,8 @@ Routes
 const Home = () => import('../Pages/Home.vue');
 const WaitingList = () => import('../Pages/WaitingList.vue');
 const Registration = () => import('../Pages/Registration.vue');
+const MasteterRegistration = () => import('../Pages/MasteterRegistration.vue');
+const Test = () => import('../Pages/Test.vue');
 const Login = () => import('../Components/Login.vue');
 
 
@@ -42,6 +44,24 @@ export const routes = [
         meta: {
             auth: true,
             title: "Registration"
+        }
+    },
+    {
+        name: 'MasterRegistration',
+        path: '/master-registration',
+        component:MasteterRegistration,
+        meta: {
+            auth: true,
+            title: "MasteterRegistration"
+        }
+    },
+    {
+        name: 'Test',
+        path: '/test',
+        component: Test,
+        meta: {
+            auth: true,
+            title: "Test"
         }
     },
     {
