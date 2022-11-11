@@ -25,7 +25,7 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::get('/list', 'list');
         Route::get('/delete/{user_id}', 'delete');
     });
-    Route::controller(ItemController::class)->prefix('/user')->group(function () {
+    Route::controller(ItemController::class)->prefix('/item')->group(function () {
         Route::post('/save', 'store');
         Route::post('/update', 'update');
         Route::get('/list', 'list');

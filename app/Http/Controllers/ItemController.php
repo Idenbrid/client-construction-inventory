@@ -14,8 +14,8 @@ class ItemController extends Controller
         $attributeNames = [
             'category' => 'Category',
             'manufacturer' => 'Manufacturer',
-            'product_name' => 'Product name',
-            'model_number' => 'Model Number',
+            'item_name' => 'Item name',
+            'item_number' => 'Item Number',
             'unit' => 'Unit',
         ];
 
@@ -24,8 +24,8 @@ class ItemController extends Controller
         $rules = [
             'category' => 'required',
             'manufacturer' => 'required',
-            'product_name' => 'required',
-            'model_number' => 'required',
+            'item_name' => 'required',
+            'item_number' => 'required',
             'unit' => 'required',
         ];
 
@@ -53,8 +53,8 @@ class ItemController extends Controller
         $attributeNames = [
             'category' => 'Category',
             'manufacturer' => 'Manufacturer',
-            'product_name' => 'Product name',
-            'model_number' => 'Model Number',
+            'item_name' => 'Item name',
+            'item_number' => 'Item Number',
             'unit' => 'Unit',
         ];
 
@@ -63,8 +63,8 @@ class ItemController extends Controller
         $rules = [
             'category' => 'required',
             'manufacturer' => 'required',
-            'product_name' => 'required',
-            'model_number' => 'required',
+            'item_name' => 'required',
+            'item_number' => 'required',
             'unit' => 'required',
         ];
 
@@ -81,7 +81,7 @@ class ItemController extends Controller
                 'created_by' => Auth::id(),
                 'updated_by' => Auth::id(),
             ]);
-            Item::find($request->id)->create($request->all());
+            Item::find($request->id)->update($request->all());
             return response()->json([
                 'success' => true,
             ]);

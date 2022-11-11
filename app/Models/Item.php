@@ -12,8 +12,8 @@ class Item extends Model
     protected $fillable = [
         'category',
         'manufacturer',
-        'product_name',
-        'model_number',
+        'item_name',
+        'item_number',
         'unit',
         'created_by',
         'updated_by',
