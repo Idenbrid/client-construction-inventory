@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\WarehouseController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,12 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::post('/update', 'update');
         Route::get('/list', 'list');
         Route::get('/delete/{item_id}', 'delete');
+    });
+    Route::controller(WarehouseController::class)->prefix('/warehouse')->group(function () {
+        Route::post('/save', 'store');
+        Route::post('/update', 'update');
+        Route::get('/list', 'list');
+        Route::get('/delete/{warehouse_id}', 'delete');
     });
 
 });
