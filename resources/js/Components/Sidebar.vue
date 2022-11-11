@@ -25,7 +25,7 @@
         <div class="list-group list-group-flush" v-if="is_login == 'manager'">
             <router-link to="/account-registration" class="list-group-item-dk">アカウント登録</router-link>
             <router-link to="/generated-material-master-registration" class="list-group-item-dk">発生資材マスタ登録</router-link>
-            <router-link to="#" class="list-group-item-dk">資材置き場マスタ登録</router-link>
+            <router-link to="/master-registration" class="list-group-item-dk">資材置き場マスタ登録</router-link>
             <router-link to="#" class="list-group-item-dk">発注先マスタ登録</router-link>
             <router-link to="#" class="list-group-item-dk">JOB番号・現場名登録</router-link>
 
