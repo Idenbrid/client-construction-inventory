@@ -9,16 +9,16 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 p-0">
-                                <ul class="switch-div">
+                                <!-- <ul class="switch-div">
                                     <li class="switch-btns">
                                         <h2 class="order-reg-h2"> 入力内容固定</h2>
                                     </li>
                                     <li class="form-fields">
 
                                     </li>
-                                </ul>
+                                </ul> -->
                                 <ul class="switch-div">
-                                    <li class="switch-btns">
+                                    <!-- <li class="switch-btns">
                                         <div class="mr-1">
                                             <input type="radio" class="btn-check" value="jobon" name="options"
                                                 id="job-on" autocomplete="on">
@@ -29,7 +29,7 @@
                                                 id="job-off" autocomplete="off">
                                             <label class="off-radio-btn" for="job-off">OFF</label>
                                         </div>
-                                    </li>
+                                    </li> -->
                                     <li class="form-fields">
                                         <div class="register-label align-items-center">JOB番号（選択）</div>
 
@@ -42,7 +42,7 @@
                                     </li>
                                 </ul>
                                 <ul class="switch-div">
-                                    <li class="switch-btns">
+                                    <!-- <li class="switch-btns">
                                         <div class="mr-1">
                                             <input type="radio" class="btn-check" value="現物" name="options" id="現物"
                                                 autocomplete="off">
@@ -53,7 +53,7 @@
                                                 autocomplete="off">
                                             <label class="off-radio-btn" for="信用">OFF</label>
                                         </div>
-                                    </li>
+                                    </li> -->
 
                                     <li class="form-fields">
                                         <div class="register-label">現場名（自動入力）</div>
@@ -62,7 +62,7 @@
                                     </li>
                                 </ul>
                                 <ul class="switch-div">
-                                    <li class="switch-btns">
+                                    <!-- <li class="switch-btns">
                                         <div class="mr-1">
                                             <input type="radio" class="btn-check" value="現物" name="options"
                                                 id="date-birth-on" autocomplete="off">
@@ -73,7 +73,7 @@
                                                 id="date-birth-off" autocomplete="off">
                                             <label class="off-radio-btn" for="date-birth-off">OFF</label>
                                         </div>
-                                    </li>
+                                    </li> -->
 
                                     <li class="form-fields ">
                                         <div class="register-label">生年月日（カレンダー）</div>
@@ -84,7 +84,7 @@
                                     </li>
                                 </ul>
                                 <ul class="switch-div">
-                                    <li class="switch-btns">
+                                    <!-- <li class="switch-btns">
                                         <div class="mr-1">
                                             <input type="radio" class="btn-check" value="現物" name="options"
                                                 id="order-party-on" autocomplete="off">
@@ -95,7 +95,7 @@
                                                 id="order-party-off" autocomplete="off">
                                             <label class="off-radio-btn" for="order-party-off">OFF</label>
                                         </div>
-                                    </li>
+                                    </li> -->
 
                                     <li class="form-fields">
                                         <div class="register-label">発注者（選択）</div>
@@ -108,7 +108,7 @@
                                     </li>
                                 </ul>
                                 <ul class="switch-div">
-                                    <li class="switch-btns">
+                                    <!-- <li class="switch-btns">
                                         <div class="mr-1">
                                             <input type="radio" class="btn-check" value="現物" name="options"
                                                 id="classification-on" autocomplete="off">
@@ -119,7 +119,7 @@
                                                 id="classification-off" autocomplete="off">
                                             <label class="off-radio-btn" for="classification-off">OFF</label>
                                         </div>
-                                    </li>
+                                    </li> -->
 
                                     <li class="form-fields">
                                         <div class="register-label">分類（選択）</div>
@@ -132,7 +132,7 @@
                                     </li>
                                 </ul>
                                 <ul class="switch-div">
-                                    <li class="switch-btns">
+                                    <!-- <li class="switch-btns">
                                         <div class="mr-1">
                                             <input type="radio" class="btn-check" value="現物" name="options"
                                                 id="product-on" autocomplete="off">
@@ -143,7 +143,7 @@
                                                 id="product-off" autocomplete="off">
                                             <label class="off-radio-btn" for="product-off">OFF</label>
                                         </div>
-                                    </li>
+                                    </li> -->
 
                                     <li class="form-fields">
                                         <div class="register-label">品名（選択）</div>
@@ -156,9 +156,9 @@
                                     </li>
                                 </ul>
                                 <ul class="switch-div">
-                                    <li class="switch-btns">
+                                    <!-- <li class="switch-btns">
 
-                                    </li>
+                                    </li> -->
 
                                     <li class="form-fields">
                                         <div class="register-label">型番（選択）</div>
@@ -171,9 +171,9 @@
                                     </li>
                                 </ul>
                                 <ul class="switch-div">
-                                    <li class="switch-btns">
+                                    <!-- <li class="switch-btns">
 
-                                    </li>
+                                    </li> -->
                                     <li class="form-fields">
                                         <div class="register-label" bis_skin_checked="1">数量（数字入力）</div>
                                         <input type="text" id="fname" name="fname" placeholder="テキスト"

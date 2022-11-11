@@ -105,6 +105,9 @@
         color: #000000;
         font-size: 16px;
         letter-spacing: 0.15px;
+        display: inline-block;
+        width: 100px;
+        margin-bottom: 13px;
     }
 
     .advance-master-reg-input {
