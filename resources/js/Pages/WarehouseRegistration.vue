@@ -13,6 +13,11 @@
                                     <div class="master-registration-input-content">
                                         <span>資材置き場名称</span>
                                         <input v-model="record.warehouse_name" class="master-reg-input" type="text" name="資材置き場名称" id="資材置き場名称" placeholder="テキスト">
+                                        <small>
+                                            <span v-if="errors.warehouse_name != null" class="text-danger float-left">
+                                                {{errors.warehouse_name[0]}}
+                                            </span>
+                                        </small>
                                     </div>
                                 </div>
                                 <div class="register-buttons">

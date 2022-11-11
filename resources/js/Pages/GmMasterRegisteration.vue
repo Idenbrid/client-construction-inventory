@@ -17,12 +17,16 @@
                                     <div class="generated-reg-input">
                                         <input v-model="item.category" type="text" name="分類" id="分類" placeholder="テキスト">
                                     </div>
+                                    <small>
+                                        <span v-if="errors.category != null" class="text-danger float-left">
+                                            {{errors.category[0]}}
+                                        </span>
+                                    </small>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="master-input-content">
-
                                         <label for="">メーカー</label>
                                     </div>
                                 </div>
@@ -30,12 +34,16 @@
                                     <div class="generated-reg-input">
                                         <input v-model="item.manufacturer" type="text" name="メーカー" id="メーカー" placeholder="テキスト">
                                     </div>
+                                    <small>
+                                        <span v-if="errors.manufacturer != null" class="text-danger float-left">
+                                            {{errors.manufacturer[0]}}
+                                        </span>
+                                    </small>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="master-input-content">
-
                                         <label for="">品名</label>
                                     </div>
                                 </div>
@@ -43,12 +51,16 @@
                                     <div class="generated-reg-input">
                                         <input v-model="item.item_name" type="text" name="品名" id="品名" placeholder="テキスト">
                                     </div>
+                                    <small>
+                                        <span v-if="errors.item_name != null" class="text-danger float-left">
+                                            {{errors.item_name[0]}}
+                                        </span>
+                                    </small>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="master-input-content">
-
                                         <label for="">型番</label>
                                     </div>
                                 </div>
@@ -56,6 +68,11 @@
                                     <div class="generated-reg-input">
                                         <input v-model="item.item_number" type="text" name="型番" id="型番" placeholder="テキスト">
                                     </div>
+                                    <small>
+                                        <span v-if="errors.item_number != null" class="text-danger float-left">
+                                            {{errors.item_number[0]}}
+                                        </span>
+                                    </small>
                                 </div>
                             </div>
                             <div class="row">
@@ -102,6 +119,11 @@
                                                 <label class="form-check-label" for="tower">台</label>
                                             </div>
                                         </li>
+                                        <small>
+                                            <span v-if="errors.unit != null" class="text-danger float-left">
+                                                {{errors.unit[0]}}
+                                            </span>
+                                        </small>
                                     </ul>
                                     <div class="account-reg-buttons mt-3">
                                         <div v-if="item.id == 0"><a class="btn btn-success" @click="handleSave()">登録</a></div>
