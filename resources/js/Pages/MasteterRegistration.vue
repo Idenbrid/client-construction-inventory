@@ -8,31 +8,37 @@
                 <div class="master-registration-form">
                     <div class="container">
                         <div class="row master-reg-row">
-                            <div class="col-sm-12 col-md-12 col-lg-6  my-auto">
+                            <div class="col-sm-12 col-md-12 col-lg-6  my-auto mb-4">
                                 <div class="master-registration-left-contet">
                                     <div class="master-registration-input-content">
                                         <span>資材置き場名称</span>
                                         <input class="master-reg-input" type="text" name="" id="" placeholder="テキスト">
                                     </div>
                                 </div>
-                                <div>
-                                    <ul class="switch-div">
+                                <div class="register-buttons">
+                                    <div class="reg-btn">
+                                        <button class="reg-button">登録</button>
+                                    </div>
+                                    <div class="clear-btn">
+                                        <button class="clear-button">クリア</button>
+                                    </div>
+                                    <!-- <ul class="switch-div">
                                         <li class="switch-btns">
                                             <div class="mr-1">
-                                                <input type="radio" class="btn-check" value="現物" name="options" id="現物"
+                                                <input type="button" class="btn-check" value="現物" name="options" id="現物"
                                                     autocomplete="off">
-                                                <label class="on-radio-btn" for="現物">ON</label>
+                                                <label class="on-radio-btn" for="現物">登録</label>
                                             </div>
                                             <div class="mr-0">
-                                                <input type="radio" class="btn-check" value="信用" name="options" id="信用"
+                                                <input type="button" class="btn-check" value="信用" name="options" id="信用"
                                                     autocomplete="off">
-                                                <label class="off-radio-btn" for="信用">OFF</label>
+                                                <label class="off-radio-btn" for="信用">削除</label>
                                             </div>
                                         </li>
-                                    </ul>
+                                    </ul> -->
                                 </div>
                             </div>
-                            <div class="col-sm-12 col-md-12 col-lg-6">
+                            <div class="col-sm-12 col-md-12 col-lg-6 mt-4">
                                 <div class="master-registration-right-contet">
                                     <table>
                                         <thead>
@@ -213,6 +219,44 @@
     tbody tr td:nth-child(2) {
         width: 430px;
         text-align: center;
+    }
+    /* BUTTONS  */
+    .register-buttons{
+        margin-top: 13px;
+    display: flex;
+    gap: 10px;
+    /* margin-left: 246px; */
+
+    }
+    .reg-button{
+        border: none;
+    border-radius: 5px;
+    padding: 0px;
+    width: 56px;
+    height: 30px;
+    font-size: 12px;
+    font-family: NotoSansJP-Medium;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: #BEA000;
+
+    }
+    .clear-button{
+        border: none;
+    border-radius: 5px;
+    padding: 0px;
+    width: 56px;
+    height: 30px;
+    font-size: 12px;
+    font-family: NotoSansJP-Medium;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: #000000;
+    color: #ffffff;
     }
     @media only screen and (max-width:768px){
         .master-reg-row{
