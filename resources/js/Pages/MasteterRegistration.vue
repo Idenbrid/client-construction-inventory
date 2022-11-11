@@ -7,8 +7,8 @@
                 </div>
                 <div class="master-registration-form">
                     <div class="container">
-                        <div class="row">
-                            <div class="col-md-6 my-auto">
+                        <div class="row master-reg-row">
+                            <div class="col-sm-12 col-md-12 col-lg-6  my-auto">
                                 <div class="master-registration-left-contet">
                                     <div class="master-registration-input-content">
                                         <span>資材置き場名称</span>
@@ -32,7 +32,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-sm-12 col-md-12 col-lg-6">
                                 <div class="master-registration-right-contet">
                                     <table>
                                         <thead>
@@ -213,5 +213,10 @@
     tbody tr td:nth-child(2) {
         width: 430px;
         text-align: center;
+    }
+    @media only screen and (max-width:768px){
+        .master-reg-row{
+            flex-direction: column;
+        }
     }
 </style>
