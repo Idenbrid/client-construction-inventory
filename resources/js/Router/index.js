@@ -11,7 +11,7 @@ const Home = () => import('../Pages/Home.vue');
 const WaitingList = () => import('../Pages/WaitingList.vue');
 const Registration = () => import('../Pages/Registration.vue');
 const WarehouseRegistration = () => import('../Pages/WarehouseRegistration.vue');
-const AdvanceMasterRegisration = () => import('../Pages/AdvanceMasterRegisration.vue');
+const SupplierRegisration = () => import('../Pages/SupplierRegisration.vue');
 const SiteNameRegistration = () => import('../Pages/SiteNameRegistration.vue');
 const Test = () => import('../Pages/Test.vue');
 const GmMasterRegistration = () => import('../Pages/GmMasterRegisteration.vue');
@@ -79,12 +79,12 @@ export const routes = [
     
     },
     {
-        name: 'AdvanceMasterRegisration',
-        path: '/advance-master-regisration',
-        component:AdvanceMasterRegisration,
+        name: 'SupplierRegisration',
+        path: '/supplier-regisration',
+        component:SupplierRegisration,
         meta: {
             auth: true,
-            title: "AdvanceMasterRegisration"
+            title: "SupplierRegisration"
         }
     
     },

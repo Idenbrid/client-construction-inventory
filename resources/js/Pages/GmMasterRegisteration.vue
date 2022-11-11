@@ -199,7 +199,7 @@
                         Swal.showLoading()
                     },
                 })
-                axios.post("/api/item/save", this.item)
+                axios.post("/api/item", this.item)
                     .then((response) => {
                         if (response.data.success == false) {
                             Swal.close()
@@ -223,7 +223,7 @@
                         Swal.showLoading()
                     },
                 })
-                axios.post("/api/item/update", this.item)
+                axios.patch("/api/item/update", this.item)
                     .then((response) => {
                         if (response.data.success == false) {
                             Swal.close()
@@ -252,7 +252,7 @@
                 this.errors = [];
             },
             getList() {
-                axios.get("/api/item/list")
+                axios.get("/api/item")
                 .then((response) => {
                     this.list = response.data
                 })
@@ -268,7 +268,7 @@
                     confirmButtonText: 'Yes, delete it!'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        axios.get("/api/item/delete/" + id)
+                        axios.delete("/api/item/" + id)
                         .then((response) => {
                             if(response.data.success == true){
                                 Swal.fire(

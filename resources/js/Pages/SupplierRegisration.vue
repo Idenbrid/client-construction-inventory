@@ -1,24 +1,25 @@
 <template>
     <section class="section-registration">
         <div class="container">
-            <div class="master-registration-content mt-2">
-                <div class="master-registration-title">
-                    <h5 class="text-white">資材置き場マスタ登録</h5>
+            <div class="advance-master-registration-content mt-2">
+                <div class="advance-master-registration-title">
+                    <h5 class="text-white">発注先マスタ登録</h5>
                 </div>
-                <div class="master-registration-form">
+                <div class="advance-master-registration-form">
                     <div class="container">
                         <div class="row master-reg-row">
                             <div class="col-sm-12 col-md-12 col-lg-6  my-auto mb-4">
-                                <div class="master-registration-left-contet">
-                                    <div class="master-registration-input-content">
-                                        <span>資材置き場名称</span>
-                                        <input v-model="record.warehouse_name" class="master-reg-input" type="text" name="資材置き場名称" id="資材置き場名称" placeholder="テキスト">
-                                        <small>
-                                            <span v-if="errors.warehouse_name != null" class="text-danger float-left">
-                                                {{errors.warehouse_name[0]}}
-                                            </span>
-                                        </small>
+                                <div class="advance-master-registration-left-contet">
+                                    <div class="advance-master-registration-input-content">
+                                        <span>発注先名称</span>
+                                        <input class="advance-master-reg-input" type="text" name="発注先名称" id="発注先名称" v-model="record.supplier_name"
+                                            placeholder="テキスト">
                                     </div>
+                                    <small>
+                                        <span v-if="errors.supplier_name != null" class="text-danger float-left">
+                                            {{errors.supplier_name[0]}}
+                                        </span>
+                                    </small>
                                 </div>
                                 <div class="register-buttons">
                                     <div v-if="record.id == 0"><a class="btn btn-success" @click="handleSave()">登録</a></div>
@@ -32,17 +33,17 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>置き場名称</th>
+                                                <th>発注先</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr v-for="(item, index) in list" :key="index">
                                                 <td>{{index+1}}</td>
-                                                <td>{{item.warehouse_name}}</td>
+                                                <td>{{item.supplier_name}}</td>
                                                 <td>
-                                                    <a class="btn" @click="deleteWarehouse(item.id)"><i class="fa-solid fa-trash-can delete-icon"></i> </a>
-                                                    <a class="btn btn-primary btn-sm" @click="editWarehouse(item)">edit</a>
+                                                    <a class="btn" @click="deleteSupplier(item.id)"><i class="fa-solid fa-trash-can delete-icon"></i> </a>
+                                                    <a class="btn btn-primary btn-sm" @click="editSupplier(item)">edit</a>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -56,14 +57,13 @@
         </div>
     </section>
 </template>
-
 <script>
 import axios from "axios";
     export default {
         data() {
             return {
                 record: {
-                    warehouse_name: '',
+                    supplier_name: '',
                     id: 0,
                 },
                 errors: [],
@@ -74,9 +74,9 @@ import axios from "axios";
             this.getList()
         },
         methods: {
-            editWarehouse(item){
+            editSupplier(item){
                 this.record.id = item.id;
-                this.record.warehouse_name = item.warehouse_name;
+                this.record.supplier_name = item.supplier_name;
             },
             handleSave() {
                 Swal.fire({
@@ -85,7 +85,7 @@ import axios from "axios";
                         Swal.showLoading()
                     },
                 })
-                axios.post("/api/warehouse", this.record)
+                axios.post("/api/supplier", this.record)
                     .then((response) => {
                         if (response.data.success == false) {
                             Swal.close()
@@ -96,7 +96,7 @@ import axios from "axios";
                             this.errors = [];
                             Swal.fire({
                                 icon: 'success',
-                                title: 'Warehouse has been registered successfully.',
+                                title: 'Supplier has been registered successfully.',
                             })
                             this.getList()
                         }
@@ -109,7 +109,7 @@ import axios from "axios";
                         Swal.showLoading()
                     },
                 })
-                axios.patch("/api/warehouse/update", this.record)
+                axios.patch("/api/supplier/update", this.record)
                     .then((response) => {
                         if (response.data.success == false) {
                             Swal.close()
@@ -120,7 +120,7 @@ import axios from "axios";
                             this.errors = [];
                             Swal.fire({
                                 icon: 'success',
-                                title: 'Warehouse has been updated successfully...',
+                                title: 'Supplier has been updated successfully...',
                             })
                             this.getList()
                         }
@@ -128,18 +128,18 @@ import axios from "axios";
             },
             clear() {
                 this.record = {
-                    warehouse_name: '',
+                    supplier_name: '',
                     id: 0,
                 };
                 this.errors = [];
             },
             getList() {
-                axios.get("/api/warehouse")
+                axios.get("/api/supplier")
                 .then((response) => {
                     this.list = response.data
                 })
             },
-            deleteWarehouse(id) {
+            deleteSupplier(id) {
                 Swal.fire({
                     title: 'Are you sure?',
                     text: "You won't be able to revert this!",
@@ -150,7 +150,7 @@ import axios from "axios";
                     confirmButtonText: 'Yes, delete it!'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        axios.delete("/api/warehouse/" + id)
+                        axios.delete("/api/supplier/" + id)
                         .then((response) => {
                             if(response.data.success == true){
                                 Swal.fire(
@@ -162,7 +162,7 @@ import axios from "axios";
                             }else{
                                 Swal.fire(
                                     'Error!',   
-                                    'Warehouse not found. Please reload the page and try agian. Thanks',
+                                    'Supplier not found. Please reload the page and try agian. Thanks',
                                     'error'
                                 )
                             }
@@ -177,25 +177,26 @@ import axios from "axios";
 </script>
 
 <style>
+    .advance-master-registration-input-content span {
+        margin-right: 30px;
+        color: #000000;
+        font-size: 16px;
+        letter-spacing: 0.15px;
+    }
 
-.master-registration-input-content span {
-    margin-right: 30px;
-    color: #000000;
-    font-size: 16px;
-    letter-spacing: 0.15px;
-}
-.master-reg-input{
-    padding: 6.5px  16.5px;
-    height: 48px;
-    border:1px solid #0000001F;
-    border-radius: 4px;
-}
-    .master-registration-form {
+    .advance-master-reg-input {
+        padding: 6.5px 16.5px;
+        height: 48px;
+        border: 1px solid #0000001F;
+        border-radius: 4px;
+    }
+
+    .advance-master-registration-form {
         padding: 12px 0px 12px 0px;
         background: #ffffff;
     }
 
-    .master-registration-content {
+    .advance-master-registration-content {
         padding: 24px;
         background-image: url(assets/images/bg-img.png);
     }
@@ -210,8 +211,9 @@ import axios from "axios";
     }
 
     tbody tr {
-       margin: 12px auto !important;
+        margin: 12px auto !important;
     }
+
     tbody tr td {
         text-align: center;
         /* text-align: left; */
@@ -219,52 +221,57 @@ import axios from "axios";
         letter-spacing: 0px;
         color: #000000;
         opacity: 1;
+        padding: 10px 0px;
     }
 
     tbody tr td:nth-child(2) {
         width: 430px;
         text-align: center;
     }
+
     /* BUTTONS  */
-    .register-buttons{
+    .register-buttons {
         margin-top: 13px;
-    display: flex;
-    gap: 10px;
-    /* margin-left: 246px; */
+        display: flex;
+        gap: 10px;
+        /* margin-left: 246px; */
 
     }
-    .reg-button{
+
+    .reg-button {
         border: none;
-    border-radius: 5px;
-    padding: 0px;
-    width: 56px;
-    height: 30px;
-    font-size: 12px;
-    font-family: NotoSansJP-Medium;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    background: #BEA000;
+        border-radius: 5px;
+        padding: 0px;
+        width: 56px;
+        height: 30px;
+        font-size: 12px;
+        font-family: NotoSansJP-Medium;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        background: #BEA000;
 
     }
-    .clear-button{
+
+    .clear-button {
         border: none;
-    border-radius: 5px;
-    padding: 0px;
-    width: 56px;
-    height: 30px;
-    font-size: 12px;
-    font-family: NotoSansJP-Medium;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    background: #000000;
-    color: #ffffff;
+        border-radius: 5px;
+        padding: 0px;
+        width: 56px;
+        height: 30px;
+        font-size: 12px;
+        font-family: NotoSansJP-Medium;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        background: #000000;
+        color: #ffffff;
     }
-    @media only screen and (max-width:768px){
-        .master-reg-row{
+
+    @media only screen and (max-width:768px) {
+        .master-reg-row {
             flex-direction: column;
         }
     }
