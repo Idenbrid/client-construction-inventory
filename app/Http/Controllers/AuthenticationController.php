@@ -39,6 +39,8 @@ class AuthenticationController extends Controller
         } else {
             $request->request->add([
                 'password' => Hash::make($request->login_password),
+                'created_by' => Auth::id(),
+                'updated_by' => Auth::id(),
             ]);
             $user = User::create($request->all());
             return response()->json([
@@ -132,6 +134,9 @@ class AuthenticationController extends Controller
                 'errors' => $validator->errors(),
             ]);
         } else {
+            $request->request->add([
+                'updated_by' => Auth::id(),
+            ]);
             if($request->login_password){
                 $request->request->add([
                     'password' => Hash::make($request->login_password),

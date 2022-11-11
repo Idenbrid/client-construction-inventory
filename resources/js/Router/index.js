@@ -12,6 +12,7 @@ const WaitingList = () => import('../Pages/WaitingList.vue');
 const Registration = () => import('../Pages/Registration.vue');
 const MasteterRegistration = () => import('../Pages/MasteterRegistration.vue');
 const Test = () => import('../Pages/Test.vue');
+const GmMasterRegistration = () => import('../Pages/GmMasterRegisteration.vue');
 const Login = () => import('../Components/Login.vue');
 
 
@@ -58,11 +59,22 @@ export const routes = [
     {
         name: 'Test',
         path: '/test',
-        component: Test,
+        component:Test,
         meta: {
             auth: true,
             title: "Test"
         }
+    },
+
+    {
+        name: 'GmMasterRegistration',
+        path: '/generated-material-master-registration',
+        component: GmMasterRegistration,
+        meta: {
+            auth: true,
+            title: "Registration"
+        }
+    
     },
     {
         name: 'Home',
