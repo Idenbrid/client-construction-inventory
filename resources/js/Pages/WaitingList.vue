@@ -31,9 +31,29 @@
                             <td>123456789…</td>
                             <td>Rテキストテ…
                                 <div class="btn-rev-del">
-                                    <a type="submit" class="delivery-btn" value="登録" data-toggle="modal"
+                                    <a type="button" class="delivery-btn" value="登録" data-toggle="modal"
                                         data-target="#staticBackdrop">納品</a>
-                                    <a type="submit" class="revision-btn" value="登録">修正</a>
+                                    <a type="button" class="revision-btn" value="登録">修正</a>
+                                    <a type="button" class="copy-content-btn disabled" value="登録">内容コピー</a>
+                                </div>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>2022/12/24</td>
+                            <td>小田切健太郎</td>
+                            <td>テキストテ...</td>
+                            <td>テキストテ...</td>
+                            <td>テキストテ...</td>
+                            <td>123456789…</td>
+                            <td>123456789…</td>
+                            <td>123456789…qq</td>
+                            <td>Rテキストテ…
+                                <div class="btn-rev-del">
+                                    <a type="button" class="delivery-btn" value="登録" data-toggle="modal"
+                                        data-target="#staticBackdrop">納品</a>
+                                    <a type="button" class="revision-btn" value="登録">修正</a>
+                                    <a type="button" class="copy-content-btn disabled" value="登録">内容コピー</a>
                                 </div>
                             </td>
 
@@ -67,7 +87,7 @@
                         </div>
                         <div class="modal-footer border-0 justify-content-center">
                             <button type="button" class="complete-btn" data-dismiss="modal">納品済み</button>
-                                 
+
                         </div>
                     </div>
                 </div>
@@ -81,24 +101,30 @@
         mounted() {
             $(document).ready(function () {
                 $('#table_id').DataTable({
-                    "responsive": {
-                        breakpoints: [{
-                                name: 'desktop',
-                                width: Infinity
-                            },
-                            {
-                                name: 'tablet',
-                                width: 1024
-                            },
-                            {
-                                name: 'phone',
-                                width: 320
-                            }
-                        ]
-                    },
+                    "columnDefs": [{
+                        "width": "90px",
+                        "targets": [ 0, 1, 2, 3, 4, 5, 6, 7 ],
+                    }],
+                    // "responsive": {
+                    //     breakpoints: [{
+                    //             name: 'desktop',
+                    //             width: Infinity
+                    //         },
+                    //         {
+                    //             name: 'tablet',
+                    //             width: 1024
+                      
+                    //         },
+                    //         {
+                    //             name: 'phone',
+                    //             width: 320,
+                        
+                    //         }
+                    //     ]
+                    // },
                     "searching": false,
                     "info": false,
-                    "autoWidth": false,
+                    "autoWidth": true,
                     "lengthChange": false,
                 });
             });
