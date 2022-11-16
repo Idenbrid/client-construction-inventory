@@ -9,6 +9,7 @@ Routes
 */
 const Home = () => import('../Pages/Home.vue');
 const WaitingList = () => import('../Pages/WaitingList.vue');
+const DeliveredList = () => import('../Pages/DeliveredList.vue');
 const Registration = () => import('../Pages/Registration.vue');
 const WarehouseRegistration = () => import('../Pages/WarehouseRegistration.vue');
 const SupplierRegisration = () => import('../Pages/SupplierRegisration.vue');
@@ -38,6 +39,15 @@ export const routes = [
         meta: {
             auth: true,
             title: "WaitingList"
+        }
+    },
+    {
+        name: 'DeliveredList',
+        path: '/delivered-list',
+        component: DeliveredList,
+        meta: {
+            auth: true,
+            title: "DeliveredList"
         }
     },
     {

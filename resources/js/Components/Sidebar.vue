@@ -10,7 +10,7 @@
         <div class="list-group list-group-flush">
             <router-link to="/order" class=" list-group-item-dk">1.　発注登録</router-link>
             <router-link to="/waiting-list" class="list-group-item-dk">2.　納品待ち一覧</router-link>
-            <router-link to="#" class="list-group-item-dk">3.　納品済み一覧</router-link>
+            <router-link to="/delivered-list" class="list-group-item-dk">3.　納品済み一覧</router-link>
             <router-link to="#" class="list-group-item-dk">4.　持ち出し中一覧</router-link>
             <router-link to="#" class="list-group-item-dk">5.　在庫一覧</router-link>
             <router-link to="#" class="list-group-item-dk">工事履歴</router-link>
