@@ -16,24 +16,26 @@
                             <th>数量</th>
                             <th>ジョブ番号</th>
                             <th>現場名</th>
+                            <th></th>
 
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>2022/12/24</td>
-                            <td>小田切健太郎</td>
-                            <td>テキストテ...</td>
-                            <td>テキストテ...</td>
-                            <td>テキストテ...</td>
-                            <td>123456789…</td>
-                            <td>123456789…</td>
-                            <td>123456789…</td>
-                            <td>Rテキストテ…
+                        <tr v-for="(order, index) in list" :key="index">
+                            <td>{{order.order_date}}</td>
+                            <td>{{order.orderer.user_name}}</td>
+                            <td>{{order.item.category}}</td>
+                            <td>{{order.item.manufacturer}}</td>
+                            <td>{{order.item.item_name}}</td>
+                            <td>{{order.item.item_number}}</td>
+                            <td>{{order.amount}}</td>
+                            <td>{{order.job.job_number}}</td>
+                            <td>{{order.job.site_name}}</td>
+                            <td>
                                 <div class="btn-rev-del">
                                     <a type="submit" class="delivery-btn" value="登録" data-toggle="modal"
                                         data-target="#staticBackdrop">納品</a>
-                                    <a type="submit" class="revision-btn" value="登録">修正</a>
+                                    <router-link :to="{ name: 'Home', params: { id: order.id }}" type="submit" class="revision-btn" value="登録">修正</router-link>
                                 </div>
                             </td>
 
@@ -67,7 +69,7 @@
                         </div>
                         <div class="modal-footer border-0 justify-content-center">
                             <button type="button" class="complete-btn" data-dismiss="modal">納品済み</button>
-                                 
+
                         </div>
                     </div>
                 </div>
@@ -75,33 +77,47 @@
         </div>
     </div>
 </template>
-
 <script>
+    import axios from "axios";
     export default {
-        mounted() {
-            $(document).ready(function () {
-                $('#table_id').DataTable({
-                    "responsive": {
-                        breakpoints: [{
-                                name: 'desktop',
-                                width: Infinity
+        data() {
+            return {
+                list: [],
+            }
+        },
+        created() {
+            this.getWaitingList()
+        },
+        methods: {
+            getWaitingList(){
+                axios.get("/api/orders/"+"ordered")
+                .then((response) => {
+                    this.list = response.data
+                    $(document).ready(function () {
+                        $('#table_id').DataTable({
+                            "responsive": {
+                                breakpoints: [{
+                                        name: 'desktop',
+                                        width: Infinity
+                                    },
+                                    {
+                                        name: 'tablet',
+                                        width: 1024
+                                    },
+                                    {
+                                        name: 'phone',
+                                        width: 320
+                                    }
+                                ]
                             },
-                            {
-                                name: 'tablet',
-                                width: 1024
-                            },
-                            {
-                                name: 'phone',
-                                width: 320
-                            }
-                        ]
-                    },
-                    "searching": false,
-                    "info": false,
-                    "autoWidth": false,
-                    "lengthChange": false,
-                });
-            });
+                            "searching": false,
+                            "info": false,
+                            "autoWidth": false,
+                            "lengthChange": false,
+                        });
+                    });
+                })
+            }
         },
     }
 </script>
