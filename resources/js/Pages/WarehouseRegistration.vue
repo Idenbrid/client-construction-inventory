@@ -1,18 +1,20 @@
 <template>
     <section class="section-registration">
-        <div class="container">
-            <div class="master-registration-content mt-2">
-                <div class="master-registration-title">
-                    <h5 class="text-white">資材置き場マスタ登録</h5>
-                </div>
-                <div class="master-registration-form">
-                    <div class="container">
+        <div class="container-fluid p-0">
+            <div class="main-content main-content-bg">
+                <div class="master-registration-content mt-2">
+                    <div class="master-registration-title">
+                        <h5 class="text-white">資材置き場マスタ登録</h5>
+                    </div>
+                    <div class="master-registration-form">
+
                         <div class="row master-reg-row">
                             <div class="col-sm-12 col-md-12 col-lg-6  my-auto mb-4">
                                 <div class="master-registration-left-contet">
                                     <div class="master-registration-input-content">
                                         <span>資材置き場名称</span>
-                                        <input v-model="record.warehouse_name" class="master-reg-input" type="text" name="資材置き場名称" id="資材置き場名称" placeholder="テキスト">
+                                        <input v-model="record.warehouse_name" class="master-reg-input" type="text"
+                                            name="資材置き場名称" id="資材置き場名称" placeholder="テキスト">
                                         <small>
                                             <span v-if="errors.warehouse_name != null" class="text-danger float-left">
                                                 {{errors.warehouse_name[0]}}
@@ -21,7 +23,8 @@
                                     </div>
                                 </div>
                                 <div class="register-buttons">
-                                    <div v-if="record.id == 0"><a class="btn btn-success" @click="handleSave()">登録</a></div>
+                                    <div v-if="record.id == 0"><a class="btn btn-success" @click="handleSave()">登録</a>
+                                    </div>
                                     <div v-else><a class="btn btn-success" @click="handleUpdate()">update</a></div>
                                     <div><a class="btn btn-danger" @click="clear()">Clear</a></div>
                                 </div>
@@ -41,8 +44,10 @@
                                                 <td>{{index+1}}</td>
                                                 <td>{{item.warehouse_name}}</td>
                                                 <td>
-                                                    <a class="btn" @click="deleteWarehouse(item.id)"><i class="fa-solid fa-trash-can delete-icon"></i> </a>
-                                                    <a class="btn btn-primary btn-sm" @click="editWarehouse(item)">edit</a>
+                                                    <a class="btn" @click="deleteWarehouse(item.id)"><i
+                                                            class="fa-solid fa-trash-can delete-icon"></i> </a>
+                                                    <a class="btn btn-primary btn-sm"
+                                                        @click="editWarehouse(item)">edit</a>
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -50,15 +55,17 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
+      
     </section>
 </template>
 
 <script>
-import axios from "axios";
+    import axios from "axios";
     export default {
         data() {
             return {
@@ -74,7 +81,7 @@ import axios from "axios";
             this.getList()
         },
         methods: {
-            editWarehouse(item){
+            editWarehouse(item) {
                 this.record.id = item.id;
                 this.record.warehouse_name = item.warehouse_name;
             },
@@ -135,9 +142,9 @@ import axios from "axios";
             },
             getList() {
                 axios.get("/api/warehouse")
-                .then((response) => {
-                    this.list = response.data
-                })
+                    .then((response) => {
+                        this.list = response.data
+                    })
             },
             deleteWarehouse(id) {
                 Swal.fire({
@@ -151,45 +158,46 @@ import axios from "axios";
                 }).then((result) => {
                     if (result.isConfirmed) {
                         axios.delete("/api/warehouse/" + id)
-                        .then((response) => {
-                            if(response.data.success == true){
-                                Swal.fire(
-                                    'Deleted!',
-                                    'Your data has been deleted.',
-                                    'success'
-                                )
-                                this.getList()
-                            }else{
-                                Swal.fire(
-                                    'Error!',   
-                                    'Warehouse not found. Please reload the page and try agian. Thanks',
-                                    'error'
-                                )
-                            }
-                            
-                        })
+                            .then((response) => {
+                                if (response.data.success == true) {
+                                    Swal.fire(
+                                        'Deleted!',
+                                        'Your data has been deleted.',
+                                        'success'
+                                    )
+                                    this.getList()
+                                } else {
+                                    Swal.fire(
+                                        'Error!',
+                                        'Warehouse not found. Please reload the page and try agian. Thanks',
+                                        'error'
+                                    )
+                                }
+
+                            })
                     }
                 })
-                
+
             },
         },
     }
 </script>
 
 <style>
+    .master-registration-input-content span {
+        margin-right: 30px;
+        color: #000000;
+        font-size: 16px;
+        letter-spacing: 0.15px;
+    }
 
-.master-registration-input-content span {
-    margin-right: 30px;
-    color: #000000;
-    font-size: 16px;
-    letter-spacing: 0.15px;
-}
-.master-reg-input{
-    padding: 6.5px  16.5px;
-    height: 48px;
-    border:1px solid #0000001F;
-    border-radius: 4px;
-}
+    .master-reg-input {
+        padding: 6.5px 16.5px;
+        height: 48px;
+        border: 1px solid #0000001F;
+        border-radius: 4px;
+    }
+
     .master-registration-form {
         padding: 12px 0px 12px 0px;
         background: #ffffff;
@@ -210,8 +218,9 @@ import axios from "axios";
     }
 
     tbody tr {
-       margin: 12px auto !important;
+        margin: 12px auto !important;
     }
+
     tbody tr td {
         text-align: center;
         /* text-align: left; */
@@ -225,46 +234,50 @@ import axios from "axios";
         width: 430px;
         text-align: center;
     }
+
     /* BUTTONS  */
-    .register-buttons{
+    .register-buttons {
         margin-top: 13px;
-    display: flex;
-    gap: 10px;
-    /* margin-left: 246px; */
+        display: flex;
+        gap: 10px;
+        /* margin-left: 246px; */
 
     }
-    .reg-button{
+
+    .reg-button {
         border: none;
-    border-radius: 5px;
-    padding: 0px;
-    width: 56px;
-    height: 30px;
-    font-size: 12px;
-    font-family: NotoSansJP-Medium;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    background: #BEA000;
+        border-radius: 5px;
+        padding: 0px;
+        width: 56px;
+        height: 30px;
+        font-size: 12px;
+        font-family: NotoSansJP-Medium;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        background: #BEA000;
 
     }
-    .clear-button{
+
+    .clear-button {
         border: none;
-    border-radius: 5px;
-    padding: 0px;
-    width: 56px;
-    height: 30px;
-    font-size: 12px;
-    font-family: NotoSansJP-Medium;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    background: #000000;
-    color: #ffffff;
+        border-radius: 5px;
+        padding: 0px;
+        width: 56px;
+        height: 30px;
+        font-size: 12px;
+        font-family: NotoSansJP-Medium;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        background: #000000;
+        color: #ffffff;
     }
-    @media only screen and (max-width:768px){
-        .master-reg-row{
+
+    @media only screen and (max-width:768px) {
+        .master-reg-row {
             flex-direction: column;
         }
     }

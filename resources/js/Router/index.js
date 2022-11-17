@@ -9,6 +9,10 @@ Routes
 */
 const Home = () => import('../Pages/Order.vue');
 const WaitingList = () => import('../Pages/WaitingList.vue');
+const DeliveredList = () => import('../Pages/DeliveredList.vue');
+const TakeoutList = () => import('../Pages/TakeoutList.vue');
+const InventoryList = () => import('../Pages/InventoryList.vue');
+const ConstructionHistory = () => import('../Pages/ConstructionHistory.vue');
 const Registration = () => import('../Pages/Registration.vue');
 const WarehouseRegistration = () => import('../Pages/WarehouseRegistration.vue');
 const SupplierRegisration = () => import('../Pages/SupplierRegisration.vue');
@@ -41,12 +45,48 @@ export const routes = [
         }
     },
     {
+        name: 'DeliveredList',
+        path: '/delivered-list',
+        component: DeliveredList,
+        meta: {
+            auth: true,
+            title: "DeliveredList"
+        }
+    },
+    {
+        name: 'TakeoutList',
+        path: '/takeout-list',
+        component: TakeoutList,
+        meta: {
+            auth: true,
+            title: "TakeoutList"
+        }
+    },
+    {
+        name: 'InventoryList',
+        path: '/inventory-list',
+        component: InventoryList,
+        meta: {
+            auth: true,
+            title: "TakeoutList"
+        }
+    },
+    {
         name: 'Registration',
         path: '/account-registration',
         component: Registration,
         meta: {
             auth: true,
             title: "Registration"
+        }
+    },
+    {
+        name: 'ConstructionHistory',
+        path: '/construction-history',
+        component: ConstructionHistory,
+        meta: {
+            auth: true,
+            title: "ConstructionHistory"
         }
     },
     {

@@ -4,7 +4,7 @@
         <div class="main-content main-content-bg">
             <h1 class="content-h1">2.　納品待ち一覧</h1>
             <div class="table-card table-responsive-sm">
-                <table id="table_id" class="table table-striped custom-table-list">
+                <table id="waiting_list_table" class="table table-striped custom-table-list">
                     <thead>
                         <tr>
                             <th>発注年月日</th>
@@ -33,9 +33,10 @@
                             <td>{{order.job.site_name}}</td>
                             <td>
                                 <div class="btn-rev-del">
-                                    <a type="submit" class="delivery-btn" value="登録" data-toggle="modal"
+                                    <a type="button" class="delivery-btn" value="登録" data-toggle="modal"
                                         data-target="#staticBackdrop">納品</a>
                                     <router-link :to="{ name: 'Home', params: { id: order.id }}" type="submit" class="revision-btn" value="登録">修正</router-link>
+                                    <a type="button" class="copy-content-btn disabled" value="登録">内容コピー</a>
                                 </div>
                             </td>
 

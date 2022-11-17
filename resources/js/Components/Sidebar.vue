@@ -10,10 +10,10 @@
         <div class="list-group list-group-flush">
             <router-link to="/order" class=" list-group-item-dk">1.　発注登録</router-link>
             <router-link to="/waiting-list" class="list-group-item-dk">2.　納品待ち一覧</router-link>
-            <router-link to="#" class="list-group-item-dk">3.　納品済み一覧</router-link>
-            <router-link to="#" class="list-group-item-dk">4.　持ち出し中一覧</router-link>
-            <router-link to="#" class="list-group-item-dk">5.　在庫一覧</router-link>
-            <router-link to="#" class="list-group-item-dk">工事履歴</router-link>
+            <router-link to="/delivered-list" class="list-group-item-dk">3.　納品済み一覧</router-link>
+            <router-link to="/takeout-list" class="list-group-item-dk">4.　持ち出し中一覧</router-link>
+            <router-link to="/inventory-list" class="list-group-item-dk">5.　在庫一覧</router-link>
+            <router-link to="/construction-history" class="list-group-item-dk">工事履歴</router-link>
         </div>
         <div class="sidebar-heading" v-if="is_login == 'manager'">
             <svg class="svg-inline--fa fa-cog fa-w-16 mr-2" aria-hidden="true" focusable="false" data-prefix="fa"
