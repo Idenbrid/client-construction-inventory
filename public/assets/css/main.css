@@ -759,6 +759,7 @@ table.dataTable thead>tr>td.sorting_desc:after {
 .account-input-content {
     gap: 30px;
     margin-bottom: 13px;
+    justify-content: flex-end;
 }
 
 .account-reg-buttons {

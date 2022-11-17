@@ -4,9 +4,9 @@
         <div class="main-content main-content-bg">
             <h1 class="content-h1">アカウント登録</h1>
             <div class="account-reg-content">
-                <div class="conrainer">
+                <div class="container p-0">
                     <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-md-4">
                             <div class="registration-left-content">
                                 <div class="d-flex align-items-center account-input-content">
                                     <div class="account-reg-lablel">
@@ -71,7 +71,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-7 ">
+                        <div class="col-md-8">
                             <table class="registration-table">
                                 <tr>
                                     <th>#</th>
@@ -240,7 +240,7 @@
         text-align: center;
     }
 
-    .registration-table tr:nth-child(even) {
+    .registration-table td:nth-child(even) {
         background-color: #f2f2f2;
     }
 
@@ -265,7 +265,7 @@
     }
 
     .account-reg-lablel {
-        width: 96px;
+        width: 98px;
     }
 
     .edit-icon {

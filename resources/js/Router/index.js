@@ -86,7 +86,7 @@ export const routes = [
         component: ConstructionHistory,
         meta: {
             auth: true,
-            title: "ConstructionHistory"
+            title: "ConstructionHistory "
         }
     },
     {
