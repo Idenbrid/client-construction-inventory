@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\SiteController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\WarehouseController;
 use Illuminate\Http\Request;
@@ -27,20 +29,16 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::get('/list', 'list');
         Route::get('/delete/{user_id}', 'delete');
     });
-    // Route::controller(ItemController::class)->prefix('/item')->group(function () {
-    //     Route::post('/save', 'store');
-    //     Route::post('/update', 'update');
-    //     Route::get('/list', 'list');
-    //     Route::get('/delete/{item_id}', 'delete');
-    // });
-    // Route::controller(WarehouseController::class)->prefix('/warehouse')->group(function () {
-    //     Route::post('/save', 'store');
-    //     Route::post('/update', 'update');
-    //     Route::get('/list', 'list');
-    //     Route::get('/delete/{warehouse_id}', 'delete');
-    // });
+    Route::resource('site', SiteController::class);
     Route::resource('item', ItemController::class);
     Route::resource('warehouse', WarehouseController::class);
     Route::resource('supplier', SupplierController::class);
+    Route::controller(OrderController::class)->group(function () {
+        Route::get('/get-settings', 'getSettings');
+        Route::get('/orders/{orderd}', 'list');
+        Route::get('/order/{orderd_id}', 'edit');
+        Route::post('/order', 'postOrder');
+        Route::patch('/order', 'updateOrder');
+    });
 
 });

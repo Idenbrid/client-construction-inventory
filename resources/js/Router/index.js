@@ -7,7 +7,7 @@ import {
 WEBSITE 
 Routes
 */
-const Home = () => import('../Pages/Home.vue');
+const Home = () => import('../Pages/Order.vue');
 const WaitingList = () => import('../Pages/WaitingList.vue');
 const DeliveredList = () => import('../Pages/DeliveredList.vue');
 const TakeoutList = () => import('../Pages/TakeoutList.vue');
@@ -16,7 +16,7 @@ const ConstructionHistory = () => import('../Pages/ConstructionHistory.vue');
 const Registration = () => import('../Pages/Registration.vue');
 const WarehouseRegistration = () => import('../Pages/WarehouseRegistration.vue');
 const SupplierRegisration = () => import('../Pages/SupplierRegisration.vue');
-const SiteNameRegistration = () => import('../Pages/SiteNameRegistration.vue');
+const SiteRegistration = () => import('../Pages/SiteRegistration.vue');
 const Test = () => import('../Pages/Test.vue');
 const GmMasterRegistration = () => import('../Pages/GmMasterRegisteration.vue');
 const Login = () => import('../Components/Login.vue');
@@ -129,18 +129,18 @@ export const routes = [
     
     },
     {
-        name: 'SiteNameRegistration',
-        path: '/site-name-registration',
-        component:SiteNameRegistration,
+        name: 'SiteRegistration',
+        path: '/site-registration',
+        component:SiteRegistration,
         meta: {
             auth: true,
-            title: "SiteNameRegistration"
+            title: "SiteRegistration"
         }
     
     },
     {
         name: 'Home',
-        path: '/order',
+        path: '/order/:id?',
         component: Home,
         meta: {
             auth: true,

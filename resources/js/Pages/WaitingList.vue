@@ -16,43 +16,26 @@
                             <th>数量</th>
                             <th>ジョブ番号</th>
                             <th>現場名</th>
+                            <th></th>
 
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>2022/12/24</td>
-                            <td>小田切健太郎</td>
-                            <td>テキストテ...</td>
-                            <td>テキストテ...</td>
-                            <td>テキストテ...</td>
-                            <td>123456789…</td>
-                            <td>123456789…</td>
-                            <td>123456789…</td>
-                            <td>Rテキストテ…
+                        <tr v-for="(order, index) in list" :key="index">
+                            <td>{{order.order_date}}</td>
+                            <td>{{order.orderer.user_name}}</td>
+                            <td>{{order.item.category}}</td>
+                            <td>{{order.item.manufacturer}}</td>
+                            <td>{{order.item.item_name}}</td>
+                            <td>{{order.item.item_number}}</td>
+                            <td>{{order.amount}}</td>
+                            <td>{{order.job.job_number}}</td>
+                            <td>{{order.job.site_name}}</td>
+                            <td>
                                 <div class="btn-rev-del">
                                     <a type="button" class="delivery-btn" value="登録" data-toggle="modal"
                                         data-target="#staticBackdrop">納品</a>
-                                    <a type="button" class="revision-btn" value="登録">修正</a>
-                                    <a type="button" class="copy-content-btn disabled" value="登録">内容コピー</a>
-                                </div>
-                            </td>
-
-                        </tr>
-                        <tr>
-                            <td>2022/12/24</td>
-                            <td>小田切健太郎</td>
-                            <td>テキストテ...</td>
-                            <td>テキストテ...</td>
-                            <td>テキストテ...</td>
-                            <td>123456789…</td>
-                            <td>123456789…</td>
-                            <td>123456789…qq</td>
-                            <td>Rテキストテ…
-                                <div class="btn-rev-del">
-                                    <a type="button" class="delivery-btn" value="登録" data-toggle="modal"
-                                        data-target="#staticBackdrop">納品</a>
-                                    <a type="button" class="revision-btn" value="登録">修正</a>
+                                    <router-link :to="{ name: 'Home', params: { id: order.id }}" type="submit" class="revision-btn" value="登録">修正</router-link>
                                     <a type="button" class="copy-content-btn disabled" value="登録">内容コピー</a>
                                 </div>
                             </td>
@@ -95,23 +78,47 @@
         </div>
     </div>
 </template>
-
 <script>
+    import axios from "axios";
     export default {
-        mounted() {
-            $(document).ready(function () {
-                $('#waiting_list_table').DataTable({
-                    "columnDefs": [{
-                        "width": "90px",
-                        "targets": [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ],
-                    }],
-                
-                    "searching": false,
-                    "info": false,
-                    "autoWidth": false,
-                    "lengthChange": false,
-                });
-            });
+        data() {
+            return {
+                list: [],
+            }
+        },
+        created() {
+            this.getWaitingList()
+        },
+        methods: {
+            getWaitingList(){
+                axios.get("/api/orders/"+"ordered")
+                .then((response) => {
+                    this.list = response.data
+                    $(document).ready(function () {
+                        $('#table_id').DataTable({
+                            "responsive": {
+                                breakpoints: [{
+                                        name: 'desktop',
+                                        width: Infinity
+                                    },
+                                    {
+                                        name: 'tablet',
+                                        width: 1024
+                                    },
+                                    {
+                                        name: 'phone',
+                                        width: 320
+                                    }
+                                ]
+                            },
+                            "searching": false,
+                            "info": false,
+                            "autoWidth": false,
+                            "lengthChange": false,
+                        });
+                    });
+                })
+            }
         },
     }
 </script>
