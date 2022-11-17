@@ -313,7 +313,9 @@
 body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     margin-left: 0;
 }
-
+#sidebar-wrapper .router-link-exact-active{
+background-color: #333333;
+}
 #wrapper {
     overflow-x: hidden;
 }
@@ -494,6 +496,7 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 .form-fields {
     width: 100%;
     display: flex;
+    align-items: center;
 
 }
 
@@ -636,6 +639,7 @@ table.dataTable thead>tr>td.sorting_desc:after {
 .btn-rev-del {
     display: inline-flex;
     margin-left: 10px;
+    gap: 5px;
 }
 
 .custom-table-list.dataTable tbody th, .custom-table-list.dataTable tbody td{
@@ -690,6 +694,21 @@ table.dataTable thead>tr>td.sorting_desc:after {
     border-radius: 2px;
     margin-right: 4px;
 }
+.taking-out-btn{
+    width: 56px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--secondary);
+    color: #fff;
+    border-radius: 2px;
+ 
+}
+.taking-out-btn:hover{
+    color: #fff;
+    text-decoration: none;
+}
 .copy-content-btn {
     width: 67px;
     height: 30px;
@@ -700,6 +719,21 @@ table.dataTable thead>tr>td.sorting_desc:after {
     color: #fff;
     border-radius: 2px;
     margin-right: 4px;
+}
+.carryout-btn {
+    width: 68px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #BEA000;
+    color: #fff;
+    border-radius: 2px;
+    margin-right: 4px;
+}
+.carryout-btn:hover{
+    color: #fff;
+    text-decoration: none;
 }
 .order_date{
     width: 120px;
@@ -725,7 +759,6 @@ table.dataTable thead>tr>td.sorting_desc:after {
 .account-input-content {
     gap: 30px;
     margin-bottom: 13px;
-    /* justify-content: space-between; */
 }
 
 .account-reg-buttons {
@@ -733,9 +766,7 @@ table.dataTable thead>tr>td.sorting_desc:after {
     justify-content: end;
     gap: 9px;
 }
-
 /* ACCOUNT REGISTRATION CSS END  */
-
 .complete-btn {
     background-color: #BEA000;
     color: #fff;
@@ -747,7 +778,18 @@ table.dataTable thead>tr>td.sorting_desc:after {
     border-radius: 2px;
     border: 1px solid #BEA000;
 }
-
+.construction-btn{
+    background-color: #BEA000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 98px;
+    height: 42px;
+    border-radius: 2px;
+    border: 1px solid #BEA000;
+    margin-left: 40px;
+}
 .footer-nav-item {
     margin: 12px 0px;
 }

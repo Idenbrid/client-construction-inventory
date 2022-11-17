@@ -2,7 +2,7 @@
     <!-- Page content-->
     <div class="container-fluid p-0">
         <div class="main-content main-content-bg">
-            <h1 class="content-h1">2.　納品待ち一覧</h1>
+            <h1 class="content-h1">4. 持ち出し中一覧</h1>
             <div class="table-card table-responsive-sm">
                 <table id="waiting_list_table" class="table table-striped custom-table-list">
                     <thead>
@@ -31,10 +31,10 @@
                             <td>123456789…</td>
                             <td>Rテキストテ…
                                 <div class="btn-rev-del">
-                                    <a type="button" class="delivery-btn" value="登録" data-toggle="modal"
-                                        data-target="#staticBackdrop">納品</a>
-                                    <a type="button" class="revision-btn" value="登録">修正</a>
-                                    <a type="button" class="copy-content-btn disabled" value="登録">内容コピー</a>
+                                    <a type="button" class="delivery-btn" value="登録">使い終り</a>
+                                    <a type="button" class="revision-btn" value="登録" data-toggle="modal"
+                                        data-target="#reminder">余り</a>
+                                    <a type="button" class="copy-content-btn disabled" value="登録">取消</a>
                                 </div>
                             </td>
 
@@ -50,10 +50,10 @@
                             <td>123456789…qq</td>
                             <td>Rテキストテ…
                                 <div class="btn-rev-del">
-                                    <a type="button" class="delivery-btn" value="登録" data-toggle="modal"
-                                        data-target="#staticBackdrop">納品</a>
-                                    <a type="button" class="revision-btn" value="登録">修正</a>
-                                    <a type="button" class="copy-content-btn disabled" value="登録">内容コピー</a>
+                                    <a type="button" class="delivery-btn" value="登録" >使い終り</a>
+                                    <a type="button" class="revision-btn" value="登録" data-toggle="modal"
+                                        data-target="#reminder">余り</a>
+                                    <a type="button" class="copy-content-btn disabled" value="登録">取消</a>
                                 </div>
                             </td>
 
@@ -63,8 +63,8 @@
                 </table>
             </div>
             <!-- Modal -->
-            <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
-                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal fade" id="reminder" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                aria-labelledby="reminderLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header border-0">
@@ -83,6 +83,10 @@
                                     <option value="opel">Opel</option>
                                     <option value="audi">Audi</option>
                                 </select>
+                            </div>
+                            <div class="form-fields justify-content-center mt-3">
+                                <div class="register-label align-items-center" bis_skin_checked="1">数量</div>
+                               <input type="text" class="form-control" placeholder="テキスト"> 
                             </div>
                         </div>
                         <div class="modal-footer border-0 justify-content-center">
@@ -105,7 +109,7 @@
                         "width": "90px",
                         "targets": [ 0, 1, 2, 3, 4, 5, 6, 7, 8 ],
                     }],
-                
+                   
                     "searching": false,
                     "info": false,
                     "autoWidth": false,
