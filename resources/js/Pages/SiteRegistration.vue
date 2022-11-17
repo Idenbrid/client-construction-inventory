@@ -1,7 +1,8 @@
 <template>
     <section class="section-registration">
-        <div class="container">
-            <div class="advance-master-registration-content mt-2">
+        <div class="container-fluid p-0">
+            <div class="main-content main-content-bg">
+        
                 <div class="advance-master-registration-title">
                     <h5 class="text-white">JOB番号・現場名登録</h5>
                 </div>

@@ -7,7 +7,7 @@
                 <div class="conrainer">
                     <div class="master-reg-row">
                         <div class="master-reg-form">
-                            <div class="row">
+                            <div class="row mb-3 align-items-center">
                                 <div class="col-md-4">
                                     <div class="master-input-content">
                                         <label for="">分類</label>
@@ -24,7 +24,7 @@
                                     </small>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mb-3">
                                 <div class="col-md-4">
                                     <div class="master-input-content">
                                         <label for="">メーカー</label>
@@ -41,7 +41,7 @@
                                     </small>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mb-3">
                                 <div class="col-md-4">
                                     <div class="master-input-content">
                                         <label for="">品名</label>
@@ -58,7 +58,7 @@
                                     </small>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mb-3">
                                 <div class="col-md-4">
                                     <div class="master-input-content">
                                         <label for="">型番</label>
@@ -75,7 +75,7 @@
                                     </small>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mb-3">
                                 <div class="col-md-4">
                                     <div class="master-input-content">
                                         <label for="">単位</label>
@@ -125,11 +125,13 @@
                                             </span>
                                         </small>
                                     </ul>
-                                    <div class="account-reg-buttons mt-3">
-                                        <div v-if="item.id == 0"><a class="btn btn-success" @click="handleSave()">登録</a></div>
-                                        <div v-else><a class="btn btn-success" @click="handleUpdate()">update</a></div>
-                                        <div><a class="btn btn-danger" @click="clear()">Clear</a></div>
+                                    <div class="account-reg-buttons">
+                                  
+                                        <div v-if="item.id == 0"><a class="register-btn" @click="handleSave()">登録</a></div>
+                                        <div v-else><a class="update-btn" @click="handleUpdate()">アップデート</a></div>
+                                        <div><a class="clear-btn" @click="clear()">削除</a></div>
                                     </div>
+                             
                                 </div>
                             </div>
                         </div>
@@ -141,7 +143,7 @@
                                     <th>メーカー</th>
                                     <th>品名</th>
                                     <th>型番</th>
-                                    <th>Action</th>
+                                    <th></th>
                                 </tr>
                                 <tr v-for="(item, index) in list" :key="index">
                                     <td>{{index+1}}</td>
@@ -150,8 +152,10 @@
                                     <td>{{item.item_name}}</td>
                                     <td>{{item.item_number}}</td>
                                     <td>
+                                        <div class="btn-grouped">
                                         <a class="btn" @click="deleteItem(item.id)"><i class="fa-solid fa-trash-can delete-icon"></i> </a>
-                                        <a class="btn btn-primary btn-sm" @click="editItem(item)">edit</a>
+                                        <a class="btn " @click="editItem(item)"><i class="fas fa-edit"></i></a>
+                                        </div>
                                     </td>
                                 </tr>
                             </table>
@@ -295,6 +299,17 @@
 </script>
 <style>
     /* ****************** ACCOUNTS REGISTRATION CSS STRAT ************* */
+   .master-input-content label{
+          margin-bottom: 8px;
+    }
+    .btn-grouped .btn{
+        padding: 0px;
+    }
+    .btn-grouped{
+        display: flex;
+        gap:10px;
+        justify-content: center;
+    }
     .delete-btn, .register-btn{
         width: 56px;
         height: 30px;
@@ -304,13 +319,46 @@
         border-radius: 2px;
         color: #fff;
     }
-    .register-btn{
+    .clear-btn{
         background-color: #000000;
         border:1px solid #000000;
+        color:#fff;
+        width: 71px;
+        height: 42px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
     }
-    .delete-btn{
+    .clear-btn:hover, .register-btn:hover{
+        text-decoration: none;
+        color:#fff;
+    }
+    .register-btn{
         background-color: #BEA000;
         border:1px solid #BEA000;
+        color:#fff;
+        width: 71px;
+        height: 42px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .update-btn:hover{
+        text-decoration: none;
+        color:#fff;
+    }
+    .update-btn{
+        background-color: #2F9456;
+        border:1px solid #2F9456;
+        color:#fff;
+        width: 110px;
+        height: 42px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
     }
     .model-no-list {
         display: flex;
@@ -324,7 +372,7 @@
 
     .master-reg-form {
         width: 40%;
-        margin-right: 15px;
+
     }
 
     .table-col {
@@ -348,9 +396,9 @@
         border-radius: 4px;
     }
 
-    .master-input-content {
+    .master-input-content{
         gap: 30px;
-        margin-bottom: 13px;
+
         display: inline-flex;
         width: 110px    ;
     }
@@ -374,9 +422,7 @@
         text-align: center;
     }
 
-    .registration-table tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
+   
 
     .registration-table tr:hover {
         background-color: #ddd;
@@ -391,6 +437,24 @@
         font-size: 12px;
         text-align: center;
     }
-
+    .account-reg-buttons{
+        margin-top: 20px;
+    }
+    @media screen and (max-width: 768px) {
+    .master-reg-row{
+        flex-direction: column;
+    }
+    .table-col{
+        width: 100%;
+    }
+    .master-reg-form{
+        width: 100%;
+        margin-bottom: 45px;
+    }
+    .gmaccount-reg-content{
+        padding: 40px 8px 48px 8px;
+    }
+   
+}
     /* ****************** ACCOUNTS REGISTRATION CSS END ************* */
 </style>
