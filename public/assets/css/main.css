@@ -911,7 +911,7 @@ tbody tr td {
 
 /* BUTTONS  */
 .register-buttons {
-    margin-top: 13px;
+    margin-top: 20px;
     display: flex;
     gap: 10px;
     justify-content: flex-end;
@@ -1141,10 +1141,11 @@ tbody tr td {
     .master-reg-form {
         width: 100%;
         margin-bottom: 45px;
+       
     }
 
     .gmaccount-reg-content {
-        padding: 40px 8px 48px 8px;
+        padding: 40px 15px 48px 15px;
     }
 
     .master-reg-row {
@@ -1152,7 +1153,7 @@ tbody tr td {
     }
 
     .master-registration-form {
-        padding: 40px 8px 48px 8px;
+        padding: 40px 15px 48px 15px;
     }
 
     .custom-table-list.dataTable {
@@ -1237,21 +1238,24 @@ tbody tr td {
     .switch-div .on-off-buttons{
         display: block;
     }
-    .registration-left-content{
-        padding: 0px 37px;
-    }
+    /* .registration-left-content{
+        padding: 0px 15px;
+    } */
     .register-btn, .clear-btn{
         width: 71px;
         height: 42px;
     }
-}
-
-
-@media only screen and (max-width:425px) {
-    .account-input-content {
-        gap: 22px;
+    .master-form-col {
+       padding: 0px;
+    }
+    .master-reg-input{
+        width: 100%;
+    }
+    .master-registration-left-content {
+        width: 100%;
     }
 }
+
 
 @media only screen and (max-width:375px) {
     .main-content {
@@ -1280,8 +1284,8 @@ tbody tr td {
 
     .account-reg-input input {
         height: 48px;
-        width: 240px;
-        padding: 12px 0px 12px 20px;
+        width: 100%;
+   
     }
 
     .account-reg-buttons {
