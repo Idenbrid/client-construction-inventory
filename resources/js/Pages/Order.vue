@@ -28,6 +28,7 @@
                                     <!-- ON OFF BUTTONS END-->
                                     <li class="form-fields">
                                         <div class="register-label align-items-center">JOB番号（選択）</div>
+                                        <div class="order-input-field">
                                         <select v-model="order.job_number" class="input-border" name="cars" id="cars">
                                             <option v-for="site in sites" :value="site">{{site.job_number}}</option>
                                         </select>
@@ -36,6 +37,7 @@
                                                 {{errors.job_number[0]}}
                                             </span>
                                         </small>
+                                    </div>
                                     </li>
                                 </ul>
                                 <ul class="switch-div">
@@ -57,6 +59,7 @@
                                     <!-- ON OFF BUTTONS END-->
                                     <li class="form-fields">
                                         <div class="register-label">現場名（自動入力）</div>
+                                        <div class="order-input-field">
                                         <input disabled type="text"
                                             :value="order.site_name = order.job_number.site_name" id="fname"
                                             name="fname" placeholder="テキスト" class="form-control input-border">
@@ -65,6 +68,7 @@
                                                 {{errors.site_name[0]}}
                                             </span>
                                         </small>
+                                        </div>
                                     </li>
                                 </ul>
                                 <ul class="switch-div">
@@ -117,6 +121,7 @@
                                     <!-- ON OFF BUTTONS END-->
                                     <li class="form-fields">
                                         <div class="register-label">発注者（選択）</div>
+                                        <div class="order-input-field">
                                         <select class="input-border" v-model="order.client_id" name="cars" id="cars">
                                             <option v-for="user in users" :value="user.id">{{user.user_name}}</option>
                                         </select>
@@ -125,6 +130,7 @@
                                                 {{errors.client_id[0]}}
                                             </span>
                                         </small>
+                                        </div>
                                     </li>
                                 </ul>
                                 <ul class="switch-div">
@@ -146,6 +152,7 @@
                                     <!-- ON OFF BUTTONS END-->
                                     <li class="form-fields">
                                         <div class="register-label">品名（選択）</div>
+                                        <div class="order-input-field">
                                         <select class="input-border" v-model="order.item_id" name="cars" id="cars">
                                             <option v-for="item in items" :value="item.id">{{item.item_name}}</option>
                                         </select>
@@ -154,6 +161,7 @@
                                                 {{errors.item_id[0]}}
                                             </span>
                                         </small>
+                                        </div>
                                     </li>
                                 </ul>
                                 <ul class="switch-div">
@@ -175,6 +183,7 @@
                                     <!-- ON OFF BUTTONS END-->
                                     <li class="form-fields">
                                         <div class="register-label">warehouses</div>
+                                        <div class="order-input-field">
                                         <select class="input-border" v-model="order.stocker_id" name="cars" id="cars">
                                             <option v-for="warehouse in warehouses" :value="warehouse.id">
                                                 {{warehouse.warehouse_name}}</option>
@@ -184,6 +193,7 @@
                                                 {{errors.stocker_id[0]}}
                                             </span>
                                         </small>
+                                        </div>
                                     </li>
                                 </ul>
                                 <ul class="switch-div">
@@ -205,6 +215,7 @@
                                     <!-- ON OFF BUTTONS END-->
                                     <li class="form-fields">
                                         <div class="register-label" bis_skin_checked="1">数量（数字入力）</div>
+                                        <div class="order-input-field">
                                         <input type="text" id="fname" v-model="order.amount" name="fname"
                                             placeholder="テキスト" class="form-control input-border">
                                         <small>
@@ -212,6 +223,7 @@
                                                 {{errors.amount[0]}}
                                             </span>
                                         </small>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
