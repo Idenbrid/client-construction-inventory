@@ -2,31 +2,25 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Site;
 use Illuminate\Http\Request;
-use Validator;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Item;
+use Validator;
 
-class ItemController extends Controller
+class SiteController extends Controller
 {
     public function store(Request $request)
     {
         $attributeNames = [
-            'category' => 'Category',
-            'manufacturer' => 'Manufacturer',
-            'item_name' => 'Item name',
-            'item_number' => 'Item Number',
-            'unit' => 'Unit',
+            'job_number' => 'Job number',
+            'site_name' => 'Site name',
         ];
 
         $messages = [];
 
         $rules = [
-            'category' => 'required',
-            'manufacturer' => 'required',
-            'item_name' => 'required',
-            'item_number' => 'required',
-            'unit' => 'required',
+            'job_number' => 'required|unique:sites',
+            'site_name' => 'required',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -42,7 +36,7 @@ class ItemController extends Controller
                 'created_by' => Auth::id(),
                 'updated_by' => Auth::id(),
             ]);
-            Item::create($request->all());
+            Site::create($request->all());
             return response()->json([
                 'success' => true,
             ]);
@@ -51,21 +45,15 @@ class ItemController extends Controller
     public function update(Request $request)
     {
         $attributeNames = [
-            'category' => 'Category',
-            'manufacturer' => 'Manufacturer',
-            'item_name' => 'Item name',
-            'item_number' => 'Item Number',
-            'unit' => 'Unit',
+            'job_number' => 'Job number',
+            'site_name' => 'Site name',
         ];
 
         $messages = [];
 
         $rules = [
-            'category' => 'required',
-            'manufacturer' => 'required',
-            'item_name' => 'required',
-            'item_number' => 'required',
-            'unit' => 'required',
+            'job_number' => 'required',
+            'site_name' => 'required',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -81,18 +69,18 @@ class ItemController extends Controller
                 'created_by' => Auth::id(),
                 'updated_by' => Auth::id(),
             ]);
-            Item::find($request->id)->update($request->all());
+            Site::find($request->id)->update($request->all());
             return response()->json([
                 'success' => true,
             ]);
         }
     }
     public function index(){
-        return Item::latest()->get();
+        return Site::latest()->get();
     }
     public function destroy($id){
-        if($item = Item::find($id)){
-            $item->delete();
+        if($site = Site::find($id)){
+            $site->delete();
             return response()->json([
                 'success'   => true,
             ]);

@@ -71,10 +71,10 @@ class WarehouseController extends Controller
             ]);
         }
     }
-    public function list(){
+    public function index(){
         return Warehouse::latest()->get();
     }
-    public function delete($id){
+    public function destroy($id){
         if($warehouse = Warehouse::find($id)){
             $warehouse->delete();
             return response()->json([

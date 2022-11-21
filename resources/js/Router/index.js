@@ -7,12 +7,16 @@ import {
 WEBSITE 
 Routes
 */
-const Home = () => import('../Pages/Home.vue');
+const Home = () => import('../Pages/Order.vue');
 const WaitingList = () => import('../Pages/WaitingList.vue');
+const DeliveredList = () => import('../Pages/DeliveredList.vue');
+const TakeoutList = () => import('../Pages/TakeoutList.vue');
+const InventoryList = () => import('../Pages/InventoryList.vue');
+const ConstructionHistory = () => import('../Pages/ConstructionHistory.vue');
 const Registration = () => import('../Pages/Registration.vue');
 const WarehouseRegistration = () => import('../Pages/WarehouseRegistration.vue');
-const AdvanceMasterRegisration = () => import('../Pages/AdvanceMasterRegisration.vue');
-const SiteNameRegistration = () => import('../Pages/SiteNameRegistration.vue');
+const SupplierRegisration = () => import('../Pages/SupplierRegisration.vue');
+const SiteRegistration = () => import('../Pages/SiteRegistration.vue');
 const Test = () => import('../Pages/Test.vue');
 const GmMasterRegistration = () => import('../Pages/GmMasterRegisteration.vue');
 const Login = () => import('../Components/Login.vue');
@@ -41,12 +45,48 @@ export const routes = [
         }
     },
     {
+        name: 'DeliveredList',
+        path: '/delivered-list',
+        component: DeliveredList,
+        meta: {
+            auth: true,
+            title: "DeliveredList"
+        }
+    },
+    {
+        name: 'TakeoutList',
+        path: '/takeout-list',
+        component: TakeoutList,
+        meta: {
+            auth: true,
+            title: "TakeoutList"
+        }
+    },
+    {
+        name: 'InventoryList',
+        path: '/inventory-list',
+        component: InventoryList,
+        meta: {
+            auth: true,
+            title: "TakeoutList"
+        }
+    },
+    {
         name: 'Registration',
         path: '/account-registration',
         component: Registration,
         meta: {
             auth: true,
             title: "Registration"
+        }
+    },
+    {
+        name: 'ConstructionHistory',
+        path: '/construction-history',
+        component: ConstructionHistory,
+        meta: {
+            auth: true,
+            title: "ConstructionHistory "
         }
     },
     {
@@ -79,28 +119,28 @@ export const routes = [
     
     },
     {
-        name: 'AdvanceMasterRegisration',
-        path: '/advance-master-regisration',
-        component:AdvanceMasterRegisration,
+        name: 'SupplierRegisration',
+        path: '/supplier-regisration',
+        component:SupplierRegisration,
         meta: {
             auth: true,
-            title: "AdvanceMasterRegisration"
+            title: "SupplierRegisration"
         }
     
     },
     {
-        name: 'SiteNameRegistration',
-        path: '/site-name-registration',
-        component:SiteNameRegistration,
+        name: 'SiteRegistration',
+        path: '/site-registration',
+        component:SiteRegistration,
         meta: {
             auth: true,
-            title: "SiteNameRegistration"
+            title: "SiteRegistration"
         }
     
     },
     {
         name: 'Home',
-        path: '/order',
+        path: '/order/:id?',
         component: Home,
         meta: {
             auth: true,

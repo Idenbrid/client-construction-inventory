@@ -3,10 +3,10 @@
     <div class="container-fluid p-0">
         <div class="main-content main-content-bg">
             <h1 class="content-h1">アカウント登録</h1>
-            <div class="account-reg-content">
-                <div class="conrainer">
-                    <div class="row">
-                        <div class="col-md-5">
+            <div class="setting-content-box">
+                <div class="container-fluid p-0">
+                    <div class="master-reg-row">
+                        <div class="master-reg-form">
                             <div class="registration-left-content">
                                 <div class="d-flex align-items-center account-input-content">
                                     <div class="account-reg-lablel">
@@ -64,14 +64,14 @@
                                     </ul>
                                 </div>
                                 <div class="account-reg-buttons">
-                                    <div v-if="user.id == 0"><a class="btn btn-success" @click="handleRegister()">登録</a>
+                                    <div v-if="user.id == 0"><a class="register-btn" @click="handleRegister()">登録</a>
                                     </div>
-                                    <div v-else><a class="btn btn-success" @click="handleUpdate()">update</a></div>
-                                    <div><a class="btn btn-danger" @click="clear()">Clear</a></div>
+                                    <div v-else><a class="update-btn" @click="handleUpdate()">アップデート</a></div>
+                                    <div><a class="clear-btn" @click="clear()">削除</a></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-7 ">
+                        <div class="table-col">
                             <table class="registration-table">
                                 <tr>
                                     <th>#</th>
@@ -84,10 +84,12 @@
                                     <td>{{user.user_name}}</td>
                                     <td>{{user.login_id}}</td>
                                     <td>
+                                        <div class="btn-grouped">
                                         <a @click="deleteUser(user.id)"><i
                                                 class="fa-solid fa-trash-can delete-icon"></i> </a>
                                         <a @click="editUser(user)"><i
                                                 class="fa-solid fa-pen-to-square edit-icon"></i></a>
+                                            </div>
                                     </td>
                                 </tr>
                             </table>
@@ -226,6 +228,13 @@
 </script>
 <style>
     /* ****************** ACCOUNTS REGISTRATION CSS STRAT ************* */
+    .setting-content-box {
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: 0px 3px 6px var(--black);
+        padding: 40px 0px 48px 48px;
+    }
+
     .registration-table {
         font-family: Arial, Helvetica, sans-serif;
         border-collapse: collapse;
@@ -240,11 +249,11 @@
         text-align: center;
     }
 
-    .registration-table tr:nth-child(even) {
+    .registration-table td:nth-child(even) {
         background-color: #f2f2f2;
     }
 
-    .registration-table tr:hover {
+    .registration-table td:hover {
         background-color: #ddd;
     }
 
@@ -265,7 +274,7 @@
     }
 
     .account-reg-lablel {
-        width: 96px;
+        width: 98px;
     }
 
     .edit-icon {
@@ -288,6 +297,9 @@
         .account-reg-content {
             padding: 36px 0px 48px 15px;
         }
+        .setting-content-box{
+        padding:40px 8px 48px 8px;
+    }
     }
 
     @media only screen and (max-width:425px) {
@@ -306,6 +318,7 @@
         .account-reg-input {
             width: 100%;
         }
+
         .account-reg-content {
             padding: 20px 15px;
         }

@@ -6,19 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Item extends Model
+class Supplier extends Model
 {
     use HasFactory, SoftDeletes;
-
     protected $fillable = [
-        'category',
-        'manufacturer',
-        'item_name',
-        'item_number',
-        'unit',
+        'supplier_name',
         'created_by',
         'updated_by',
     ];
+    
     protected $dates = ['deleted_at'];
-
 }

@@ -2,31 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Supplier;
+use App\Models\Warehouse;
 use Illuminate\Http\Request;
-use Validator;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Item;
+use Validator;
 
-class ItemController extends Controller
+class SupplierController extends Controller
 {
     public function store(Request $request)
     {
         $attributeNames = [
-            'category' => 'Category',
-            'manufacturer' => 'Manufacturer',
-            'item_name' => 'Item name',
-            'item_number' => 'Item Number',
-            'unit' => 'Unit',
+            'supplier_name' => 'Name',
         ];
 
         $messages = [];
 
         $rules = [
-            'category' => 'required',
-            'manufacturer' => 'required',
-            'item_name' => 'required',
-            'item_number' => 'required',
-            'unit' => 'required',
+            'supplier_name' => 'required',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -42,7 +35,7 @@ class ItemController extends Controller
                 'created_by' => Auth::id(),
                 'updated_by' => Auth::id(),
             ]);
-            Item::create($request->all());
+            Supplier::create($request->all());
             return response()->json([
                 'success' => true,
             ]);
@@ -51,21 +44,13 @@ class ItemController extends Controller
     public function update(Request $request)
     {
         $attributeNames = [
-            'category' => 'Category',
-            'manufacturer' => 'Manufacturer',
-            'item_name' => 'Item name',
-            'item_number' => 'Item Number',
-            'unit' => 'Unit',
+            'supplier_name' => 'Name',
         ];
 
         $messages = [];
 
         $rules = [
-            'category' => 'required',
-            'manufacturer' => 'required',
-            'item_name' => 'required',
-            'item_number' => 'required',
-            'unit' => 'required',
+            'supplier_name' => 'required',
         ];
 
         $validator = Validator::make($request->all(), $rules, $messages);
@@ -81,18 +66,18 @@ class ItemController extends Controller
                 'created_by' => Auth::id(),
                 'updated_by' => Auth::id(),
             ]);
-            Item::find($request->id)->update($request->all());
+            Supplier::find($request->id)->update($request->all());
             return response()->json([
                 'success' => true,
             ]);
         }
     }
     public function index(){
-        return Item::latest()->get();
+        return Supplier::latest()->get();
     }
     public function destroy($id){
-        if($item = Item::find($id)){
-            $item->delete();
+        if($supplier = Supplier::find($id)){
+            $supplier->delete();
             return response()->json([
                 'success'   => true,
             ]);

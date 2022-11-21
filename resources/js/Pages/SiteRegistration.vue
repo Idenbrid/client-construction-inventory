@@ -2,77 +2,80 @@
     <section class="section-registration">
         <div class="container-fluid p-0">
             <div class="main-content main-content-bg">
-
-                <div class="master-registration-title">
-                    <h5 class="text-white">資材置き場マスタ登録</h5>
+        
+                <div class="advance-master-registration-title">
+                    <h5 class="text-white">JOB番号・現場名登録</h5>
                 </div>
-                <div class="master-registration-form">
-
-                    <div class="row master-reg-row">
-                        <div class="col-sm-12 col-md-12 col-lg-6 master-form-col">
-                            <div class="master-registration-left-content">
-                                <div class="master-registration-input-content">
-                                    <span>資材置き場名称</span>
-                                    <input v-model="record.warehouse_name" class="master-reg-input" type="text"
-                                        name="資材置き場名称" id="資材置き場名称" placeholder="テキスト">
-                                    <small>
-                                        <span v-if="errors.warehouse_name != null" class="text-danger float-left">
-                                            {{errors.warehouse_name[0]}}
-                                        </span>
-                                    </small>
+                <div class="advance-master-registration-form">
+                    <div class="container">
+                        <div class="row master-reg-row">
+                            <div class="col-sm-12 col-md-12 col-lg-6  my-auto mb-4">
+                                <div class="advance-master-registration-left-contet">
+                                    <div class="advance-master-registration-input-content">
+                                        <span>JOB番号</span>
+                                        <input class="advance-master-reg-input" v-model="site.job_number" type="text" name="JOB番号" id="JOB番号" placeholder="テキスト">
+                                        <small>
+                                            <span v-if="errors.job_number != null" class="text-danger float-left">
+                                                {{errors.job_number[0]}}
+                                            </span>
+                                        </small>
+                                    </div>
+                                    <div class="advance-master-registration-input-content">
+                                        <span>現場名</span>
+                                        <input class="advance-master-reg-input" v-model="site.site_name" type="text" name="現場名" id="現場名" placeholder="テキスト">
+                                        <small>
+                                            <span v-if="errors.site_name != null" class="text-danger float-left">
+                                                {{errors.site_name[0]}}
+                                            </span>
+                                        </small>
+                                    </div>
                                 </div>
                                 <div class="register-buttons">
-                                <div v-if="record.id == 0"><a class="register-btn" @click="handleSave()">登録</a>
+                                    <div v-if="site.id == 0"><a class="btn btn-success" @click="handleSave()">登録</a></div>
+                                    <div v-else><a class="btn btn-success" @click="handleUpdate()">update</a></div>
+                                    <div><a class="btn btn-danger" @click="clear()">Clear</a></div>
                                 </div>
-                                <div v-else><a class="update-btn" @click="handleUpdate()">アップデート</a></div>
-                                <div><a class="clear-btn" @click="clear()">削除</a></div>
                             </div>
-                            </div>
-                            
-                        </div>
-                        <div class="col-sm-12 col-md-12 col-lg-6">
-                            <div class="master-registration-right-contet">
-                                <table class="registration-table">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>置き場名称</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr v-for="(item, index) in list" :key="index">
-                                            <td>{{index+1}}</td>
-                                            <td>{{item.warehouse_name}}</td>
-                                            <td>
-                                                <div class="btn-grouped">
-                                                <a class="btn" @click="deleteWarehouse(item.id)"><i
-                                                        class="fa-solid fa-trash-can delete-icon"></i> </a>
-                                                <a class="btn" @click="editWarehouse(item)"><i class="fas fa-edit" aria-hidden="true"></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div class="col-sm-12 col-md-12 col-lg-6 mt-4">
+                                <div class="master-registration-right-contet">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>クリア</th>
+                                                <th>クリア</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr v-for="(site, index) in list" :key="index">
+                                                <td>{{index+1}}</td>
+                                                <td>{{site.job_number}}</td>
+                                                <td>{{site.site_name}}</td>
+                                                <td>
+                                                    <a class="btn" @click="deleteSite(site.id)"><i class="fa-solid fa-trash-can delete-icon"></i> </a>
+                                                    <a class="btn btn-primary btn-sm" @click="editSite(site)">edit</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
         </div>
-
     </section>
 </template>
-
 <script>
     import axios from "axios";
     export default {
         data() {
             return {
-                record: {
-                    warehouse_name: '',
+                site: {
+                    job_number: '',
+                    site_name: '',
                     id: 0,
                 },
                 errors: [],
@@ -83,9 +86,10 @@
             this.getList()
         },
         methods: {
-            editWarehouse(item) {
-                this.record.id = item.id;
-                this.record.warehouse_name = item.warehouse_name;
+            editSite(item) {
+                this.site.id = item.id;
+                this.site.job_number = item.job_number;
+                this.site.site_name = item.site_name;
             },
             handleSave() {
                 Swal.fire({
@@ -94,7 +98,7 @@
                         Swal.showLoading()
                     },
                 })
-                axios.post("/api/warehouse", this.record)
+                axios.post("/api/site", this.site)
                     .then((response) => {
                         if (response.data.success == false) {
                             Swal.close()
@@ -105,7 +109,7 @@
                             this.errors = [];
                             Swal.fire({
                                 icon: 'success',
-                                title: 'Warehouse has been registered successfully.',
+                                title: 'Site has been registered successfully.',
                             })
                             this.getList()
                         }
@@ -118,7 +122,7 @@
                         Swal.showLoading()
                     },
                 })
-                axios.patch("/api/warehouse/update", this.record)
+                axios.patch("/api/site/update", this.site)
                     .then((response) => {
                         if (response.data.success == false) {
                             Swal.close()
@@ -129,26 +133,27 @@
                             this.errors = [];
                             Swal.fire({
                                 icon: 'success',
-                                title: 'Warehouse has been updated successfully...',
+                                title: 'Site has been updated successfully.',
                             })
                             this.getList()
                         }
                     })
             },
             clear() {
-                this.record = {
-                    warehouse_name: '',
+                this.site = {
+                    job_number: '',
+                    site_name: '',
                     id: 0,
                 };
                 this.errors = [];
             },
             getList() {
-                axios.get("/api/warehouse")
+                axios.get("/api/site")
                     .then((response) => {
                         this.list = response.data
                     })
             },
-            deleteWarehouse(id) {
+            deleteSite(id) {
                 Swal.fire({
                     title: 'Are you sure?',
                     text: "You won't be able to revert this!",
@@ -159,7 +164,7 @@
                     confirmButtonText: 'Yes, delete it!'
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        axios.delete("/api/warehouse/" + id)
+                        axios.delete("/api/site/" + id)
                             .then((response) => {
                                 if (response.data.success == true) {
                                     Swal.fire(
@@ -171,7 +176,7 @@
                                 } else {
                                     Swal.fire(
                                         'Error!',
-                                        'Warehouse not found. Please reload the page and try agian. Thanks',
+                                        'Site not found. Please reload the page and try agian. Thanks',
                                         'error'
                                     )
                                 }
@@ -186,32 +191,29 @@
 </script>
 
 <style>
-.master-registration-left-content{
-    display: inline-block;
-}
-    .master-registration-input-content span {
+    .advance-master-registration-input-content span {
         margin-right: 30px;
         color: #000000;
         font-size: 16px;
         letter-spacing: 0.15px;
+        display: inline-block;
+        width: 100px;
+        margin-bottom: 13px;
     }
 
-    .master-reg-input {
+    .advance-master-reg-input {
         padding: 6.5px 16.5px;
         height: 48px;
         border: 1px solid #0000001F;
         border-radius: 4px;
-        width: 219px;
     }
 
-    .master-registration-form {
-        background-color: #fff;
-        border-radius: 4px;
-        box-shadow: 0px 3px 6px var(--black);
-        padding: 40px 0px 48px 48px;
+    .advance-master-registration-form {
+        padding: 12px 0px 12px 0px;
+        background: #ffffff;
     }
 
-    .master-registration-content {
+    .advance-master-registration-content {
         padding: 24px;
         background-image: url(assets/images/bg-img.png);
     }
@@ -236,6 +238,7 @@
         letter-spacing: 0px;
         color: #000000;
         opacity: 1;
+        padding: 10px 0px;
     }
 
     tbody tr td:nth-child(2) {
@@ -248,7 +251,7 @@
         margin-top: 13px;
         display: flex;
         gap: 10px;
-        justify-content: flex-end;
+        /* margin-left: 246px; */
 
     }
 
@@ -287,9 +290,6 @@
     @media only screen and (max-width:768px) {
         .master-reg-row {
             flex-direction: column;
-        }
-        .master-registration-form{
-            padding: 40px 8px 48px 8px;
         }
     }
 </style>
