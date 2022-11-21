@@ -48,7 +48,7 @@
                                             <div class="btn-grouped">
                                                 <a class="btn" @click="deleteSupplier(item.id)"><i
                                                         class="fa-solid fa-trash-can delete-icon"></i> </a>
-                                                <a class="btn" @click="editSupplier(item)"><i class="fas fa-edit"
+                                                <a class="btn" @click="editSupplier(item)"><i class="fas fa-edit edit-icon"
                                                         aria-hidden="true"></i></a>
                                             </div>
                                         </td>

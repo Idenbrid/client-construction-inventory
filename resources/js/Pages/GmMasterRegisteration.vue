@@ -139,7 +139,7 @@
                         <div class="table-col">
                             <table class="registration-table">
                                 <tr>
-                                    <th>#</th>
+                                    <!-- <th>#</th> -->
                                     <th>分類</th>
                                     <th>メーカー</th>
                                     <th>品名</th>
@@ -148,7 +148,7 @@
                                     <th></th>
                                 </tr>
                                 <tr v-for="(item, index) in list" :key="index">
-                                    <td>{{index+1}}</td>
+                                    <!-- <td>{{index+1}}</td> -->
                                     <td>{{item.category}}</td>
                                     <td>{{item.manufacturer}}</td>
                                     <td>{{item.item_name}}</td>
