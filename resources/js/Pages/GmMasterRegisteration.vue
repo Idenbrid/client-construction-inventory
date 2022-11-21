@@ -32,7 +32,8 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="generated-reg-input">
-                                        <input v-model="item.manufacturer" type="text" name="メーカー" id="メーカー" placeholder="テキスト">
+                                        <input v-model="item.manufacturer" type="text" name="メーカー" id="メーカー"
+                                            placeholder="テキスト">
                                     </div>
                                     <small>
                                         <span v-if="errors.manufacturer != null" class="text-danger float-left">
@@ -49,7 +50,8 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="generated-reg-input">
-                                        <input v-model="item.item_name" type="text" name="品名" id="品名" placeholder="テキスト">
+                                        <input v-model="item.item_name" type="text" name="品名" id="品名"
+                                            placeholder="テキスト">
                                     </div>
                                     <small>
                                         <span v-if="errors.item_name != null" class="text-danger float-left">
@@ -66,7 +68,8 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="generated-reg-input">
-                                        <input v-model="item.item_number" type="text" name="型番" id="型番" placeholder="テキスト">
+                                        <input v-model="item.item_number" type="text" name="型番" id="型番"
+                                            placeholder="テキスト">
                                     </div>
                                     <small>
                                         <span v-if="errors.item_number != null" class="text-danger float-left">
@@ -85,37 +88,43 @@
                                     <ul class="model-no-list">
                                         <li>
                                             <div class="form-check">
-                                                <input v-model="item.unit" type="radio" value="m" class="form-check-input" id="m" name="m" />
+                                                <input v-model="item.unit" type="radio" value="m"
+                                                    class="form-check-input" id="m" name="m" />
                                                 <label class="form-check-label" for="m">m</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input v-model="item.unit" type="radio" value="本" class="form-check-input" id="book" name="book" />
+                                                <input v-model="item.unit" type="radio" value="本"
+                                                    class="form-check-input" id="book" name="book" />
                                                 <label class="form-check-label" for="book">本</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input v-model="item.unit" type="radio" value="個" class="form-check-input" id="male" name="indivual" />
+                                                <input v-model="item.unit" type="radio" value="個"
+                                                    class="form-check-input" id="male" name="indivual" />
                                                 <label class="form-check-label" for="indivual">個</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input v-model="item.unit" type="radio" value="箱" class="form-check-input" id="box" name="box" />
+                                                <input v-model="item.unit" type="radio" value="箱"
+                                                    class="form-check-input" id="box" name="box" />
                                                 <label class="form-check-label" for="box">箱</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input v-model="item.unit" type="radio" value="袋" class="form-check-input" id="bag" name="bag" />
+                                                <input v-model="item.unit" type="radio" value="袋"
+                                                    class="form-check-input" id="bag" name="bag" />
                                                 <label class="form-check-label" for="bag">袋</label>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="form-check">
-                                                <input v-model="item.unit" type="radio" value="台" class="form-check-input" id="tower" name="tower" />
+                                                <input v-model="item.unit" type="radio" value="台"
+                                                    class="form-check-input" id="tower" name="tower" />
                                                 <label class="form-check-label" for="tower">台</label>
                                             </div>
                                         </li>
@@ -126,12 +135,13 @@
                                         </small>
                                     </ul>
                                     <div class="account-reg-buttons">
-                                  
-                                        <div v-if="item.id == 0"><a class="register-btn" @click="handleSave()">登録</a></div>
+
+                                        <div v-if="item.id == 0"><a class="register-btn" @click="handleSave()">登録</a>
+                                        </div>
                                         <div v-else><a class="update-btn" @click="handleUpdate()">アップデート</a></div>
                                         <div><a class="clear-btn" @click="clear()">削除</a></div>
                                     </div>
-                             
+
                                 </div>
                             </div>
                         </div>
@@ -153,8 +163,9 @@
                                     <td>{{item.item_number}}</td>
                                     <td>
                                         <div class="btn-grouped">
-                                        <a class="btn" @click="deleteItem(item.id)"><i class="fa-solid fa-trash-can delete-icon"></i> </a>
-                                        <a class="btn " @click="editItem(item)"><i class="fas fa-edit"></i></a>
+                                            <a class="btn" @click="deleteItem(item.id)"><i
+                                                    class="fa-solid fa-trash-can delete-icon"></i> </a>
+                                            <a class="btn " @click="editItem(item)"><i class="fas fa-edit"></i></a>
                                         </div>
                                     </td>
                                 </tr>
@@ -188,7 +199,7 @@
             this.getList()
         },
         methods: {
-            editItem(item){
+            editItem(item) {
                 this.item.id = item.id;
                 this.item.category = item.category;
                 this.item.manufacturer = item.manufacturer;
@@ -257,9 +268,9 @@
             },
             getList() {
                 axios.get("/api/item")
-                .then((response) => {
-                    this.list = response.data
-                })
+                    .then((response) => {
+                        this.list = response.data
+                    })
             },
             deleteItem(id) {
                 Swal.fire({
@@ -273,26 +284,26 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                         axios.delete("/api/item/" + id)
-                        .then((response) => {
-                            if(response.data.success == true){
-                                Swal.fire(
-                                    'Deleted!',
-                                    'Your data has been deleted.',
-                                    'success'
-                                )
-                                this.getList()
-                            }else{
-                                Swal.fire(
-                                    'Error!',   
-                                    'Item not found. Please reload the page and try agian. Thanks',
-                                    'error'
-                                )
-                            }
-                            
-                        })
+                            .then((response) => {
+                                if (response.data.success == true) {
+                                    Swal.fire(
+                                        'Deleted!',
+                                        'Your data has been deleted.',
+                                        'success'
+                                    )
+                                    this.getList()
+                                } else {
+                                    Swal.fire(
+                                        'Error!',
+                                        'Item not found. Please reload the page and try agian. Thanks',
+                                        'error'
+                                    )
+                                }
+
+                            })
                     }
                 })
-                
+
             },
         },
     }
