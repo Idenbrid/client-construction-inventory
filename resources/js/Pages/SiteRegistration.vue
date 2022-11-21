@@ -6,12 +6,10 @@
                 <div class="advance-master-registration-title">
                     <h5 class="content-h1">JOB番号・現場名登録</h5>
                 </div>
-                <div class="master-registration-form">
-            
-                        <div class="master-reg-row">
-                            <div class="col-sm-12 col-md-12 col-lg-6 master-form-col p-0">
-                                <div class="master-registration-left-content">
-                                    <div class="d-flex align-items-center account-input-content">
+                <div class="master-registration-form">           
+                        <div class="master-reg-row">                     
+                                <div class="master-reg-form">
+                                    <div class="account-input-content">
                                         <div class="account-reg-lablel"><label>JOB番号</label></div>
                                         <div class="account-reg-input">
                                         <input class="master-reg-input" v-model="site.job_number" type="text" name="JOB番号" id="JOB番号" placeholder="テキスト">
@@ -22,8 +20,10 @@
                                         </small>
                                     </div>
                                     </div>
-                                    <div class="d-flex align-items-center account-input-content">
-                                        <div class="account-reg-lablel"><label>現場名</label></div>
+                                    <div class="account-input-content">
+                                        <div class="account-reg-lablel">
+                                            <label>現場名</label>
+                                        </div>
                                         <div class="account-reg-input">
                                         <input class="master-reg-input" v-model="site.site_name" type="text" name="現場名" id="現場名" placeholder="テキスト">
                                         <small>
@@ -38,10 +38,8 @@
                                     <div v-else><a class="update-btn" @click="handleUpdate()">アップデート</a></div>
                                     <div><a class="clear-btn" @click="clear()">削除</a></div>
                                 </div>
-                                </div>
-                               
-                            </div>
-                            <div class="col-sm-12 col-md-12 col-lg-6 p-0">
+                                </div>                                 
+                            <div class="table-col">
                                 <div class="master-registration-right-contet">
                                     <table class="registration-table">
                                         <thead>

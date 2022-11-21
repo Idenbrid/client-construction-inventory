@@ -1009,11 +1009,14 @@ tbody tr td {
 
 .master-reg-form {
     width: 40%;
+    margin: auto;
 
 }
 
 .table-col {
     width: 50%;
+    overflow-x: auto;
+    position: relative;
 }
 
 .gmaccount-reg-content {
@@ -1081,6 +1084,9 @@ tbody tr td {
         position: relative;
         overflow-x: scroll;
     }
+}
+.account-input-radio{
+    width: 59.38%;
 }
 @media screen and (max-width: 920px) and (min-width:769px) {
     .table-responsive-sm {
