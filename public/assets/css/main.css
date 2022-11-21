@@ -1123,6 +1123,12 @@ tbody tr td {
         display: flex;
         flex-direction: column;
     }
+    .table-col td:nth-child(even){
+        background:#F5F5F5;
+    }
+    .custom-table-list thead th{
+            text-align: center !important   ;
+    } 
 @media screen and (max-width: 1050px) and (min-width:920px) {
     .job-search-field {
         flex-direction: column;

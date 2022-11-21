@@ -79,7 +79,7 @@
                                     <th>アカウントID</th>
                                     <th>権限</th>
                                 </tr>
-                                <tr  class="f-12-regular" v-for="(user, index) in list" :key="index">
+                                <tr  class="f-12-regular td-color" v-for="(user, index) in list" :key="index">
                                     <td>{{index+1}}</td>
                                     <td>{{user.user_name}}</td>
                                     <td>{{user.login_id}}</td>
@@ -226,3 +226,8 @@
         },
     }
 </script>
+<style>
+.table-col td:nth-child(even){
+    background:#F5F5F5;
+}
+</style>
