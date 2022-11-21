@@ -171,11 +171,6 @@
     margin-top: 46px;
 
 }
-
-
-
-
-
 .login-logo {
     width: 196px;
     margin: auto;
@@ -764,6 +759,12 @@ table.dataTable thead>tr>td.sorting_desc:after {
 
 .account-reg-lablel {
     width: 40%;
+ 
+}
+.account-reg-lablel label{
+    font-size: 16px;
+    font-weight:400;
+    font-family: NotoSansJP-Regular;
 }
 
 .account-input-content {
@@ -939,6 +940,10 @@ tbody tr td {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    font-family: NotoSansJP-Medium;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
 }
 
 .clear-btn:hover,
@@ -1042,6 +1047,8 @@ tbody tr td {
     padding: 8px;
     font-size: 12px;
     text-align: center;
+    font-family: NotoSansJP-Regular;
+    font-weight: 400;
 }
 
 .registration-table tr:hover {
@@ -1049,13 +1056,15 @@ tbody tr td {
 }
 
 .registration-table th {
-
+    
+    font-family: NotoSansJP-Regular;
     text-align: left;
     background-color: black;
     color: white;
     height: 32px;
     font-size: 12px;
     text-align: center;
+    font-weight: 400;
 }
 
 .account-reg-buttons {
@@ -1090,6 +1099,23 @@ tbody tr td {
     padding: 0px 15px
 }
 
+/* UTILITIES CLASSES  */
+.f-12-regular th , .f-12-regular td{
+    font-size: 12px;
+    font-family: NotoSansJP-Regular;
+    font-weight: 400;
+    }
+.f-16-regular{
+    font-size: 16px;
+    font-family: NotoSansJP-Regular;
+    font-weight: 400;
+    }
+    .delete-icon{
+        color: red;
+    }
+    .edit-icon{
+        color: #2F9456;
+    }
 @media screen and (max-width: 1050px) and (min-width:920px) {
     .job-search-field {
         flex-direction: column;

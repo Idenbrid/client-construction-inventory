@@ -13,7 +13,7 @@
                         
                                 <div class="account-input-content">
                                     <div class="account-reg-lablel">
-                                    <label>資材置き場名称</label>
+                                    <label class="f-16-regular mb-0">資材置き場名称</label>
                                     </div>
                                     <div class="account-reg-input">
                                     <input v-model="record.warehouse_name" class="master-reg-input" type="text"
@@ -38,21 +38,21 @@
                             <div class="master-registration-right-contet">
                                 <table class="registration-table">
                                     <thead>
-                                        <tr>
+                                        <tr class="f-12-regular">
                                             <th>#</th>
                                             <th>置き場名称</th>
                                             <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr v-for="(item, index) in list" :key="index">
+                                        <tr class="f-12-regular" v-for="(item, index) in list" :key="index">
                                             <td>{{index+1}}</td>
                                             <td>{{item.warehouse_name}}</td>
                                             <td>
                                                 <div class="btn-grouped">
                                                 <a class="btn" @click="deleteWarehouse(item.id)"><i
                                                         class="fa-solid fa-trash-can delete-icon"></i> </a>
-                                                <a class="btn" @click="editWarehouse(item)"><i class="fas fa-edit" aria-hidden="true"></i></a>
+                                                <a class="btn" @click="editWarehouse(item)"><i class="fas fa-edit edit-icon" aria-hidden="true"></i></a>
                                                 </div>
                                             </td>
                                         </tr>

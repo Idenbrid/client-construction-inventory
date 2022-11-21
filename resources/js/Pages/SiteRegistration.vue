@@ -43,15 +43,15 @@
                                 <div class="master-registration-right-contet">
                                     <table class="registration-table">
                                         <thead>
-                                            <tr>
+                                            <tr class="f-12-regular">
                                                 <th>#</th>
-                                                <th>クリア</th>
-                                                <th>クリア</th>
+                                                <th>JOB番号</th>
+                                                <th>現場名</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr v-for="(site, index) in list" :key="index">
+                                            <tr class="f-12-regular" v-for="(site, index) in list" :key="index">
                                                 <td>{{index+1}}</td>
                                                 <td>{{site.job_number}}</td>
                                                 <td>{{site.site_name}}</td>
@@ -194,4 +194,10 @@
         },
     }
 </script>
-
+<style>
+.f-12-regular th , .f-12-regular td{
+font-size: 12px;
+font-family: NotoSansJP-Regular;
+font-weight: 400;
+}
+</style>

@@ -11,7 +11,7 @@
                     <div class="master-reg-form">
                         <div class="account-input-content">
                             <div class="account-reg-lablel">
-                                <label>発注先名称</label>
+                                <label class="f-16-regular mb-0">発注先名称</label>
                             </div>
                             <div class="account-reg-input"> 
                                 <input class="master-reg-input" type="text" name="発注先名称"
@@ -34,14 +34,14 @@
                         <div class="master-registration-right-contet">
                             <table class="registration-table">
                                 <thead>
-                                    <tr>
+                                    <tr class="f-12-regular">
                                         <th>#</th>
                                         <th>発注先</th>
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr v-for="(item, index) in list" :key="index">
+                                    <tr  class="f-12-regular" v-for="(item, index) in list" :key="index">
                                         <td>{{index+1}}</td>
                                         <td>{{item.supplier_name}}</td>
                                         <td>

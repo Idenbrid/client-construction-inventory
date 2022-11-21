@@ -73,13 +73,13 @@
                         </div>
                         <div class="table-col">
                             <table class="registration-table">
-                                <tr>
+                                <tr class="f-12-regular">
                                     <th>#</th>
                                     <th>アカウント名</th>
                                     <th>アカウントID</th>
-                                    <th></th>
+                                    <th>権限</th>
                                 </tr>
-                                <tr v-for="(user, index) in list" :key="index">
+                                <tr  class="f-12-regular" v-for="(user, index) in list" :key="index">
                                     <td>{{index+1}}</td>
                                     <td>{{user.user_name}}</td>
                                     <td>{{user.login_id}}</td>
