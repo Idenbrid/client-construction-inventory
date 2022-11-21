@@ -8,12 +8,12 @@
                     <div class="master-reg-row">
                         <div class="master-reg-form">
                             <div class="account-input-content">
-                                <div class="account-reg-lablel">            
-                                        <label for="">分類</label>                              
+                                <div class="account-reg-lablel">
+                                    <label for="">分類</label>
                                 </div>
-                                    <div class="account-reg-input">
-                                        <input v-model="item.category" type="text" name="分類" id="分類" placeholder="テキスト">
-                                  
+                                <div class="account-reg-input">
+                                    <input v-model="item.category" type="text" name="分類" id="分類" placeholder="テキスト">
+
                                     <small>
                                         <span v-if="errors.category != null" class="text-danger float-left">
                                             {{errors.category[0]}}
@@ -21,13 +21,13 @@
                                     </small>
                                 </div>
                             </div>
-                            <div class="account-input-content mb-3">  
-                                    <div class="account-reg-lablel">
-                                        <label for="">メーカー</label>
-                                    </div>  
-                                    <div class="account-reg-input">          
-                                        <input v-model="item.manufacturer" type="text" name="メーカー" id="メーカー"
-                                            placeholder="テキスト">
+                            <div class="account-input-content mb-3">
+                                <div class="account-reg-lablel">
+                                    <label for="">メーカー</label>
+                                </div>
+                                <div class="account-reg-input">
+                                    <input v-model="item.manufacturer" type="text" name="メーカー" id="メーカー"
+                                        placeholder="テキスト">
                                     <small>
                                         <span v-if="errors.manufacturer != null" class="text-danger float-left">
                                             {{errors.manufacturer[0]}}
@@ -36,16 +36,15 @@
                                 </div>
                             </div>
                             <div class="account-input-content mb-3">
-                            
-                                    <div class="account-reg-lablel">
-                                        <label for="">品名</label>
-                                    </div>
-                             
+
+                                <div class="account-reg-lablel">
+                                    <label for="">品名</label>
+                                </div>
+
                                 <div class="account-reg-input">
-                                 
-                                        <input v-model="item.item_name" type="text" name="品名" id="品名"
-                                            placeholder="テキスト">
-                                
+
+                                    <input v-model="item.item_name" type="text" name="品名" id="品名" placeholder="テキスト">
+
                                     <small>
                                         <span v-if="errors.item_name != null" class="text-danger float-left">
                                             {{errors.item_name[0]}}
@@ -54,14 +53,13 @@
                                 </div>
                             </div>
                             <div class="account-input-content mb-3">
-                                    <div class="account-reg-lablel">
-                                        <label for="">型番</label>
-                                    </div>
+                                <div class="account-reg-lablel">
+                                    <label for="">型番</label>
+                                </div>
                                 <div class="account-reg-input">
-                               
-                                        <input v-model="item.item_number" type="text" name="型番" id="型番"
-                                            placeholder="テキスト">
-                                
+
+                                    <input v-model="item.item_number" type="text" name="型番" id="型番" placeholder="テキスト">
+
                                     <small>
                                         <span v-if="errors.item_number != null" class="text-danger float-left">
                                             {{errors.item_number[0]}}
@@ -71,9 +69,9 @@
                             </div>
                             <div class="account-input-content mb-3">
                                 <div class="account-reg-lablel">
-                                 
-                                        <label for="">単位</label>
-                                   
+
+                                    <label for="">単位</label>
+
                                 </div>
                                 <div class="account-input-radio">
                                     <ul class="model-no-list">
@@ -125,27 +123,28 @@
                                             </span>
                                         </small>
                                     </ul>
-                                   
+
 
                                 </div>
-                                
+
                             </div>
                             <div class="account-reg-buttons">
 
-<div v-if="item.id == 0"><a class="register-btn" @click="handleSave()">登録</a>
-</div>
-<div v-else><a class="update-btn" @click="handleUpdate()">アップデート</a></div>
-<div><a class="clear-btn" @click="clear()">削除</a></div>
-</div>
+                                <div v-if="item.id == 0"><a class="register-btn" @click="handleSave()">登録</a>
+                                </div>
+                                <div v-else><a class="update-btn" @click="handleUpdate()">アップデート</a></div>
+                                <div><a class="clear-btn" @click="clear()">削除</a></div>
+                            </div>
                         </div>
                         <div class="table-col">
                             <table class="registration-table">
                                 <tr>
+                                    <th>#</th>
                                     <th>分類</th>
                                     <th>メーカー</th>
                                     <th>品名</th>
                                     <th>型番</th>
-                                   
+
                                     <th></th>
                                 </tr>
                                 <tr v-for="(item, index) in list" :key="index">
