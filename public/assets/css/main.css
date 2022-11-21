@@ -284,7 +284,9 @@
     padding: 24px;
     height: 100vh;
 }
-
+.switch-div .on-off-buttons{
+    display: none;
+}
 .order-reg-card {
     background-color: #fff;
     border-radius: 4px;
@@ -1165,7 +1167,7 @@ tbody tr td:nth-child(2) {
 
     .switch-btns {
         flex-direction: column;
-        width: 110px;
+        width: 80px;
         margin-right: 5px;
     }
 
@@ -1221,6 +1223,9 @@ tbody tr td:nth-child(2) {
     .account-reg-content {
         padding: 20px;
     }
+    .switch-div .on-off-buttons{
+        display: block;
+    }
 }
 
 
@@ -1267,8 +1272,6 @@ tbody tr td:nth-child(2) {
     }
 }
 
-/*//////////////////////////////////////////////////////////////////
-  [ Responsive ]*/
 
 @media only screen and (max-width: 576px) {
     .wrap-login100 {
