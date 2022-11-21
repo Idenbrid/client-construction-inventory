@@ -9,10 +9,13 @@
                 <div class="master-registration-form">
 
                     <div class="master-reg-row">
-                        <div class="col-sm-12 col-md-12 col-lg-6 master-form-col p-0">
-                            <div class="master-registration-left-content">
-                                <div class="master-registration-input-content">
-                                    <span>資材置き場名称</span>
+                        <div class="master-reg-form">
+                        
+                                <div class="account-input-content">
+                                    <div class="account-reg-lablel">
+                                    <label>資材置き場名称</label>
+                                    </div>
+                                    <div class="account-reg-input">
                                     <input v-model="record.warehouse_name" class="master-reg-input" type="text"
                                         name="資材置き場名称" id="資材置き場名称" placeholder="テキスト">
                                     <small>
@@ -21,16 +24,17 @@
                                         </span>
                                     </small>
                                 </div>
+                                </div>
                                 <div class="register-buttons">
                                 <div v-if="record.id == 0"><a class="register-btn" @click="handleSave()">登録</a>
                                 </div>
                                 <div v-else><a class="update-btn" @click="handleUpdate()">アップデート</a></div>
                                 <div><a class="clear-btn" @click="clear()">削除</a></div>
                             </div>
-                            </div>
+                         
                             
                         </div>
-                        <div class="col-sm-12 col-md-12 col-lg-6 p-0">
+                        <div class="table-col">
                             <div class="master-registration-right-contet">
                                 <table class="registration-table">
                                     <thead>
