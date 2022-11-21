@@ -17,37 +17,6 @@
     --dark-ood: #836343;
 }
 
-/* 
-@font-face {
-    font-family: NotoSansJP-Black;
-    src: url(../css/fonts/NotoSansJP-Black.ttf);
-}
-
-@font-face {
-    font-family: NotoSansJP-Bold;
-    src: url(../css/fonts/NotoSansJP-Bold.ttf);
-}
-
-@font-face {
-    font-family: NotoSansJP-Light;
-    src: url(../css/fonts/NotoSansJP-Light.ttf);
-}
-
-@font-face {
-    font-family: NotoSansJP-Regular;
-    src: url(../css/fonts/NotoSansJP-Regular.ttf);
-}
-
-@font-face {
-    font-family: NotoSansJP-Medium;
-    src: url(../css/fonts/NotoSansJP-Medium.ttf);
-}
-
-@font-face {
-    font-family: NotoSansJP-Thin;
-    src: url(../css/fonts/NotoSansJP-Thin.ttf);
-} 
-*/
 
 @font-face {
     font-family: NotoSansJP-Black;
@@ -284,9 +253,11 @@
     padding: 24px;
     height: 100vh;
 }
-.switch-div .on-off-buttons{
+
+.switch-div .on-off-buttons {
     display: none;
 }
+
 .order-reg-card {
     background-color: #fff;
     border-radius: 4px;
@@ -314,6 +285,10 @@
 
 body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     margin-left: 0;
+}
+
+.mbile-top-nav-setting .setting-toggle-end .router-link-exact-active {
+    color: #BEA000;
 }
 
 #sidebar-wrapper .router-link-exact-active {
@@ -514,9 +489,10 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 
 .form-control {
     border: 1px solid #0000001F;
+    background-color: #fff !important;
     border-radius: 4px;
     height: 37px;
-    width: 219px !important;
+    width: 219px;
 }
 
 .btn-submit {
@@ -626,6 +602,7 @@ table.dataTable thead>tr>td.sorting_desc:after {
 
 .table-responsive-sm {
     position: relative;
+    overflow: auto;
 }
 
 .custom-table-list td:nth-child(even) {
@@ -784,9 +761,11 @@ table.dataTable thead>tr>td.sorting_desc:after {
     justify-content: center;
     align-items: center;
 }
-.account-reg-lablel{
+
+.account-reg-lablel {
     width: 40%;
 }
+
 .account-input-content {
     gap: 30px;
     margin-bottom: 13px;
@@ -1084,47 +1063,106 @@ tbody tr td {
 }
 
 
-.account-input-radio{
+.account-input-radio {
     width: 59.38%;
 }
+
+.field-label {
+    margin-right: 30px;
+}
+
+.job-search-field {
+    display: flex;
+    align-items: center;
+}
+
+.job-form-fields {
+    display: flex;
+    padding: 15px 0px;
+}
+
+.job-form-control {
+    border: 1px solid #0000001F;
+    background-color: #fff !important;
+    border-radius: 4px;
+    height: 37px;
+    width: 219px;
+    padding: 0px 15px
+}
+
 @media screen and (max-width: 1050px) and (min-width:920px) {
-   
-    .master-reg-form{
+    .job-search-field {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .job-form-control {
+        width: 100%;
+    }
+
+    .job-form-fields {
+        align-items: flex-end;
+    }
+
+    .master-reg-form {
         width: 100%;
         max-width: 100%;
         margin-bottom: 30px;
     }
-    .table-col{
+
+    .table-col {
         width: 100%;
     }
+
     .table-responsive-sm {
         position: relative;
         overflow-x: auto;
     }
-    .gmaccount-reg-content{
+
+    .gmaccount-reg-content {
         padding: 48px 15px;
     }
-    .master-registration-form{
+
+    .master-registration-form {
         padding: 40px 15px 48px 15px;
     }
 }
+
 @media screen and (max-width: 920px) and (min-width:769px) {
-    
-    .master-reg-form{
+    .job-form-control {
+        width: 100%;
+    }
+
+    .job-search-field {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .job-form-fields {
+        align-items: flex-end;
+    }
+
+    .master-reg-form {
         width: 100%;
         max-width: 100%;
         margin-bottom: 30px;
     }
-    .table-col{
+
+    .table-col {
         width: 100%;
     }
+
     .table-responsive-sm {
         position: relative;
         overflow-x: auto;
     }
-    .gmaccount-reg-content{
+
+    .gmaccount-reg-content {
         padding: 48px 15px;
     }
+
     .table-responsive-sm {
         position: relative;
         overflow-x: scroll;
@@ -1148,7 +1186,7 @@ tbody tr td {
     }
 
     .form-control {
-        width: 180px !important;
+        width: 180px;
     }
 
     .custom-table-list.dataTable {
@@ -1178,10 +1216,39 @@ tbody tr td {
 }
 
 @media screen and (max-width: 768px) {
-    .master-registration-right-contet{
+    .construction-btn {
+        margin-left: 5px;
+        margin-bottom: 3px;
+    }
+
+    .field-label {
+        margin-right: 0px;
+    }
+
+    .job-form-control {
+        width: 100%;
+    }
+
+    .job-search-field {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .job-form-fields {
+        align-items: flex-end;
+    }
+
+    .job-search-field {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .master-registration-right-contet {
         margin-top: 20px;
     }
-    
+
     .table-col {
         width: 100%;
     }
@@ -1190,8 +1257,8 @@ tbody tr td {
         width: 100%;
         max-width: 100%;
         margin-bottom: 30px;
-      
-       
+
+
     }
 
     .gmaccount-reg-content {
@@ -1229,7 +1296,7 @@ tbody tr td {
     }
 
     .form-control {
-        width: 100% !important;
+        width: 100%;
     }
 
     .form-fields {
@@ -1266,8 +1333,8 @@ tbody tr td {
         min-height: 100vh;
     }
 
-    .date{
-       width: 100%;
+    .date {
+        width: 100%;
     }
 
     .account-input-content {
@@ -1276,35 +1343,44 @@ tbody tr td {
         flex-direction: column;
         align-items: flex-start;
     }
-     .account-reg-input{
+
+    .account-reg-input {
         width: 100%;
-     }
-     .account-reg-input input{
+    }
+
+    .account-reg-input input {
         height: 48px;
-     }
+    }
+
     .account-reg-content {
         padding: 20px;
     }
-    .switch-div .on-off-buttons{
+
+    .switch-div .on-off-buttons {
         display: block;
     }
+
     /* .registration-left-content{
         padding: 0px 15px;
     } */
-    .register-btn, .clear-btn{
+    .register-btn,
+    .clear-btn {
         width: 71px;
         height: 42px;
     }
+
     .master-form-col {
-       padding: 0px;
+        padding: 0px;
     }
-    .master-reg-input{
+
+    .master-reg-input {
         width: 100%;
     }
+
     .master-registration-left-content {
         width: 100%;
     }
-  
+
 }
 
 
@@ -1336,7 +1412,7 @@ tbody tr td {
     .account-reg-input input {
         height: 48px;
         width: 100%;
-   
+
     }
 
     .account-reg-buttons {

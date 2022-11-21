@@ -37,7 +37,7 @@
                                     <tr>
                                         <th>#</th>
                                         <th>発注先</th>
-                                        <th>Action</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
