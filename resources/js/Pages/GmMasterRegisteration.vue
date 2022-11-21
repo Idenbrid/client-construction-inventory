@@ -158,7 +158,7 @@
                                         <div class="btn-grouped">
                                             <a class="btn" @click="deleteItem(item.id)"><i
                                                     class="fa-solid fa-trash-can delete-icon"></i> </a>
-                                            <a class="btn " @click="editItem(item)"><i class="fas fa-edit"></i></a>
+                                            <a class="btn " @click="editItem(item)"><i class="fas fa-edit edit-icon"></i></a>
                                         </div>
                                     </td>
                                 </tr>
