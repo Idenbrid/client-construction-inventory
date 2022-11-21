@@ -763,7 +763,7 @@ table.dataTable thead>tr>td.sorting_desc:after {
 /* ACCOUNT REGISTRATION CSS START  */
 
 .account-reg-input {
-    width: 59.38%;
+    width: 60%;
 }
 
 .account-reg-input input {
@@ -784,11 +784,13 @@ table.dataTable thead>tr>td.sorting_desc:after {
     justify-content: center;
     align-items: center;
 }
-
+.account-reg-lablel{
+    width: 40%;
+}
 .account-input-content {
     gap: 30px;
     margin-bottom: 13px;
-    justify-content: flex-end;
+    justify-content: flex-start;
     display: flex;
     align-items: center;
 }
@@ -1008,8 +1010,10 @@ tbody tr td {
 }
 
 .master-reg-form {
-    width: 40%;
+    width: 50%;
+    max-width: 426px;
     margin: auto;
+    padding: 0px 15px;
 
 }
 
@@ -1079,16 +1083,48 @@ tbody tr td {
     margin-top: 20px;
 }
 
-@media only screen and (max-width: 1024px){
-    .table-responsive-sm {
-        position: relative;
-        overflow-x: scroll;
-    }
-}
+
 .account-input-radio{
     width: 59.38%;
 }
+@media screen and (max-width: 1050px) and (min-width:920px) {
+   
+    .master-reg-form{
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+    .table-col{
+        width: 100%;
+    }
+    .table-responsive-sm {
+        position: relative;
+        overflow-x: auto;
+    }
+    .gmaccount-reg-content{
+        padding: 48px 15px;
+    }
+    .master-registration-form{
+        padding: 40px 15px 48px 15px;
+    }
+}
 @media screen and (max-width: 920px) and (min-width:769px) {
+    
+    .master-reg-form{
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+    .table-col{
+        width: 100%;
+    }
+    .table-responsive-sm {
+        position: relative;
+        overflow-x: auto;
+    }
+    .gmaccount-reg-content{
+        padding: 48px 15px;
+    }
     .table-responsive-sm {
         position: relative;
         overflow-x: scroll;
@@ -1152,7 +1188,9 @@ tbody tr td {
 
     .master-reg-form {
         width: 100%;
-        margin-bottom: 45px;
+        max-width: 100%;
+        margin-bottom: 30px;
+      
        
     }
 

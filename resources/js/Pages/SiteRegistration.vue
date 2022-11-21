@@ -47,7 +47,7 @@
                                                 <th>#</th>
                                                 <th>クリア</th>
                                                 <th>クリア</th>
-                                                <th>Action</th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
