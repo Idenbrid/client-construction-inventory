@@ -27,7 +27,7 @@
                                     </div>
                                     <div class="clear-btn">
                                         <button class="clear-button">
-クリア</button>
+                                            クリア</button>
                                     </div>
                                 </div>
                             </div>
@@ -55,32 +55,6 @@
                                                 <td>1</td>
                                                 <td>12345678901234567890</td>
                                             </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>12345678901234567890</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>12345678901234567890</td>
-                                            </tr>
-                                            
-                                            <tr>
-                                                <td>1</td>
-                                                <td>12345678901234567890</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>12345678901234567890</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>12345678901234567890</td>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>12345678901234567890</td>
-                                            </tr>
-
                                         </tbody>
                                     </table>
                                 </div>
@@ -100,6 +74,11 @@
 </script>
 
 <style>
+    .advance-master-registration-input-content {
+        margin-bottom: 13px;
+        display: flex;
+    }
+
     .advance-master-registration-input-content span {
         margin-right: 30px;
         color: #000000;
@@ -115,16 +94,23 @@
         height: 48px;
         border: 1px solid #0000001F;
         border-radius: 4px;
+        width: 100%;
     }
 
     .advance-master-registration-form {
-        padding: 12px 0px 12px 0px;
+        padding: 12px 0px 12px 80px;
         background: #ffffff;
     }
 
     .advance-master-registration-content {
         padding: 24px;
         background-image: url(assets/images/bg-img.png);
+    }
+
+    .master-registration-right-contet {
+        height: 600px;
+        overflow-y: scroll;
+
     }
 
     thead tr th {
@@ -160,7 +146,8 @@
         margin-top: 13px;
         display: flex;
         gap: 10px;
-        /* margin-left: 246px; */
+        display: flex;
+        justify-content: end;
 
     }
 
