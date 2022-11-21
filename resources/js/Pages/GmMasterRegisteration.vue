@@ -141,11 +141,11 @@
                         <div class="table-col">
                             <table class="registration-table">
                                 <tr>
-                                    <th>Sr.</th>
                                     <th>分類</th>
                                     <th>メーカー</th>
                                     <th>品名</th>
                                     <th>型番</th>
+                                   
                                     <th></th>
                                 </tr>
                                 <tr v-for="(item, index) in list" :key="index">
