@@ -664,7 +664,10 @@ table.dataTable thead>tr>td.sorting_desc:after {
     border-radius: 2px;
     margin-right: 4px;
 }
-
+.taking-btn:hover{
+    color: #fff;
+    text-decoration: none;
+}
 .taking-btn {
     width: 80px;
     height: 30px;
