@@ -24,11 +24,11 @@
                                 </svg>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end setting-toggle-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#!">アカウント登録</a>
-                                <a class="dropdown-item" href="#!">発生資材マスタ登録</a>
-                                <a class="dropdown-item" href="#!">資材置き場マスタ登録</a>
-                                <a class="dropdown-item" href="#!">発注先マスタ登録</a>
-                                <a class="dropdown-item" href="#!">JOB番号・現場名登録</a>
+                                <router-link class="dropdown-item" to="/account-registration">アカウント登録</router-link>
+                                <router-link class="dropdown-item" to="/generated-material-master-registration">発生資材マスタ登録</router-link>
+                                <router-link class="dropdown-item" to="/master-registration">資材置き場マスタ登録</router-link>
+                                <router-link class="dropdown-item" to="/supplier-regisration">発注先マスタ登録</router-link>
+                                <router-link class="dropdown-item" to="/site-registration">JOB番号・現場名登録</router-link>
                             </div>
                         </li>
                     </ul>

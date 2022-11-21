@@ -4,7 +4,7 @@
             <div class="main-content main-content-bg">
 
                 <div class="master-registration-title">
-                    <h5 class="text-white">資材置き場マスタ登録</h5>
+                    <h5 class="content-h1">資材置き場マスタ登録</h5>
                 </div>
                 <div class="master-registration-form">
 

@@ -4,7 +4,7 @@
             <div class="main-content main-content-bg">
         
                 <div class="advance-master-registration-title">
-                    <h5 class="text-white">JOB番号・現場名登録</h5>
+                    <h5 class="content-h1">JOB番号・現場名登録</h5>
                 </div>
                 <div class="master-registration-form">
             

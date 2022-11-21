@@ -789,6 +789,8 @@ table.dataTable thead>tr>td.sorting_desc:after {
     gap: 30px;
     margin-bottom: 13px;
     justify-content: flex-end;
+    display: flex;
+    align-items: center;
 }
 
 .account-reg-buttons {
@@ -905,10 +907,7 @@ tbody tr td {
     opacity: 1;
 }
 
-tbody tr td:nth-child(2) {
-    width: 430px;
-    text-align: center;
-}
+
 
 /* BUTTONS  */
 .register-buttons {
@@ -1112,7 +1111,6 @@ tbody tr td:nth-child(2) {
 @media (min-width: 768px) {
 
 
-
     #sidebar-wrapper {
         margin-left: 0;
         border-right: 4px solid;
@@ -1132,6 +1130,10 @@ tbody tr td:nth-child(2) {
 }
 
 @media screen and (max-width: 768px) {
+    .master-registration-right-contet{
+        margin-top: 20px;
+    }
+    
     .table-col {
         width: 100%;
     }
@@ -1210,21 +1212,37 @@ tbody tr td:nth-child(2) {
 
     .main-content {
         height: 100%;
+        min-height: 100vh;
     }
 
-    /* registrartion  */
+    .date{
+       width: 100%;
+    }
 
     .account-input-content {
         gap: 0px;
         margin-bottom: 13px;
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
     }
-
+     .account-reg-input{
+        width: 100%;
+     }
+     .account-reg-input input{
+        height: 48px;
+     }
     .account-reg-content {
         padding: 20px;
     }
     .switch-div .on-off-buttons{
         display: block;
+    }
+    .registration-left-content{
+        padding: 0px 37px;
+    }
+    .register-btn, .clear-btn{
+        width: 71px;
+        height: 42px;
     }
 }
 

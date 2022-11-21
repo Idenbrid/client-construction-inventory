@@ -8,7 +8,7 @@
                     <div class="master-reg-row">
                         <div class="master-reg-form">
                             <div class="registration-left-content">
-                                <div class="d-flex align-items-center account-input-content">
+                                <div class="account-input-content">
                                     <div class="account-reg-lablel">
                                         <label for="">アカウント名</label>
                                     </div>
@@ -21,7 +21,7 @@
                                         </small>
                                     </div>
                                 </div>
-                                <div class="d-flex align-items-center  account-input-content">
+                                <div class="account-input-content">
                                     <div class="account-reg-lablel"> <label for="">アカウントID</label></div>
                                     <div class="account-reg-input">
                                         <input type="text" name="login_id" v-model="user.login_id" placeholder="テキスト">
@@ -32,7 +32,7 @@
                                         </small>
                                     </div>
                                 </div>
-                                <div class="d-flex align-items-center account-input-content">
+                                <div class="account-input-content">
                                     <div class="account-reg-lablel">
                                         <label for="">Password</label>
                                     </div>
@@ -46,7 +46,7 @@
                                         </small>
                                     </div>
                                 </div>
-                                <div class="d-flex align-items-center account-input-content">
+                                <div class="account-input-content">
                                     <div class="account-reg-lablel"> <label for="">タイプ</label></div>
                                     <ul class="switch-div">
                                         <li class="switch-btns-registration">
@@ -77,7 +77,7 @@
                                     <th>#</th>
                                     <th>アカウント名</th>
                                     <th>アカウントID</th>
-                                    <th>action</th>
+                                    <th></th>
                                 </tr>
                                 <tr v-for="(user, index) in list" :key="index">
                                     <td>{{index+1}}</td>
@@ -85,9 +85,9 @@
                                     <td>{{user.login_id}}</td>
                                     <td>
                                         <div class="btn-grouped">
-                                        <a @click="deleteUser(user.id)"><i
+                                        <a class="btn" @click="deleteUser(user.id)"><i
                                                 class="fa-solid fa-trash-can delete-icon"></i> </a>
-                                        <a @click="editUser(user)"><i
+                                        <a class="btn" @click="editUser(user)"><i
                                                 class="fa-solid fa-pen-to-square edit-icon"></i></a>
                                             </div>
                                     </td>

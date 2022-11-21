@@ -3,7 +3,7 @@
     <div class="container-fluid p-0">
         <div class="main-content main-content-bg">
             <h1 class="content-h1">工事履歴</h1>
-            <div class="table-card table-responsive-sm">
+            <div class="table-card">
                 <div class="container job-top-search">
                 <div class="row">
                     <div class="col-md-6 mx-auto">
@@ -15,6 +15,7 @@
                 </div>
                 </div>
             </div>
+            <div class="table-responsive-sm">
                 <table id="waiting_list_table" class="table table-striped custom-table-list">
                     <thead>
                         <tr>
@@ -62,6 +63,7 @@
 
                     </tbody>
                 </table>
+            </div>
             </div>
 
         </div>
