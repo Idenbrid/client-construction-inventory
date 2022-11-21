@@ -8,8 +8,8 @@
                 </div>
                 <div class="master-registration-form">
 
-                    <div class="row master-reg-row">
-                        <div class="col-sm-12 col-md-12 col-lg-6 master-form-col">
+                    <div class="master-reg-row">
+                        <div class="col-sm-12 col-md-12 col-lg-6 master-form-col p-0">
                             <div class="master-registration-left-content">
                                 <div class="master-registration-input-content">
                                     <span>資材置き場名称</span>
@@ -30,7 +30,7 @@
                             </div>
                             
                         </div>
-                        <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="col-sm-12 col-md-12 col-lg-6 p-0">
                             <div class="master-registration-right-contet">
                                 <table class="registration-table">
                                     <thead>
@@ -185,111 +185,3 @@
     }
 </script>
 
-<style>
-.master-registration-left-content{
-    display: inline-block;
-}
-    .master-registration-input-content span {
-        margin-right: 30px;
-        color: #000000;
-        font-size: 16px;
-        letter-spacing: 0.15px;
-    }
-
-    .master-reg-input {
-        padding: 6.5px 16.5px;
-        height: 48px;
-        border: 1px solid #0000001F;
-        border-radius: 4px;
-        width: 219px;
-    }
-
-    .master-registration-form {
-        background-color: #fff;
-        border-radius: 4px;
-        box-shadow: 0px 3px 6px var(--black);
-        padding: 40px 0px 48px 48px;
-    }
-
-    .master-registration-content {
-        padding: 24px;
-        background-image: url(assets/images/bg-img.png);
-    }
-
-    thead tr th {
-        width: 130px;
-        text-align: center;
-        background: black;
-        color: #ffffff;
-        font-size: 12px;
-        padding: 8px 0px;
-    }
-
-    tbody tr {
-        margin: 12px auto !important;
-    }
-
-    tbody tr td {
-        text-align: center;
-        /* text-align: left; */
-        font-size: 12px;
-        letter-spacing: 0px;
-        color: #000000;
-        opacity: 1;
-    }
-
-    tbody tr td:nth-child(2) {
-        width: 430px;
-        text-align: center;
-    }
-
-    /* BUTTONS  */
-    .register-buttons {
-        margin-top: 13px;
-        display: flex;
-        gap: 10px;
-        justify-content: flex-end;
-
-    }
-
-    .reg-button {
-        border: none;
-        border-radius: 5px;
-        padding: 0px;
-        width: 56px;
-        height: 30px;
-        font-size: 12px;
-        font-family: NotoSansJP-Medium;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        background: #BEA000;
-
-    }
-
-    .clear-button {
-        border: none;
-        border-radius: 5px;
-        padding: 0px;
-        width: 56px;
-        height: 30px;
-        font-size: 12px;
-        font-family: NotoSansJP-Medium;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        background: #000000;
-        color: #ffffff;
-    }
-
-    @media only screen and (max-width:768px) {
-        .master-reg-row {
-            flex-direction: column;
-        }
-        .master-registration-form{
-            padding: 40px 8px 48px 8px;
-        }
-    }
-</style>

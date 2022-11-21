@@ -3,7 +3,7 @@
     <div class="container-fluid p-0">
         <div class="main-content main-content-bg">
             <h1 class="content-h1">アカウント登録</h1>
-            <div class="setting-content-box">
+            <div class="gmaccount-reg-content">
                 <div class="container-fluid p-0">
                     <div class="master-reg-row">
                         <div class="master-reg-form">
@@ -226,104 +226,3 @@
         },
     }
 </script>
-<style>
-    /* ****************** ACCOUNTS REGISTRATION CSS STRAT ************* */
-    .setting-content-box {
-        background-color: #fff;
-        border-radius: 4px;
-        box-shadow: 0px 3px 6px var(--black);
-        padding: 40px 0px 48px 48px;
-    }
-
-    .registration-table {
-        font-family: Arial, Helvetica, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    .registration-table td,
-    .registration-table th {
-        /* border: 1px solid #ddd; */
-        padding: 8px;
-        font-size: 12px;
-        text-align: center;
-    }
-
-    .registration-table td:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-
-    .registration-table td:hover {
-        background-color: #ddd;
-    }
-
-    .registration-table th {
-
-        text-align: left;
-        background-color: black;
-        color: white;
-        height: 32px;
-        font-size: 12px;
-        text-align: center;
-    }
-
-    .delete-icon {
-        color: red;
-        padding: 3px;
-        font-size: 16px;
-    }
-
-    .account-reg-lablel {
-        width: 98px;
-    }
-
-    .edit-icon {
-        color: blue;
-        font-size: 16px;
-        padding: 3px;
-    }
-
-    @media only screen and (max-width:1024px) {
-        .account-reg-content {
-            padding: 40px 0px 48px 60px;
-        }
-
-        .account-reg-lablel label {
-            font-size: 13px;
-        }
-    }
-
-    @media only screen and (max-width:768px) {
-        .account-reg-content {
-            padding: 36px 0px 48px 15px;
-        }
-        .setting-content-box{
-        padding:40px 8px 48px 8px;
-    }
-    }
-
-    @media only screen and (max-width:425px) {
-        .account-reg-input {
-            width: 100%;
-        }
-
-        .account-reg-content {
-            padding: 15px;
-        }
-    }
-
-    @media only screen and (max-width:375px) {}
-
-    @media only screen and (max-width:320px) {
-        .account-reg-input {
-            width: 100%;
-        }
-
-        .account-reg-content {
-            padding: 20px 15px;
-        }
-
-    }
-
-    /* ****************** ACCOUNTS REGISTRATION CSS END ************* */
-</style>
