@@ -4,7 +4,7 @@
         <div class="main-content main-content-bg">
             <h1 class="content-h1">4. 持ち出し中一覧</h1>
             <div class="table-card table-responsive-sm">
-                <table id="waiting_list_table" class="table custom-table-list display">
+                <table id="waiting_list_table" class="table custom-table-list">
                    
                     <thead>
                         <tr>
