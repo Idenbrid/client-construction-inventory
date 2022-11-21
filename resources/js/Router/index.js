@@ -17,7 +17,6 @@ const Registration = () => import('../Pages/Registration.vue');
 const WarehouseRegistration = () => import('../Pages/WarehouseRegistration.vue');
 const SupplierRegisration = () => import('../Pages/SupplierRegisration.vue');
 const SiteRegistration = () => import('../Pages/SiteRegistration.vue');
-const Test = () => import('../Pages/Test.vue');
 const GmMasterRegistration = () => import('../Pages/GmMasterRegisteration.vue');
 const Login = () => import('../Components/Login.vue');
 
@@ -98,15 +97,7 @@ export const routes = [
             title: "WarehouseRegistration"
         }
     },
-    {
-        name: 'Test',
-        path: '/test',
-        component:Test,
-        meta: {
-            auth: true,
-            title: "Test"
-        }
-    },
+ 
 
     {
         name: 'GmMasterRegistration',

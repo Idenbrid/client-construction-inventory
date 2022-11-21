@@ -194,10 +194,4 @@
         },
     }
 </script>
-<style>
-.f-12-regular th , .f-12-regular td{
-font-size: 12px;
-font-family: NotoSansJP-Regular;
-font-weight: 400;
-}
-</style>
+
