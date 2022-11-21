@@ -3,7 +3,7 @@
         <div class="main-content main-content-bg">
         
                 <div class="advance-master-registration-title">
-                    <h5 class="text-white">発注先マスタ登録</h5>
+                    <h5 class="content-h1">発注先マスタ登録</h5>
                 </div>
                 <div class="master-registration-form">
           
