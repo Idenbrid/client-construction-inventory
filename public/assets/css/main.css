@@ -1076,6 +1076,12 @@ tbody tr td {
     margin-top: 20px;
 }
 
+@media only screen and (max-width: 1024px){
+    .table-responsive-sm {
+        position: relative;
+        overflow-x: scroll;
+    }
+}
 @media screen and (max-width: 920px) and (min-width:769px) {
     .table-responsive-sm {
         position: relative;
@@ -1254,6 +1260,7 @@ tbody tr td {
     .master-registration-left-content {
         width: 100%;
     }
+  
 }
 
 

@@ -29,7 +29,7 @@
                             <td>123456789…</td>
                             <td>123456789…</td>
                             <td>123456789…</td>
-                            <td>Rテキストテ…
+                            <td class="d-flex" style="width:max-content">Rテキストテ…
                                 <div class="btn-rev-del">
                                     <a type="button" class="delivery-btn" value="登録">使い終り</a>
                                     <a type="button" class="revision-btn" value="登録" data-toggle="modal"
@@ -48,7 +48,7 @@
                             <td>123456789…</td>
                             <td>123456789…</td>
                             <td>123456789…qq</td>
-                            <td>Rテキストテ…
+                            <td class="d-flex" style="width:max-content">Rテキストテ…
                                 <div class="btn-rev-del">
                                     <a type="button" class="delivery-btn" value="登録" >使い終り</a>
                                     <a type="button" class="revision-btn" value="登録" data-toggle="modal"
