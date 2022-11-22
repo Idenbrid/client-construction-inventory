@@ -59,6 +59,9 @@
 }
 
 /* ***************** LOGIN CSS END ********************** */
+.main-site{
+    overflow-y: hidden;
+}
 .main-login {
     width: 100%;
     margin: 0 auto;
@@ -871,6 +874,7 @@ table.dataTable thead>tr>td.sorting_desc:after {
     border-radius: 4px;
     box-shadow: 0px 3px 6px var(--black);
     padding: 40px 0px 48px 48px;
+   
 }
 
 .master-registration-content {
@@ -1017,6 +1021,8 @@ tbody tr td {
     width: 50%;
     overflow-x: auto;
     position: relative;
+    height: 75vh;
+    overflow-y: auto;
 }
 
 .gmaccount-reg-content {
@@ -1070,9 +1076,7 @@ tbody tr td {
 /* .registration-table tr:hover {
     background-color: #ddd;
 } */
-.registration-table td:nth-child(odd) {
-    background-color:  #F5F5F5;
-}
+
 
 .registration-table th {
     
@@ -1182,6 +1186,9 @@ tbody tr td {
     .master-registration-form {
         padding: 40px 15px 48px 15px;
     }
+    .table-col{
+        height: 48vh;
+    }
 }
 
 @media screen and (max-width: 920px) and (min-width:769px) {
@@ -1247,6 +1254,9 @@ tbody tr td {
     .custom-table-list.dataTable {
         width: max-content;
     }
+    .table-col{
+        height: 34vh;
+    }
 }
 
 @media (min-width: 768px) {
@@ -1271,6 +1281,12 @@ tbody tr td {
 }
 
 @media screen and (max-width: 768px) {
+    .main-site {
+        overflow-y: inherit;
+    }
+    .table-col{
+        height: 48vh;
+    }
     .order-input-field{
         width: 100%;
     }

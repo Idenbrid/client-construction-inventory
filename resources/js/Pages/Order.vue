@@ -216,7 +216,7 @@
                                     <li class="form-fields">
                                         <div class="register-label" bis_skin_checked="1">数量（数字入力）</div>
                                         <div class="order-input-field">
-                                        <input type="text" id="fname" v-model="order.amount" name="fname"
+                                        <input type="number" id="fname" v-model="order.amount" name="fname"
                                             placeholder="テキスト" class="form-control input-border">
                                         <small>
                                             <span v-if="errors.amount != null" class="text-danger float-left">

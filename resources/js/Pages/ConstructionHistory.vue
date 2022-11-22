@@ -10,7 +10,7 @@
                     <div class="job-form-fields">
                         <div class="job-search-field">
                         <div class="field-label">JOB番号入力</div>
-                        <input type="text" id="fname" name="fname" placeholder="テキスト" class="job-form-control input-border">
+                        <input type="number" id="fname" name="fname" placeholder="テキスト" class="job-form-control input-border">
                     </div>
                             <button type="button" class="construction-btn" >検索</button>
                     </div>

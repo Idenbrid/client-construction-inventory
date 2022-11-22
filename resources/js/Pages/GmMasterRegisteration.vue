@@ -58,7 +58,7 @@
                                 </div>
                                 <div class="account-reg-input">
 
-                                    <input v-model="item.item_number" type="text" name="型番" id="型番" placeholder="テキスト">
+                                    <input v-model="item.item_number" type="number" name="型番" id="型番" placeholder="テキスト">
 
                                     <small>
                                         <span v-if="errors.item_number != null" class="text-danger float-left">

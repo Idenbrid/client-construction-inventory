@@ -24,7 +24,7 @@
                                 <div class="account-input-content">
                                     <div class="account-reg-lablel"> <label for="">アカウントID</label></div>
                                     <div class="account-reg-input">
-                                        <input type="text" name="login_id" v-model="user.login_id" placeholder="テキスト">
+                                        <input type="number" name="login_id" v-model="user.login_id" placeholder="テキスト">
                                         <small>
                                             <span v-if="errors.login_id != null" class="text-danger float-left">
                                                 {{errors.login_id[0]}}
@@ -226,8 +226,3 @@
         },
     }
 </script>
-<style>
-.table-col td:nth-child(even){
-    background:#F5F5F5;
-}
-</style>
