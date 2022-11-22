@@ -3,12 +3,12 @@
     <div class="container-fluid p-0">
         <div class="main-content main-content-bg">
             <h1 class="content-h1">アカウント登録</h1>
-            <div class="account-reg-content">
-                <div class="conrainer">
-                    <div class="row">
-                        <div class="col-md-5">
+            <div class="gmaccount-reg-content">
+                <div class="container-fluid p-0">
+                    <div class="master-reg-row">
+                        <div class="master-reg-form">
                             <div class="registration-left-content">
-                                <div class="d-flex align-items-center account-input-content">
+                                <div class="account-input-content">
                                     <div class="account-reg-lablel">
                                         <label for="">アカウント名</label>
                                     </div>
@@ -21,7 +21,7 @@
                                         </small>
                                     </div>
                                 </div>
-                                <div class="d-flex align-items-center  account-input-content">
+                                <div class="account-input-content">
                                     <div class="account-reg-lablel"> <label for="">アカウントID</label></div>
                                     <div class="account-reg-input">
                                         <input type="text" name="login_id" v-model="user.login_id" placeholder="テキスト">
@@ -32,9 +32,9 @@
                                         </small>
                                     </div>
                                 </div>
-                                <div class="d-flex align-items-center account-input-content">
+                                <div class="account-input-content">
                                     <div class="account-reg-lablel">
-                                        <label for="">Password</label>
+                                        <label for="">パスワード</label>
                                     </div>
                                     <div class="account-reg-input">
                                         <input type="password" name="password" v-model="user.login_password"
@@ -46,7 +46,7 @@
                                         </small>
                                     </div>
                                 </div>
-                                <div class="d-flex align-items-center account-input-content">
+                                <div class="account-input-content">
                                     <div class="account-reg-lablel"> <label for="">タイプ</label></div>
                                     <ul class="switch-div">
                                         <li class="switch-btns-registration">
@@ -64,30 +64,32 @@
                                     </ul>
                                 </div>
                                 <div class="account-reg-buttons">
-                                    <div v-if="user.id == 0"><a class="btn btn-success" @click="handleRegister()">登録</a>
+                                    <div v-if="user.id == 0"><a class="register-btn" @click="handleRegister()">登録</a>
                                     </div>
-                                    <div v-else><a class="btn btn-success" @click="handleUpdate()">update</a></div>
-                                    <div><a class="btn btn-danger" @click="clear()">Clear</a></div>
+                                    <div v-else><a class="update-btn" @click="handleUpdate()">アップデート</a></div>
+                                    <div><a class="clear-btn" @click="clear()">削除</a></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-7 ">
+                        <div class="table-col">
                             <table class="registration-table">
-                                <tr>
+                                <tr class="f-12-regular">
                                     <th>#</th>
                                     <th>アカウント名</th>
                                     <th>アカウントID</th>
-                                    <th>action</th>
+                                    <th>権限</th>
                                 </tr>
-                                <tr v-for="(user, index) in list" :key="index">
+                                <tr  class="f-12-regular td-color" v-for="(user, index) in list" :key="index">
                                     <td>{{index+1}}</td>
                                     <td>{{user.user_name}}</td>
                                     <td>{{user.login_id}}</td>
                                     <td>
-                                        <a @click="deleteUser(user.id)"><i
+                                        <div class="btn-grouped">
+                                        <a class="btn" @click="deleteUser(user.id)"><i
                                                 class="fa-solid fa-trash-can delete-icon"></i> </a>
-                                        <a @click="editUser(user)"><i
+                                        <a class="btn" @click="editUser(user)"><i
                                                 class="fa-solid fa-pen-to-square edit-icon"></i></a>
+                                            </div>
                                     </td>
                                 </tr>
                             </table>
@@ -225,92 +227,7 @@
     }
 </script>
 <style>
-    /* ****************** ACCOUNTS REGISTRATION CSS STRAT ************* */
-    .registration-table {
-        font-family: Arial, Helvetica, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    .registration-table td,
-    .registration-table th {
-        /* border: 1px solid #ddd; */
-        padding: 8px;
-        font-size: 12px;
-        text-align: center;
-    }
-
-    .registration-table tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-
-    .registration-table tr:hover {
-        background-color: #ddd;
-    }
-
-    .registration-table th {
-
-        text-align: left;
-        background-color: black;
-        color: white;
-        height: 32px;
-        font-size: 12px;
-        text-align: center;
-    }
-
-    .delete-icon {
-        color: red;
-        padding: 3px;
-        font-size: 16px;
-    }
-
-    .account-reg-lablel {
-        width: 96px;
-    }
-
-    .edit-icon {
-        color: blue;
-        font-size: 16px;
-        padding: 3px;
-    }
-
-    @media only screen and (max-width:1024px) {
-        .account-reg-content {
-            padding: 40px 0px 48px 60px;
-        }
-
-        .account-reg-lablel label {
-            font-size: 13px;
-        }
-    }
-
-    @media only screen and (max-width:768px) {
-        .account-reg-content {
-            padding: 36px 0px 48px 15px;
-        }
-    }
-
-    @media only screen and (max-width:425px) {
-        .account-reg-input {
-            width: 100%;
-        }
-
-        .account-reg-content {
-            padding: 15px;
-        }
-    }
-
-    @media only screen and (max-width:375px) {}
-
-    @media only screen and (max-width:320px) {
-        .account-reg-input {
-            width: 100%;
-        }
-        .account-reg-content {
-            padding: 20px 15px;
-        }
-
-    }
-
-    /* ****************** ACCOUNTS REGISTRATION CSS END ************* */
+.table-col td:nth-child(even){
+    background:#F5F5F5;
+}
 </style>

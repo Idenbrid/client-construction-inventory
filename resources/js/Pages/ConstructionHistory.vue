@@ -3,18 +3,21 @@
     <div class="container-fluid p-0">
         <div class="main-content main-content-bg">
             <h1 class="content-h1">工事履歴</h1>
-            <div class="table-card table-responsive-sm">
+            <div class="table-card">
                 <div class="container job-top-search">
                 <div class="row">
-                    <div class="col-md-6 mx-auto">
-                    <div class="form-fields">
-                        <div class="field-label" bis_skin_checked="1">JOB番号入力</div><input type="text" id="fname"
-                            name="fname" placeholder="テキスト" class="form-control input-border">
-                            <button type="button" class="construction-btn" data-dismiss="modal">検索</button>
+                    <div class="col-sm-12 col-md-12 col-lg-8 mx-auto">
+                    <div class="job-form-fields">
+                        <div class="job-search-field">
+                        <div class="field-label">JOB番号入力</div>
+                        <input type="text" id="fname" name="fname" placeholder="テキスト" class="job-form-control input-border">
+                    </div>
+                            <button type="button" class="construction-btn" >検索</button>
                     </div>
                 </div>
                 </div>
             </div>
+            <div class="table-responsive-sm">
                 <table id="waiting_list_table" class="table table-striped custom-table-list">
                     <thead>
                         <tr>
@@ -63,6 +66,7 @@
                     </tbody>
                 </table>
             </div>
+            </div>
 
         </div>
     </div>
@@ -83,13 +87,3 @@
     }
 </script>
 
-<style>
-.field-label{
-    margin-right: 30px;
-    align-items: center;
-    display: flex;
-}
-.job-top-search{
-    padding: 35px 0px;
-}
-</style>

@@ -4,7 +4,8 @@
         <div class="main-content main-content-bg">
             <h1 class="content-h1">4. 持ち出し中一覧</h1>
             <div class="table-card table-responsive-sm">
-                <table id="waiting_list_table" class="table table-striped custom-table-list">
+                <table id="waiting_list_table" class="table custom-table-list">
+                   
                     <thead>
                         <tr>
                             <th>発注年月日</th>
@@ -29,7 +30,7 @@
                             <td>123456789…</td>
                             <td>123456789…</td>
                             <td>123456789…</td>
-                            <td>Rテキストテ…
+                            <td class="d-flex" style="width:max-content">Rテキストテ…
                                 <div class="btn-rev-del">
                                     <a type="button" class="delivery-btn" value="登録">使い終り</a>
                                     <a type="button" class="revision-btn" value="登録" data-toggle="modal"
@@ -48,7 +49,7 @@
                             <td>123456789…</td>
                             <td>123456789…</td>
                             <td>123456789…qq</td>
-                            <td>Rテキストテ…
+                            <td class="d-flex" style="width:max-content">Rテキストテ…
                                 <div class="btn-rev-del">
                                     <a type="button" class="delivery-btn" value="登録" >使い終り</a>
                                     <a type="button" class="revision-btn" value="登録" data-toggle="modal"

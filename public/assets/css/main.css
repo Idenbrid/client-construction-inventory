@@ -17,37 +17,6 @@
     --dark-ood: #836343;
 }
 
-/* 
-@font-face {
-    font-family: NotoSansJP-Black;
-    src: url(../css/fonts/NotoSansJP-Black.ttf);
-}
-
-@font-face {
-    font-family: NotoSansJP-Bold;
-    src: url(../css/fonts/NotoSansJP-Bold.ttf);
-}
-
-@font-face {
-    font-family: NotoSansJP-Light;
-    src: url(../css/fonts/NotoSansJP-Light.ttf);
-}
-
-@font-face {
-    font-family: NotoSansJP-Regular;
-    src: url(../css/fonts/NotoSansJP-Regular.ttf);
-}
-
-@font-face {
-    font-family: NotoSansJP-Medium;
-    src: url(../css/fonts/NotoSansJP-Medium.ttf);
-}
-
-@font-face {
-    font-family: NotoSansJP-Thin;
-    src: url(../css/fonts/NotoSansJP-Thin.ttf);
-} 
-*/
 
 @font-face {
     font-family: NotoSansJP-Black;
@@ -202,11 +171,6 @@
     margin-top: 46px;
 
 }
-
-
-
-
-
 .login-logo {
     width: 196px;
     margin: auto;
@@ -255,7 +219,12 @@
     color: var(--black);
     opacity: 0.3;
 }
-
+.setting-toggle-end a{
+font-size:16px;
+font-weight: 400;
+color: #000000DE;
+font-family: NotoSansJP-Regular;
+}
 .setting-toggle {
     background-color: #ffff;
     width: 76px;
@@ -283,6 +252,10 @@
 .main-content {
     padding: 24px;
     height: 100vh;
+}
+
+.switch-div .on-off-buttons {
+    display: none;
 }
 
 .order-reg-card {
@@ -313,9 +286,15 @@
 body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     margin-left: 0;
 }
-#sidebar-wrapper .router-link-exact-active{
-background-color: #333333;
+
+.mbile-top-nav-setting .setting-toggle-end .router-link-exact-active {
+    color: #BEA000;
 }
+
+#sidebar-wrapper .router-link-exact-active {
+    background-color: #333333;
+}
+
 #wrapper {
     overflow-x: hidden;
 }
@@ -510,9 +489,10 @@ background-color: #333333;
 
 .form-control {
     border: 1px solid #0000001F;
+    background-color: #fff !important;
     border-radius: 4px;
     height: 37px;
-    width: 219px !important;
+    width: 219px;
 }
 
 .btn-submit {
@@ -552,6 +532,7 @@ background-color: #333333;
 
 .model-no-list {
     display: flex;
+    flex-wrap: wrap;
 
 }
 
@@ -562,9 +543,10 @@ background-color: #333333;
 
 .nav-items .nav-link {
     color: #fff;
-    font-family: NotoSansJP-Light;
+    font-family: NotoSansJP-Regular;
     font-size: 12px;
     padding: 0.5rem;
+    font-weight: 400;
 }
 
 .nav-items .nav-link:after {
@@ -618,8 +600,10 @@ table.dataTable thead>tr>td.sorting_asc:before,
 table.dataTable thead>tr>td.sorting_desc:after {
     color: var(--secondary);
 }
-.table-responsive-sm{
+
+.table-responsive-sm {
     position: relative;
+    overflow: auto;
 }
 
 .custom-table-list td:nth-child(even) {
@@ -633,16 +617,19 @@ table.dataTable thead>tr>td.sorting_desc:after {
 .custom-table-list tbody tr:nth-of-type(odd) {
     background-color: inherit;
 }
-.custom-table-list th{
+
+.custom-table-list th {
     font-size: 12px;
 }
+
 .btn-rev-del {
     display: inline-flex;
     margin-left: 10px;
     gap: 5px;
 }
 
-.custom-table-list.dataTable tbody th, .custom-table-list.dataTable tbody td{
+.custom-table-list.dataTable tbody th,
+.custom-table-list.dataTable tbody td {
     font-size: 12px;
     padding: 4px 8px;
     border-top: 0px;
@@ -683,7 +670,11 @@ table.dataTable thead>tr>td.sorting_desc:after {
     border-radius: 2px;
     margin-right: 4px;
 }
-.taking-btn{
+.taking-btn:hover{
+    color: #fff;
+    text-decoration: none;
+}
+.taking-btn {
     width: 80px;
     height: 30px;
     display: inline-flex;
@@ -694,7 +685,8 @@ table.dataTable thead>tr>td.sorting_desc:after {
     border-radius: 2px;
     margin-right: 4px;
 }
-.taking-out-btn{
+
+.taking-out-btn {
     width: 56px;
     height: 30px;
     display: inline-flex;
@@ -703,12 +695,14 @@ table.dataTable thead>tr>td.sorting_desc:after {
     background: var(--secondary);
     color: #fff;
     border-radius: 2px;
- 
+
 }
-.taking-out-btn:hover{
+
+.taking-out-btn:hover {
     color: #fff;
     text-decoration: none;
 }
+
 .copy-content-btn {
     width: 67px;
     height: 30px;
@@ -720,6 +714,7 @@ table.dataTable thead>tr>td.sorting_desc:after {
     border-radius: 2px;
     margin-right: 4px;
 }
+
 .carryout-btn {
     width: 68px;
     height: 30px;
@@ -731,13 +726,16 @@ table.dataTable thead>tr>td.sorting_desc:after {
     border-radius: 2px;
     margin-right: 4px;
 }
-.carryout-btn:hover{
+
+.carryout-btn:hover {
     color: #fff;
     text-decoration: none;
 }
-.order_date{
+
+.order_date {
     width: 120px;
 }
+
 .copy-content-btn:hover {
     color: #fff;
     text-decoration: none;
@@ -746,19 +744,46 @@ table.dataTable thead>tr>td.sorting_desc:after {
 /* ACCOUNT REGISTRATION CSS START  */
 
 .account-reg-input {
-    width: 59.38%;
+    width: 60%;
 }
 
 .account-reg-input input {
     height: 37px;
-    width: 219px;
     width: 100%;
-    padding: 6.5px 16.5px;
+    padding: 5px 15px;
+    border: 1px solid #0000001F;
+    border-radius: 4px;
+}
+
+.switch-btns-registration input[type=radio] {
+    display: none;
+
+}
+
+.master-form-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.account-reg-lablel {
+    width: 40%;
+ 
+}
+.account-reg-lablel label{
+    font-size: 16px;
+    font-weight:400;
+    font-family: NotoSansJP-Regular;
+    color: #000000;
+    margin-bottom: 0px;
 }
 
 .account-input-content {
     gap: 30px;
     margin-bottom: 13px;
+    justify-content: flex-start;
+    display: flex;
+    align-items: center;
 }
 
 .account-reg-buttons {
@@ -766,6 +791,7 @@ table.dataTable thead>tr>td.sorting_desc:after {
     justify-content: end;
     gap: 9px;
 }
+
 /* ACCOUNT REGISTRATION CSS END  */
 .complete-btn {
     background-color: #BEA000;
@@ -778,7 +804,8 @@ table.dataTable thead>tr>td.sorting_desc:after {
     border-radius: 2px;
     border: 1px solid #BEA000;
 }
-.construction-btn{
+
+.construction-btn {
     background-color: #BEA000;
     color: #fff;
     display: flex;
@@ -790,6 +817,7 @@ table.dataTable thead>tr>td.sorting_desc:after {
     border: 1px solid #BEA000;
     margin-left: 40px;
 }
+
 .footer-nav-item {
     margin: 12px 0px;
 }
@@ -819,11 +847,382 @@ table.dataTable thead>tr>td.sorting_desc:after {
     text-decoration: none;
 }
 
+.master-registration-left-content {
+    display: inline-block;
+}
+
+.master-registration-input-content span {
+    margin-right: 30px;
+    color: #000000;
+    font-size: 16px;
+    letter-spacing: 0.15px;
+}
+
+.master-reg-input {
+    padding: 6.5px 16.5px;
+    height: 48px;
+    border: 1px solid #0000001F;
+    border-radius: 4px;
+    width: 219px;
+}
+
+.master-registration-form {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 3px 6px var(--black);
+    padding: 40px 0px 48px 48px;
+}
+
+.master-registration-content {
+    padding: 24px;
+    background-image: url(assets/images/bg-img.png);
+}
+
+thead tr th {
+    width: 130px;
+    text-align: center;
+    background: black;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 8px 0px;
+}
+
+tbody tr {
+    margin: 12px auto !important;
+}
+
+tbody tr td {
+    text-align: center;
+    /* text-align: left; */
+    font-size: 12px;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 1;
+}
+
+
+
+/* BUTTONS  */
+.register-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+
+}
+
+.reg-button {
+    border: none;
+    border-radius: 5px;
+    padding: 0px;
+    width: 56px;
+    height: 30px;
+    font-size: 12px;
+    font-family: NotoSansJP-Medium;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: #BEA000;
+
+}
+
+.clear-btn {
+    background-color: #000000;
+    border: 1px solid #000000;
+    color: #fff;
+    width: 56px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.register-btn {
+    background-color: #BEA000;
+    border: 1px solid #BEA000;
+    color: #fff;
+    width: 56px;
+    border-radius: 2px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-family: NotoSansJP-Medium;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.clear-btn:hover,
+.register-btn:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.update-btn:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.update-btn {
+    background-color: #2F9456;
+    border: 1px solid #2F9456;
+    border-radius: 2px;
+    color: #fff;
+    width: 110px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.master-input-content label {
+    margin-bottom: 8px;
+}
+
+.btn-grouped .btn {
+    padding: 0px;
+}
+
+.btn-grouped {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.master-reg-row {
+    display: flex;
+    justify-content: space-between;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.master-reg-form {
+    width: 50%;
+    max-width: 426px;
+    margin: auto;
+    padding: 0px 15px;
+
+}
+
+.table-col {
+    width: 50%;
+    overflow-x: auto;
+    position: relative;
+}
+
+.gmaccount-reg-content {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 3px 6px var(--black);
+    padding: 40px 0px 48px 48px;
+}
+.gm-reg-radio-buttton input[type="radio"]{
+    accent-color:darkgoldenrod;
+
+  }
+.generated-reg-input input {
+    height: 37px;
+    width: 100%;
+    max-width: 100%;
+    padding: 0px 15px;
+    color: #00000099;
+    border: 1px solid #0000001F;
+    border-radius: 4px;
+}
+
+.master-input-content {
+    gap: 30px;
+    display: inline-flex;
+    width: 110px;
+}
+
+.registration-left-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.registration-table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.registration-table td,
+.registration-table th {
+    /* border: 1px solid #ddd; */
+    padding: 8px;
+    font-size: 12px;
+    text-align: center;
+    font-family: NotoSansJP-Regular;
+    font-weight: 400;
+    color: #000000;
+}
+
+/* .registration-table tr:hover {
+    background-color: #ddd;
+} */
+.registration-table td:nth-child(odd) {
+    background-color:  #F5F5F5;
+}
+
+.registration-table th {
+    
+    font-family: NotoSansJP-Regular;
+    text-align: left;
+    background-color: black;
+    color: white;
+    height: 32px;
+    font-size: 12px;
+    text-align: center;
+    font-weight: 400;
+}
+
+.account-reg-buttons {
+    margin-top: 20px;
+}
+
+
+.account-input-radio {
+    width: 59.38%;
+}
+
+.field-label {
+    margin-right: 30px;
+}
+
+.job-search-field {
+    display: flex;
+    align-items: center;
+}
+
+.job-form-fields {
+    display: flex;
+    padding: 15px 0px;
+}
+
+.job-form-control {
+    border: 1px solid #0000001F;
+    background-color: #fff !important;
+    border-radius: 4px;
+    height: 37px;
+    width: 219px;
+    padding: 0px 15px
+}
+
+/* UTILITIES CLASSES  */
+.f-12-regular th , .f-12-regular td{
+    font-size: 12px;
+    font-family: NotoSansJP-Regular;
+    font-weight: 400;
+    }
+.f-16-regular{
+    font-size: 16px;
+    font-family: NotoSansJP-Regular;
+    font-weight: 400;
+    }
+    .delete-icon{
+        color: red;
+    }
+    .edit-icon{
+        color: #2F9456;
+    }
+    .order-input-field{
+        display: flex;
+        flex-direction: column;
+    }
+    .table-col td:nth-child(even){
+        background:#F5F5F5;
+    }
+    .custom-table-list thead th{
+            text-align: center !important   ;
+    } 
+@media screen and (max-width: 1050px) and (min-width:920px) {
+    .job-search-field {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .job-form-control {
+        width: 100%;
+    }
+
+    .job-form-fields {
+        align-items: flex-end;
+    }
+
+    .master-reg-form {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .table-col {
+        width: 100%;
+    }
+
+    .table-responsive-sm {
+        position: relative;
+        overflow-x: auto;
+    }
+
+    .gmaccount-reg-content {
+        padding: 48px 15px;
+    }
+
+    .master-registration-form {
+        padding: 40px 15px 48px 15px;
+    }
+}
+
 @media screen and (max-width: 920px) and (min-width:769px) {
-    .table-responsive-sm{
+    .job-form-control {
+        width: 100%;
+    }
+
+    .job-search-field {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .job-form-fields {
+        align-items: flex-end;
+    }
+
+    .master-reg-form {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .table-col {
+        width: 100%;
+    }
+
+    .table-responsive-sm {
+        position: relative;
+        overflow-x: auto;
+    }
+
+    .gmaccount-reg-content {
+        padding: 48px 15px;
+    }
+
+    .table-responsive-sm {
         position: relative;
         overflow-x: scroll;
     }
+
     .order-reg-card {
         padding: 48px 15px;
     }
@@ -842,8 +1241,9 @@ table.dataTable thead>tr>td.sorting_desc:after {
     }
 
     .form-control {
-        width: 180px !important;
+        width: 180px;
     }
+
     .custom-table-list.dataTable {
         width: max-content;
     }
@@ -871,9 +1271,70 @@ table.dataTable thead>tr>td.sorting_desc:after {
 }
 
 @media screen and (max-width: 768px) {
+    .order-input-field{
+        width: 100%;
+    }
+    .construction-btn {
+        margin-left: 5px;
+        margin-bottom: 3px;
+    }
+
+    .field-label {
+        margin-right: 0px;
+    }
+
+    .job-form-control {
+        width: 100%;
+    }
+
+    .job-search-field {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .job-form-fields {
+        align-items: flex-end;
+    }
+
+    .job-search-field {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .master-registration-right-contet {
+        margin-top: 20px;
+    }
+
+    .table-col {
+        width: 100%;
+    }
+
+    .master-reg-form {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
+
+
+    }
+
+    .gmaccount-reg-content {
+        padding: 40px 15px 48px 15px;
+    }
+
+    .master-reg-row {
+        flex-direction: column;
+    }
+
+    .master-registration-form {
+        padding: 40px 15px 48px 15px;
+    }
+
     .custom-table-list.dataTable {
         width: max-content;
     }
+
     .footer-nav-section {
         display: block;
     }
@@ -884,7 +1345,7 @@ table.dataTable thead>tr>td.sorting_desc:after {
 
     .switch-btns {
         flex-direction: column;
-        width: 110px;
+        width: 80px;
         margin-right: 5px;
     }
 
@@ -893,11 +1354,12 @@ table.dataTable thead>tr>td.sorting_desc:after {
     }
 
     .form-control {
-        width: 100% !important;
+        width: 100%;
     }
 
     .form-fields {
         flex-direction: column;
+
     }
 
     .register-label {
@@ -927,27 +1389,63 @@ table.dataTable thead>tr>td.sorting_desc:after {
 
     .main-content {
         height: 100%;
+        min-height: 100vh;
     }
 
-    /* registrartion  */
+    .date {
+        width: 100%;
+    }
 
     .account-input-content {
         gap: 0px;
         margin-bottom: 13px;
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .account-reg-input {
+        width: 100%;
+    }
+
+    .account-reg-input input {
+        height: 48px;
     }
 
     .account-reg-content {
         padding: 20px;
     }
-}
 
-
-@media only screen and (max-width:425px) {
-    .account-input-content {
-        gap: 22px;
+    .switch-div .on-off-buttons {
+        display: block;
     }
+
+    /* .registration-left-content{
+        padding: 0px 15px;
+    } */
+    .register-btn,
+    .clear-btn {
+        width: 71px;
+        height: 42px;
+    }
+
+    .master-form-col {
+        padding: 0px;
+    }
+
+    .master-reg-input {
+        width: 100%;
+    }
+
+    .master-registration-left-content {
+        width: 100%;
+    }
+    .account-reg-lablel {
+        width: 100%;
+     
+    }
+
 }
+
 
 @media only screen and (max-width:375px) {
     .main-content {
@@ -960,7 +1458,7 @@ table.dataTable thead>tr>td.sorting_desc:after {
 
     .account-reg-input input {
         height: 48px;
-        width: 249px;
+        width: 100%;
         padding: 12px 0px 12px 20px;
     }
 }
@@ -976,8 +1474,8 @@ table.dataTable thead>tr>td.sorting_desc:after {
 
     .account-reg-input input {
         height: 48px;
-        width: 240px;
-        padding: 12px 0px 12px 20px;
+        width: 100%;
+
     }
 
     .account-reg-buttons {
@@ -986,8 +1484,6 @@ table.dataTable thead>tr>td.sorting_desc:after {
     }
 }
 
-/*//////////////////////////////////////////////////////////////////
-  [ Responsive ]*/
 
 @media only screen and (max-width: 576px) {
     .wrap-login100 {
@@ -1019,3 +1515,13 @@ table.dataTable thead>tr>td.sorting_desc:after {
         padding: 60px 15px 10px 15px;
     }
 }
+
+/* @media screen and (max-width: 2400px) and (min-width:1380px){
+
+    .table-responsive-sm::-webkit-scrollbar {
+        display: none;
+    }
+}
+table.dataTable{
+    width: max-content !important;
+} */
