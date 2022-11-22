@@ -936,7 +936,7 @@ tbody tr td {
     border: 1px solid #000000;
     color: #fff;
     width: 56px;
-    height: 30px;
+    height: 41px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -950,7 +950,7 @@ tbody tr td {
     color: #fff;
     width: 56px;
     border-radius: 2px;
-    height: 30px;
+    height: 41px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -977,12 +977,13 @@ tbody tr td {
     border: 1px solid #2F9456;
     border-radius: 2px;
     color: #fff;
-    width: 110px;
-    height: 30px;
+    /* width: 110px;
+    height: 30px; */
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    padding: 8px;
 }
 
 .master-input-content label {
@@ -1192,6 +1193,10 @@ tbody tr td {
 }
 
 @media screen and (max-width: 920px) and (min-width:769px) {
+    .update-btn{
+        width: max-content;
+        height: 31px;
+    }
     .job-form-control {
         width: 100%;
     }
@@ -1281,6 +1286,10 @@ tbody tr td {
 }
 
 @media screen and (max-width: 768px) {
+    .update-btn{
+        width: max-content;
+        height: 41px;
+    }
     .main-site {
         overflow-y: inherit;
     }
@@ -1443,6 +1452,7 @@ tbody tr td {
         width: 71px;
         height: 42px;
     }
+  
 
     .master-form-col {
         padding: 0px;
