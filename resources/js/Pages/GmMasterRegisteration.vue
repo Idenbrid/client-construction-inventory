@@ -76,42 +76,42 @@
                                 <div class="account-input-radio">
                                     <ul class="model-no-list">
                                         <li>
-                                            <div class="form-check">
+                                            <div class="form-check gm-reg-radio-buttton">
                                                 <input v-model="item.unit" type="radio" value="m"
                                                     class="form-check-input" id="m" name="m" />
                                                 <label class="form-check-label" for="m">m</label>
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="form-check">
+                                            <div class="form-check gm-reg-radio-buttton">
                                                 <input v-model="item.unit" type="radio" value="本"
                                                     class="form-check-input" id="book" name="book" />
                                                 <label class="form-check-label" for="book">本</label>
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="form-check">
+                                            <div class="form-check gm-reg-radio-buttton">
                                                 <input v-model="item.unit" type="radio" value="個"
                                                     class="form-check-input" id="male" name="indivual" />
                                                 <label class="form-check-label" for="indivual">個</label>
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="form-check">
+                                            <div class="form-check gm-reg-radio-buttton">
                                                 <input v-model="item.unit" type="radio" value="箱"
                                                     class="form-check-input" id="box" name="box" />
                                                 <label class="form-check-label" for="box">箱</label>
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="form-check">
+                                            <div class="form-check gm-reg-radio-buttton">
                                                 <input v-model="item.unit" type="radio" value="袋"
                                                     class="form-check-input" id="bag" name="bag" />
                                                 <label class="form-check-label" for="bag">袋</label>
                                             </div>
                                         </li>
                                         <li>
-                                            <div class="form-check">
+                                            <div class="form-check gm-reg-radio-buttton">
                                                 <input v-model="item.unit" type="radio" value="台"
                                                     class="form-check-input" id="tower" name="tower" />
                                                 <label class="form-check-label" for="tower">台</label>

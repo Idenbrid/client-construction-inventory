@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="account-input-content">
                                     <div class="account-reg-lablel">
-                                        <label for="">Password</label>
+                                        <label for="">パスワード</label>
                                     </div>
                                     <div class="account-reg-input">
                                         <input type="password" name="password" v-model="user.login_password"

@@ -219,7 +219,12 @@
     color: var(--black);
     opacity: 0.3;
 }
-
+.setting-toggle-end a{
+font-size:16px;
+font-weight: 400;
+color: #000000DE;
+font-family: NotoSansJP-Regular;
+}
 .setting-toggle {
     background-color: #ffff;
     width: 76px;
@@ -538,9 +543,10 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 
 .nav-items .nav-link {
     color: #fff;
-    font-family: NotoSansJP-Light;
+    font-family: NotoSansJP-Regular;
     font-size: 12px;
     padding: 0.5rem;
+    font-weight: 400;
 }
 
 .nav-items .nav-link:after {
@@ -765,6 +771,8 @@ table.dataTable thead>tr>td.sorting_desc:after {
     font-size: 16px;
     font-weight:400;
     font-family: NotoSansJP-Regular;
+    color: #000000;
+    margin-bottom: 0px;
 }
 
 .account-input-content {
@@ -1013,7 +1021,10 @@ tbody tr td {
     box-shadow: 0px 3px 6px var(--black);
     padding: 40px 0px 48px 48px;
 }
+.gm-reg-radio-buttton input[type="radio"]{
+    accent-color:darkgoldenrod;
 
+  }
 .generated-reg-input input {
     height: 37px;
     width: 100%;
@@ -1049,10 +1060,14 @@ tbody tr td {
     text-align: center;
     font-family: NotoSansJP-Regular;
     font-weight: 400;
+    color: #000000;
 }
 
-.registration-table tr:hover {
+/* .registration-table tr:hover {
     background-color: #ddd;
+} */
+.registration-table td:nth-child(odd) {
+    background-color:  #F5F5F5;
 }
 
 .registration-table th {
@@ -1420,6 +1435,10 @@ tbody tr td {
     .master-registration-left-content {
         width: 100%;
     }
+    .account-reg-lablel {
+        width: 100%;
+     
+    }
 
 }
 
@@ -1435,7 +1454,7 @@ tbody tr td {
 
     .account-reg-input input {
         height: 48px;
-        width: 249px;
+        width: 100%;
         padding: 12px 0px 12px 20px;
     }
 }
@@ -1492,3 +1511,13 @@ tbody tr td {
         padding: 60px 15px 10px 15px;
     }
 }
+
+/* @media screen and (max-width: 2400px) and (min-width:1380px){
+
+    .table-responsive-sm::-webkit-scrollbar {
+        display: none;
+    }
+}
+table.dataTable{
+    width: max-content !important;
+} */
