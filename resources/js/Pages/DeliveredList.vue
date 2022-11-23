@@ -36,14 +36,12 @@
                             <td>
                                 <div class="btn-rev-del">
                                     <a type="button" class="taking-btn" value="登録">持ち出し</a>
-                               
                                 </div>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-        
         </div>
     </div>
 </template>
@@ -87,5 +85,12 @@
 </script>
 
 <style>
-
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current{
+    background: #BEA000;
+    color: #fff !important;
+    border: none;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{
+border: none !important;
+}
 </style>
