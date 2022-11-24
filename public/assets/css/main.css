@@ -1286,7 +1286,10 @@ tbody tr td {
         border-image: linear-gradient(270deg, #4E3000 0%, #D6CDA2 17%, #987B3A 34%, #E0CDA2 49%, #836343 73%, #E6C466 100%) 1% 0%;
     }
 
-    .update-btn {
+    /* .update-btn {
+        border-image: linear-gradient(270deg, #4E3000 0%, #D6CDA2 17%, #987B3A 34%, #E0CDA2 49%, #836343 73%, #E6C466 100%) 1% 0%;    
+    } */
+    .update-btn{
         width: max-content;
         height: 41px;
     }
