@@ -13,22 +13,22 @@
                             <div class="account-reg-lablel">
                                 <label class="f-16-regular mb-0">発注先名称</label>
                             </div>
-                            <div class="account-reg-input"> 
-                                <input class="master-reg-input" type="text" name="発注先名称"
-                                    id="発注先名称" v-model="record.supplier_name" placeholder="テキスト">
-                            <small>
-                                <span v-if="errors.supplier_name != null" class="text-danger float-left">
-                                    {{errors.supplier_name[0]}}
-                                </span>
-                            </small>
-                        </div>
-                           
+                            <div class="account-reg-input">
+                                <input class="master-reg-input" type="text" name="発注先名称" id="発注先名称"
+                                    v-model="record.supplier_name" placeholder="テキスト">
+                                <small>
+                                    <span v-if="errors.supplier_name != null" class="text-danger float-left">
+                                        {{errors.supplier_name[0]}}
+                                    </span>
+                                </small>
+                            </div>
+
                         </div>
                         <div class="register-buttons">
-                                <div v-if="record.id == 0"><a class="register-btn" @click="handleSave()">登録</a></div>
-                                <div v-else><a class="update-btn" @click="handleUpdate()">アップデート</a></div>
-                                <div><a class="clear-btn" @click="clear()">削除</a></div>
-                            </div>
+                            <div v-if="record.id == 0"><a class="register-btn" @click="handleSave()">登録</a></div>
+                            <div v-else><a class="update-btn" @click="handleUpdate()">アップデート</a></div>
+                            <div><a class="clear-btn" @click="clear()">削除</a></div>
+                        </div>
                     </div>
                     <div class="table-col">
                         <div class="master-registration-right-contet">
@@ -41,15 +41,15 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr  class="f-12-regular" v-for="(item, index) in list" :key="index">
+                                    <tr class="f-12-regular" v-for="(item, index) in list" :key="index">
                                         <td>{{index+1}}</td>
                                         <td>{{item.supplier_name}}</td>
                                         <td>
                                             <div class="btn-grouped">
                                                 <a class="btn" @click="deleteSupplier(item.id)"><i
                                                         class="fa-solid fa-trash-can delete-icon"></i> </a>
-                                                <a class="btn" @click="editSupplier(item)"><i class="fas fa-edit edit-icon"
-                                                        aria-hidden="true"></i></a>
+                                                <a class="btn" @click="editSupplier(item)"><i
+                                                        class="fas fa-edit edit-icon" aria-hidden="true"></i></a>
                                             </div>
                                         </td>
                                     </tr>

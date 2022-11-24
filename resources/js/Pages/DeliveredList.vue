@@ -4,7 +4,7 @@
         <div class="main-content main-content-bg">
             <h1 class="content-h1">3.　納品済み一覧</h1>
             <div class="table-card table-responsive-sm">
-                <table id="waiting_list_table" class="table table-striped custom-table-list">
+                <table id="delivered_list_table" class="table table-striped custom-table-list nowrap">
                     <thead>
                         <tr>
                             <th>発注年月日</th>
@@ -50,30 +50,7 @@
     export default {
         mounted() {
             $(document).ready(function () {
-                $('#waiting_list_table').DataTable({
-                    "columnDefs": [
-    { className: 
-                  "order_date",
-                  "targets": [ 10 ]
-                 }
-  ],
-                    // "responsive": {
-                    //     breakpoints: [{
-                    //             name: 'desktop',
-                    //             width: Infinity
-                    //         },
-                    //         {
-                    //             name: 'tablet',
-                    //             width: 1024
-                      
-                    //         },
-                    //         {
-                    //             name: 'phone',
-                    //             width: 320,
-                        
-                    //         }
-                    //     ]
-                    // },
+                $('#delivered_list_table').DataTable({
                     "searching": false,
                     "info": false,
                     "autoWidth": true,
@@ -83,14 +60,3 @@
         },
     }
 </script>
-
-<style>
-.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current{
-    background: #BEA000;
-    color: #fff !important;
-    border: none;
-}
-.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{
-border: none !important;
-}
-</style>
