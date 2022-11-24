@@ -5,7 +5,6 @@
             <h1 class="content-h1">4. 持ち出し中一覧</h1>
             <div class="table-card table-responsive-sm">
                 <table id="takeout_list_table" class="table custom-table-list nowrap">
-
                     <thead>
                         <tr>
                             <th>発注年月日</th>
@@ -17,7 +16,6 @@
                             <th>数量</th>
                             <th>ジョブ番号</th>
                             <th>現場名</th>
-
                         </tr>
                     </thead>
                     <tbody>
@@ -38,7 +36,6 @@
                                     <a type="button" class="copy-content-btn disabled" value="登録">取消</a>
                                 </div>
                             </td>
-
                         </tr>
                         <tr>
                             <td>2022/12/24</td>
@@ -57,9 +54,7 @@
                                     <a type="button" class="copy-content-btn disabled" value="登録">取消</a>
                                 </div>
                             </td>
-
                         </tr>
-
                     </tbody>
                 </table>
             </div>
@@ -69,13 +64,11 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header border-0">
-
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-
                             <div class="form-fields justify-content-center">
                                 <div class="register-label align-items-center" bis_skin_checked="1">置き場登録</div>
                                 <select class="input-border" name="cars" id="cars">
@@ -92,7 +85,6 @@
                         </div>
                         <div class="modal-footer border-0 justify-content-center">
                             <button type="button" class="complete-btn" data-dismiss="modal">納品済み</button>
-
                         </div>
                     </div>
                 </div>
@@ -106,7 +98,6 @@
         mounted() {
             $(document).ready(function () {
                 $('#takeout_list_table').DataTable({
-
                     "searching": false,
                     "info": false,
                     "autoWidth": false,

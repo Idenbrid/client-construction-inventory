@@ -50,7 +50,7 @@
     export default {
         mounted() {
             $(document).ready(function () {
-                $('#delivered_list_table').DataTable({               
+                $('#delivered_list_table').DataTable({
                     "searching": false,
                     "info": false,
                     "autoWidth": true,

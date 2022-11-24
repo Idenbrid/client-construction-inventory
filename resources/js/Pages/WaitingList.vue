@@ -17,7 +17,6 @@
                             <th>ジョブ番号</th>
                             <th>現場名</th>
                             <th></th>
-
                         </tr>
                     </thead>
                     <tbody>
@@ -40,9 +39,7 @@
                                     <a type="button" class="copy-content-btn disabled" value="登録">内容コピー</a>
                                 </div>
                             </td>
-
                         </tr>
-
                     </tbody>
                 </table>
             </div>
@@ -52,13 +49,11 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header border-0">
-
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-
                             <div class="form-fields justify-content-center">
                                 <div class="register-label align-items-center" bis_skin_checked="1">置き場登録</div>
                                 <select class="input-border" name="cars" id="cars">

@@ -279,6 +279,10 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     color: #BEA000;
 }
 
+.mbile-top-nav-setting .setting-toggle-end .router-link-active {
+    color: #BEA000;
+}
+
 #sidebar-wrapper .router-link-exact-active {
     background-color: #333333;
 }
@@ -1161,6 +1165,16 @@ tbody tr td {
     color: #fff !important;
     border: 1px solid #fff;
     padding: 5px 12px;
+}
+
+.account-input-radio {
+    width: 100%;
+}
+
+.setting-toggle-end .dropdown-item:focus,
+.dropdown-item:hover {
+    background-color: inherit;
+    color: #777777;
 }
 
 @media screen and (max-width: 1050px) and (min-width:920px) {
