@@ -321,7 +321,7 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 .top-navbar {
     background: transparent linear-gradient(270deg, var(--bakers-chocolate) 0%, var(--raffia) 53%, var(--putty) 100%) 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #00000029;
-    padding: 3.5px 15px !important;
+    padding: 4px 15px !important;
     position: relative;
     display: -ms-flexbox;
     display: flex;
@@ -1167,9 +1167,7 @@ tbody tr td {
     padding: 5px 12px;
 }
 
-.account-input-radio {
-    width: 100%;
-}
+
 
 .setting-toggle-end .dropdown-item:focus,
 .dropdown-item:hover {
@@ -1295,8 +1293,7 @@ tbody tr td {
 }
 
 @media (min-width: 768px) {
-
-
+    
     #sidebar-wrapper {
         margin-left: 0;
         border-right: 4px solid;
@@ -1316,14 +1313,15 @@ tbody tr td {
 }
 
 @media screen and (max-width: 768px) {
+    .account-input-radio {
+        width: 100%;
+    }
     .footer-nav-section {
         border-top: 4px solid;
         border-image: linear-gradient(270deg, #4E3000 0%, #D6CDA2 17%, #987B3A 34%, #E0CDA2 49%, #836343 73%, #E6C466 100%) 1% 0%;
     }
 
-    /* .update-btn {
-        border-image: linear-gradient(270deg, #4E3000 0%, #D6CDA2 17%, #987B3A 34%, #E0CDA2 49%, #836343 73%, #E6C466 100%) 1% 0%;    
-    } */
+
     .update-btn {
         width: max-content;
         height: 41px;
