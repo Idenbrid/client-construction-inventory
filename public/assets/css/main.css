@@ -619,7 +619,7 @@ table.dataTable thead>tr>td.sorting_desc:after {
 .custom-table-list.dataTable tbody th,
 .custom-table-list.dataTable tbody td {
     font-size: 12px;
-    padding: 4px 8px;
+    padding: 4px 5px;
     border-top: 0px;
     vertical-align: middle;
 
@@ -639,7 +639,6 @@ table.dataTable thead>tr>td.sorting_desc:after {
     background: var(--secondary);
     color: #fff;
     border-radius: 2px;
-    margin-right: 4px;
 }
 
 .revision-btn:hover {
@@ -656,7 +655,7 @@ table.dataTable thead>tr>td.sorting_desc:after {
     background: #000;
     color: #fff;
     border-radius: 2px;
-    margin-right: 4px;
+
 }
 
 .taking-btn:hover {
@@ -702,7 +701,6 @@ table.dataTable thead>tr>td.sorting_desc:after {
     background: #000;
     color: #fff;
     border-radius: 2px;
-    margin-right: 4px;
 }
 
 .carryout-btn {
@@ -714,7 +712,7 @@ table.dataTable thead>tr>td.sorting_desc:after {
     background: #BEA000;
     color: #fff;
     border-radius: 2px;
-    margin-right: 4px;
+
 }
 
 .carryout-btn:hover {
@@ -1142,6 +1140,29 @@ tbody tr td {
     text-align: center !important;
 }
 
+#history_list_table_wrapper .paginate_button.current,
+#inventory_list_table_wrapper .paginate_button.current,
+#takeout_list_table_wrapper .paginate_button.current,
+#delivered_list_table_wrapper .paginate_button.current,
+#waiting_list_table_wrapper,
+.paginate_button.current {
+    background-color: #BEA000;
+    color: #fff !important;
+    border: 1px solid #BEA000;
+    padding: 5px 12px;
+}
+
+#history_list_table_wrapper .paginate_button.current:hover,
+#inventory_list_table_wrapper .paginate_button.current:hover,
+#takeout_list_table_wrapper .paginate_button.current:hover,
+#delivered_list_table_wrapper .paginate_button.current:hover,
+#waiting_list_table_wrapper .paginate_button.current:hover {
+    background-color: #000000;
+    color: #fff !important;
+    border: 1px solid #fff;
+    padding: 5px 12px;
+}
+
 @media screen and (max-width: 1050px) and (min-width:920px) {
     .job-search-field {
         flex-direction: column;
@@ -1289,7 +1310,7 @@ tbody tr td {
     /* .update-btn {
         border-image: linear-gradient(270deg, #4E3000 0%, #D6CDA2 17%, #987B3A 34%, #E0CDA2 49%, #836343 73%, #E6C466 100%) 1% 0%;    
     } */
-    .update-btn{
+    .update-btn {
         width: max-content;
         height: 41px;
     }

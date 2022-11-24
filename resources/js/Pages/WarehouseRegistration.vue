@@ -2,20 +2,17 @@
     <section class="section-registration">
         <div class="container-fluid p-0">
             <div class="main-content main-content-bg">
-
                 <div class="master-registration-title">
                     <h5 class="content-h1">資材置き場マスタ登録</h5>
                 </div>
                 <div class="master-registration-form">
-
                     <div class="master-reg-row">
                         <div class="master-reg-form">
-                        
-                                <div class="account-input-content">
-                                    <div class="account-reg-lablel">
+                            <div class="account-input-content">
+                                <div class="account-reg-lablel">
                                     <label class="f-16-regular mb-0">資材置き場名称</label>
-                                    </div>
-                                    <div class="account-reg-input">
+                                </div>
+                                <div class="account-reg-input">
                                     <input v-model="record.warehouse_name" class="master-reg-input" type="text"
                                         name="資材置き場名称" id="資材置き場名称" placeholder="テキスト">
                                     <small>
@@ -24,15 +21,13 @@
                                         </span>
                                     </small>
                                 </div>
-                                </div>
-                                <div class="register-buttons">
+                            </div>
+                            <div class="register-buttons">
                                 <div v-if="record.id == 0"><a class="register-btn" @click="handleSave()">登録</a>
                                 </div>
                                 <div v-else><a class="update-btn" @click="handleUpdate()">アップデート</a></div>
                                 <div><a class="clear-btn" @click="clear()">削除</a></div>
                             </div>
-                         
-                            
                         </div>
                         <div class="table-col">
                             <div class="master-registration-right-contet">
@@ -50,9 +45,10 @@
                                             <td>{{item.warehouse_name}}</td>
                                             <td>
                                                 <div class="btn-grouped">
-                                                <a class="btn" @click="deleteWarehouse(item.id)"><i
-                                                        class="fa-solid fa-trash-can delete-icon"></i> </a>
-                                                <a class="btn" @click="editWarehouse(item)"><i class="fas fa-edit edit-icon" aria-hidden="true"></i></a>
+                                                    <a class="btn" @click="deleteWarehouse(item.id)"><i
+                                                            class="fa-solid fa-trash-can delete-icon"></i> </a>
+                                                    <a class="btn" @click="editWarehouse(item)"><i
+                                                            class="fas fa-edit edit-icon" aria-hidden="true"></i></a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -188,4 +184,3 @@
         },
     }
 </script>
-

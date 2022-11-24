@@ -35,7 +35,8 @@
                                 <div class="btn-rev-del">
                                     <a type="button" class="delivery-btn" value="登録" data-toggle="modal"
                                         data-target="#staticBackdrop">納品</a>
-                                    <router-link :to="{ name: 'Home', params: { id: order.id }}" type="submit" class="revision-btn" value="登録">修正</router-link>
+                                    <router-link :to="{ name: 'Home', params: { id: order.id }}" type="submit"
+                                        class="revision-btn" value="登録">修正</router-link>
                                     <a type="button" class="copy-content-btn disabled" value="登録">内容コピー</a>
                                 </div>
                             </td>
@@ -90,34 +91,34 @@
             this.getWaitingList()
         },
         methods: {
-            getWaitingList(){
-                axios.get("/api/orders/"+"ordered")
-                .then((response) => {
-                    this.list = response.data
-                    $(document).ready(function () {
-                        $('#table_id').DataTable({
-                            "responsive": {
-                                breakpoints: [{
-                                        name: 'desktop',
-                                        width: Infinity
-                                    },
-                                    {
-                                        name: 'tablet',
-                                        width: 1024
-                                    },
-                                    {
-                                        name: 'phone',
-                                        width: 320
-                                    }
-                                ]
-                            },
-                            "searching": false,
-                            "info": false,
-                            "autoWidth": false,
-                            "lengthChange": false,
+            getWaitingList() {
+                axios.get("/api/orders/" + "ordered")
+                    .then((response) => {
+                        this.list = response.data
+                        $(document).ready(function () {
+                            $('#table_id').DataTable({
+                                "responsive": {
+                                    breakpoints: [{
+                                            name: 'desktop',
+                                            width: Infinity
+                                        },
+                                        {
+                                            name: 'tablet',
+                                            width: 1024
+                                        },
+                                        {
+                                            name: 'phone',
+                                            width: 320
+                                        }
+                                    ]
+                                },
+                                "searching": false,
+                                "info": false,
+                                "autoWidth": false,
+                                "lengthChange": false,
+                            });
                         });
-                    });
-                })
+                    })
             }
         },
     }

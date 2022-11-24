@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="table-responsive-sm">
-                <table id="waiting_list_table" class="table table-striped custom-table-list">
+                <table id="history_list_table" class="table table-striped custom-table-list nowrap">
                     <thead>
                         <tr>
                             <th>発注年月日</th>
@@ -76,7 +76,7 @@
     export default {
         mounted() {
             $(document).ready(function () {
-                $('#waiting_list_table').DataTable({
+                $('#history_list_table').DataTable({
                     "searching": false,
                     "info": false,
                     "autoWidth": false,

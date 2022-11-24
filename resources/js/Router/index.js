@@ -18,7 +18,6 @@ const WarehouseRegistration = () => import('../Pages/WarehouseRegistration.vue')
 const SupplierRegisration = () => import('../Pages/SupplierRegisration.vue');
 const SiteRegistration = () => import('../Pages/SiteRegistration.vue');
 const GmMasterRegistration = () => import('../Pages/GmMasterRegisteration.vue');
-const Test = () => import('../Pages/Test.vue');
 const Login = () => import('../Components/Login.vue');
 
 
@@ -107,17 +106,6 @@ export const routes = [
         meta: {
             auth: true,
             title: "Registration"
-        }
-    
-    },
-
-    {
-        name: 'Test',
-        path: '/test',
-        component: Test,
-        meta: {
-            auth: true,
-            title: "Test"
         }
     
     },

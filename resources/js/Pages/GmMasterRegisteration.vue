@@ -36,15 +36,11 @@
                                 </div>
                             </div>
                             <div class="account-input-content mb-3">
-
                                 <div class="account-reg-lablel">
                                     <label for="">品名</label>
                                 </div>
-
                                 <div class="account-reg-input">
-
                                     <input v-model="item.item_name" type="text" name="品名" id="品名" placeholder="テキスト">
-
                                     <small>
                                         <span v-if="errors.item_name != null" class="text-danger float-left">
                                             {{errors.item_name[0]}}
@@ -57,9 +53,8 @@
                                     <label for="">型番</label>
                                 </div>
                                 <div class="account-reg-input">
-
-                                    <input v-model="item.item_number" type="number" name="型番" id="型番" placeholder="テキスト">
-
+                                    <input v-model="item.item_number" type="number" name="型番" id="型番"
+                                        placeholder="テキスト">
                                     <small>
                                         <span v-if="errors.item_number != null" class="text-danger float-left">
                                             {{errors.item_number[0]}}
@@ -69,9 +64,7 @@
                             </div>
                             <div class="account-input-content mb-3">
                                 <div class="account-reg-lablel">
-
                                     <label for="">単位</label>
-
                                 </div>
                                 <div class="account-input-radio">
                                     <ul class="model-no-list">
@@ -123,10 +116,7 @@
                                             </span>
                                         </small>
                                     </ul>
-
-
                                 </div>
-
                             </div>
                             <div class="account-reg-buttons">
 
@@ -170,7 +160,6 @@
         </div>
     </div>
 </template>
-
 <script>
     import axios from "axios";
     export default {

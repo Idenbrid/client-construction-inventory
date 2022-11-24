@@ -4,7 +4,7 @@
         <div class="main-content main-content-bg">
             <h1 class="content-h1">5. 在庫一覧</h1>
             <div class="table-card table-responsive-sm">
-                <table id="waiting_list_table" class="table table-striped custom-table-list">
+                <table id="inventory_list_table" class="table table-striped custom-table-list nowrap">
                     <thead>
                         <tr>
                             <th>発注年月日</th>
@@ -39,7 +39,6 @@
                                         data-target="#stockfix">在庫修正</a>
                                 </div>
                             </td>
-
                         </tr>
                         <tr>
                             <td>2022/12/24</td>
@@ -49,7 +48,7 @@
                             <td>テキストテ...</td>
                             <td>123456789…</td>
                             <td>123456789…</td>
-                            <td>123456789…qq</td>
+                            <td>123456789…</td>
                             <td>
                                 <div class="btn-rev-del ml-0">
                                     <a type="button" class="carryout-btn" value="登録" data-toggle="modal"
@@ -60,9 +59,7 @@
                                         data-target="#stockfix">在庫修正</a>
                                 </div>
                             </td>
-
                         </tr>
-
                     </tbody>
                 </table>
             </div>
@@ -72,13 +69,11 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header border-0">
-
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-
                             <div class="form-fields justify-content-center">
                                 <div class="register-label align-items-center">置き場登録</div>
                                 <div class="date"><input type="date" id="date" name="datebirth"
@@ -114,7 +109,6 @@
                         </div>
                         <div class="modal-footer border-0 justify-content-center pb-4">
                             <button type="button" class="complete-btn" data-dismiss="modal">登録</button>
-
                         </div>
                     </div>
                 </div>
@@ -125,13 +119,11 @@
                 <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
                         <div class="modal-header border-0">
-
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body pt-0">
-
                             <div class="booking-content">
                                 <table class="w-100">
                                     <thead>
@@ -145,10 +137,10 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td style="width:110px">2022/10/10</td>
-                                            <td style="width:180px">テキストテキスト…</td>
-                                            <td style="width:82px">100</td>
-                                            <td style="width:117px">123456789…</td>
+                                            <td>2022/10/10</td>
+                                            <td>テキストテキスト…</td>
+                                            <td>100</td>
+                                            <td>123456789…</td>
                                             <td>
                                                 テキストテキスト…
                                                 <div class="btn-rev-del">
@@ -159,16 +151,10 @@
                                                 </div>
                                             </td>
                                         </tr>
-
-
-
-
                                     </tbody>
                                 </table>
                             </div>
-
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -178,13 +164,11 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header border-0">
-
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-
                             <div class="form-fields justify-content-center">
                                 <div class="register-label align-items-center">置き場登録</div>
                                 <select class="input-border" name="cars" id="cars">
@@ -214,12 +198,7 @@
     export default {
         mounted() {
             $(document).ready(function () {
-                $('#waiting_list_table').DataTable({
-                    "columnDefs": [{
-                        "width": "90px",
-                        "targets": [0, 1, 2, 3, 4, 5, 6, 7, 8],
-                    }],
-
+                $('#inventory_list_table').DataTable({
                     "searching": false,
                     "info": false,
                     "autoWidth": false,
@@ -229,19 +208,3 @@
         },
     }
 </script>
-
-<style>
-    .booking-content th {
-        text-align: left;
-        background-color: black;
-        color: white;
-        height: 32px;
-        font-size: 12px;
-        text-align: center;
-    }
-    .booking-content td{
-           font-size: 12px;
-           text-align: center;
-           padding: 10px 4px;
-    }
-</style>
