@@ -42,7 +42,6 @@
                                     <a class="delivery-btn">持ち出し完了</a>
                                 </div>
                             </td>
-
                         </tr>
                     </tbody>
                 </table>
@@ -53,13 +52,11 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header border-0">
-
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-
                             <div class="form-fields justify-content-center">
                                 <div class="register-label align-items-center" bis_skin_checked="1">置き場登録</div>
                                 <select class="input-border" v-model="record.warehouse_id" name="cars" id="cars">

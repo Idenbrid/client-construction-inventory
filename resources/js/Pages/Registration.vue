@@ -79,17 +79,17 @@
                                     <th>アカウントID</th>
                                     <th>権限</th>
                                 </tr>
-                                <tr  class="f-12-regular td-color" v-for="(user, index) in list" :key="index">
+                                <tr class="f-12-regular td-color" v-for="(user, index) in list" :key="index">
                                     <td>{{index+1}}</td>
                                     <td>{{user.user_name}}</td>
                                     <td>{{user.login_id}}</td>
                                     <td>
                                         <div class="btn-grouped">
-                                        <a class="btn" @click="deleteUser(user.id)"><i
-                                                class="fa-solid fa-trash-can delete-icon"></i> </a>
-                                        <a class="btn" @click="editUser(user)"><i
-                                                class="fa-solid fa-pen-to-square edit-icon"></i></a>
-                                            </div>
+                                            <a class="btn" @click="deleteUser(user.id)"><i
+                                                    class="fa-solid fa-trash-can delete-icon"></i> </a>
+                                            <a class="btn" @click="editUser(user)"><i
+                                                    class="fa-solid fa-pen-to-square edit-icon"></i></a>
+                                        </div>
                                     </td>
                                 </tr>
                             </table>

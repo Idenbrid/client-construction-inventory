@@ -4,7 +4,7 @@
         <div class="main-content main-content-bg">
             <h1 class="content-h1">5. 在庫一覧</h1>
             <div class="table-card table-responsive-sm">
-                <table id="waiting_list_table" class="table table-striped custom-table-list">
+                <table id="inventory_list_table" class="table table-striped custom-table-list nowrap">
                     <thead>
                         <tr>
                             <th>発注年月日</th>
@@ -122,10 +122,10 @@
                                     </thead>
                                     <tbody>
                                         <tr v-for="(reserve, index) in reserveOrders" :key="index">
-                                            <td style="width:110px">{{reserve.order_date}}</td>
-                                            <td style="width:180px">{{reserve.orderer.user_name}}</td>
-                                            <td style="width:82px">{{reserve.amount}}</td>
-                                            <td style="width:117px">{{reserve.job.job_number}}</td>
+                                            <t>{{reserve.order_date}}</t>
+                                            <td>{{reserve.orderer.user_name}}</td>
+                                            <td>{{reserve.amount}}</td>
+                                            <td>{{reserve.job.job_number}}</td>
                                             <td>
                                                 <div class="btn-rev-del">
                                                     <a type="button" class="taking-out-btn" value="登録" @click.prevent="reserveToUsing(reserve)">持ち出し</a>
@@ -341,19 +341,3 @@
         },
     }
 </script>
-<style>
-    .booking-content th {
-        text-align: left;
-        background-color: black;
-        color: white;
-        height: 32px;
-        font-size: 12px;
-        text-align: center;
-    }
-
-    .booking-content td {
-        font-size: 12px;
-        text-align: center;
-        padding: 10px 4px;
-    }
-</style>

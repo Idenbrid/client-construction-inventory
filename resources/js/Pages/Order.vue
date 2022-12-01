@@ -7,7 +7,6 @@
                 <form class="order-register-form" @submit.prevent="handleOrder()">
                     <div class="container">
                         <div class="row">
-
                             <div class="col-md-12 p-0">
                                 <ul class="switch-div">
                                     <!-- ON OFF BUTTONS-->
@@ -29,15 +28,16 @@
                                     <li class="form-fields">
                                         <div class="register-label align-items-center">JOB番号（選択）</div>
                                         <div class="order-input-field">
-                                        <select v-model="order.job_number" class="input-border" name="cars" id="cars">
-                                            <option v-for="site in sites" :value="site">{{site.job_number}}</option>
-                                        </select>
-                                        <small>
-                                            <span v-if="errors.job_number != null" class="text-danger float-left">
-                                                {{errors.job_number[0]}}
-                                            </span>
-                                        </small>
-                                    </div>
+                                            <select v-model="order.job_number" class="input-border" name="cars"
+                                                id="cars">
+                                                <option v-for="site in sites" :value="site">{{site.job_number}}</option>
+                                            </select>
+                                            <small>
+                                                <span v-if="errors.job_number != null" class="text-danger float-left">
+                                                    {{errors.job_number[0]}}
+                                                </span>
+                                            </small>
+                                        </div>
                                     </li>
                                 </ul>
                                 <ul class="switch-div">
@@ -60,14 +60,14 @@
                                     <li class="form-fields">
                                         <div class="register-label">現場名（自動入力）</div>
                                         <div class="order-input-field">
-                                        <input disabled type="text"
-                                            :value="order.site_name = order.job_number.site_name" id="fname"
-                                            name="fname" placeholder="テキスト" class="form-control input-border">
-                                        <small>
-                                            <span v-if="errors.site_name != null" class="text-danger float-left">
-                                                {{errors.site_name[0]}}
-                                            </span>
-                                        </small>
+                                            <input disabled type="text"
+                                                :value="order.site_name = order.job_number.site_name" id="fname"
+                                                name="fname" placeholder="テキスト" class="form-control input-border">
+                                            <small>
+                                                <span v-if="errors.site_name != null" class="text-danger float-left">
+                                                    {{errors.site_name[0]}}
+                                                </span>
+                                            </small>
                                         </div>
                                     </li>
                                 </ul>
@@ -122,14 +122,16 @@
                                     <li class="form-fields">
                                         <div class="register-label">発注者（選択）</div>
                                         <div class="order-input-field">
-                                        <select class="input-border" v-model="order.client_id" name="cars" id="cars">
-                                            <option v-for="user in users" :value="user.id">{{user.user_name}}</option>
-                                        </select>
-                                        <small>
-                                            <span v-if="errors.client_id != null" class="text-danger float-left">
-                                                {{errors.client_id[0]}}
-                                            </span>
-                                        </small>
+                                            <select class="input-border" v-model="order.client_id" name="cars"
+                                                id="cars">
+                                                <option v-for="user in users" :value="user.id">{{user.user_name}}
+                                                </option>
+                                            </select>
+                                            <small>
+                                                <span v-if="errors.client_id != null" class="text-danger float-left">
+                                                    {{errors.client_id[0]}}
+                                                </span>
+                                            </small>
                                         </div>
                                     </li>
                                 </ul>
@@ -153,14 +155,15 @@
                                     <li class="form-fields">
                                         <div class="register-label">品名（選択）</div>
                                         <div class="order-input-field">
-                                        <select class="input-border" v-model="order.item_id" name="cars" id="cars">
-                                            <option v-for="item in items" :value="item.id">{{item.item_name}}</option>
-                                        </select>
-                                        <small>
-                                            <span v-if="errors.item_id != null" class="text-danger float-left">
-                                                {{errors.item_id[0]}}
-                                            </span>
-                                        </small>
+                                            <select class="input-border" v-model="order.item_id" name="cars" id="cars">
+                                                <option v-for="item in items" :value="item.id">{{item.item_name}}
+                                                </option>
+                                            </select>
+                                            <small>
+                                                <span v-if="errors.item_id != null" class="text-danger float-left">
+                                                    {{errors.item_id[0]}}
+                                                </span>
+                                            </small>
                                         </div>
                                     </li>
                                 </ul>
@@ -184,15 +187,16 @@
                                     <li class="form-fields">
                                         <div class="register-label">warehouses</div>
                                         <div class="order-input-field">
-                                        <select class="input-border" v-model="order.stocker_id" name="cars" id="cars">
-                                            <option v-for="warehouse in warehouses" :value="warehouse.id">
-                                                {{warehouse.warehouse_name}}</option>
-                                        </select>
-                                        <small>
-                                            <span v-if="errors.stocker_id != null" class="text-danger float-left">
-                                                {{errors.stocker_id[0]}}
-                                            </span>
-                                        </small>
+                                            <select class="input-border" v-model="order.stocker_id" name="cars"
+                                                id="cars">
+                                                <option v-for="warehouse in warehouses" :value="warehouse.id">
+                                                    {{warehouse.warehouse_name}}</option>
+                                            </select>
+                                            <small>
+                                                <span v-if="errors.stocker_id != null" class="text-danger float-left">
+                                                    {{errors.stocker_id[0]}}
+                                                </span>
+                                            </small>
                                         </div>
                                     </li>
                                 </ul>
@@ -216,13 +220,13 @@
                                     <li class="form-fields">
                                         <div class="register-label" bis_skin_checked="1">数量（数字入力）</div>
                                         <div class="order-input-field">
-                                        <input type="number" id="fname" v-model="order.amount" name="fname"
-                                            placeholder="テキスト" class="form-control input-border">
-                                        <small>
-                                            <span v-if="errors.amount != null" class="text-danger float-left">
-                                                {{errors.amount[0]}}
-                                            </span>
-                                        </small>
+                                            <input type="number" id="fname" v-model="order.amount" name="fname"
+                                                placeholder="テキスト" class="form-control input-border">
+                                            <small>
+                                                <span v-if="errors.amount != null" class="text-danger float-left">
+                                                    {{errors.amount[0]}}
+                                                </span>
+                                            </small>
                                         </div>
                                     </li>
                                 </ul>

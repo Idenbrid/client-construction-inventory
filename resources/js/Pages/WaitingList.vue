@@ -17,7 +17,6 @@
                             <th>ジョブ番号</th>
                             <th>現場名</th>
                             <th></th>
-
                         </tr>
                     </thead>
                     <tbody>

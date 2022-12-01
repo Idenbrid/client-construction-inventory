@@ -4,7 +4,7 @@
         <div class="main-content main-content-bg">
             <h1 class="content-h1">3.　納品済み一覧</h1>
             <div class="table-card table-responsive-sm">
-                <table id="waiting_list_table" class="table table-striped custom-table-list">
+                <table id="delivered_list_table" class="table table-striped custom-table-list nowrap">
                     <thead>
                         <tr>
                             <th>発注年月日</th>
