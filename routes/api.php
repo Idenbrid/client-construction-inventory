@@ -39,6 +39,15 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::get('/order/{orderd_id}', 'edit');
         Route::post('/order', 'postOrder');
         Route::patch('/order', 'updateOrder');
+        Route::post('/move-to-delivery-list', 'moveToDelivery');
+        Route::get('/move-to-use-list/{order_id}', 'moveToUse');
+        Route::get('/all-used/{order_id}', 'allItemUsed');
+        Route::get('/get-orders-used-using', 'getOrderUsedUsing');
+        Route::post('/save-remaining', 'saveRemaining');
+        Route::get('/get-remaining-list', 'getRemainingList');
+        Route::post('/reserve-order', 'reserveOrder');
+        Route::get('/get-related-reserve-orders/{order_id}', 'reserveOrders');
+        Route::post('/reserve-to-using', 'reserveToUsing');
     });
 
 });

@@ -33,15 +33,12 @@
                             <td>{{order.job.site_name}}</td>
                             <td>
                                 <div class="btn-rev-del">
-                                    <a type="button" class="delivery-btn" value="登録" data-toggle="modal"
-                                        data-target="#staticBackdrop">納品</a>
+                                    <a type="button" class="delivery-btn" @click.prevent="record.order_id = order.id" value="登録" data-toggle="modal" data-target="#staticBackdrop">納品</a>
                                     <router-link :to="{ name: 'Home', params: { id: order.id }}" type="submit" class="revision-btn" value="登録">修正</router-link>
                                     <a type="button" class="copy-content-btn disabled" value="登録">内容コピー</a>
                                 </div>
                             </td>
-
                         </tr>
-
                     </tbody>
                 </table>
             </div>
@@ -51,26 +48,20 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header border-0">
-
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-
                             <div class="form-fields justify-content-center">
                                 <div class="register-label align-items-center" bis_skin_checked="1">置き場登録</div>
-                                <select class="input-border" name="cars" id="cars">
-                                    <option value="volvo">Volvo</option>
-                                    <option value="saab">Saab</option>
-                                    <option value="opel">Opel</option>
-                                    <option value="audi">Audi</option>
+                                <select class="input-border" v-model="record.warehouse_id" id="cars">
+                                    <option v-for="house in warehouse" :value="house.id">{{house.warehouse_name}}</option>
                                 </select>
                             </div>
                         </div>
                         <div class="modal-footer border-0 justify-content-center">
-                            <button type="button" class="complete-btn" data-dismiss="modal">納品済み</button>
-
+                            <button @click.prevent="moveToDelivery()" type="button" class="complete-btn" data-dismiss="modal">納品済み</button>
                         </div>
                     </div>
                 </div>
@@ -84,39 +75,86 @@
         data() {
             return {
                 list: [],
+                warehouse: [],
+                record: {
+                    warehouse_id: '',
+                    order_id: '',
+                }
             }
         },
         created() {
-            this.getWaitingList()
+            this.getWaitingList();
+            this.getWarehouse();
         },
         methods: {
+            moveToDelivery(){
+                axios.post('/api/move-to-delivery-list', this.record)
+                .then((response) => {
+                    if (response.data.success == false) {
+                        Swal.close()
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Something went wrong please reload the page and try again. Thanks',
+                        })
+                        this.record = {
+                            warehouse_id: '',
+                            order_id: '',
+                        };
+                    } else {
+                        Swal.close()
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Order has been updated successfully.',
+                        })
+                        this.record = {
+                            warehouse_id: '',
+                            order_id: '',
+                        };
+                        this.getWaitingList();
+                    }
+                })
+                .error((error) => {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Something went wrong please reload the page and try again. Thanks',
+                    })
+                });
+            },
+            getWarehouse(){
+                axios.get('/api/warehouse')
+                .then((res) => {
+                    this.warehouse = res.data
+                })
+            },
             getWaitingList(){
                 axios.get("/api/orders/"+"ordered")
                 .then((response) => {
                     this.list = response.data
-                    $(document).ready(function () {
-                        $('#table_id').DataTable({
-                            "responsive": {
-                                breakpoints: [{
-                                        name: 'desktop',
-                                        width: Infinity
-                                    },
-                                    {
-                                        name: 'tablet',
-                                        width: 1024
-                                    },
-                                    {
-                                        name: 'phone',
-                                        width: 320
-                                    }
-                                ]
-                            },
-                            "searching": false,
-                            "info": false,
-                            "autoWidth": false,
-                            "lengthChange": false,
+                    if(this.list.length > 0){
+                        $(document).ready(function () {
+                            $('#waiting_list_table').DataTable({
+                                "responsive": {
+                                    breakpoints: [{
+                                            name: 'desktop',
+                                            width: Infinity
+                                        },
+                                        {
+                                            name: 'tablet',
+                                            width: 1024
+                                        },
+                                        {
+                                            name: 'phone',
+                                            width: 320
+                                        }
+                                    ]
+                                },
+                                "searching": false,
+                                "info": false,
+                                "autoWidth": false,
+                                "lengthChange": false,
+                            });
                         });
-                    });
+                    }
                 })
             }
         },

@@ -13,17 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('reserve_orders', function (Blueprint $table) {
             $table->id();
+            $table->integer('order_id');
             $table->unsignedBigInteger('job_id');
             $table->unsignedBigInteger('client_id');
             $table->unsignedBigInteger('item_id');
             $table->unsignedBigInteger('stocker_id');
             $table->date('order_date');
             $table->integer('amount');
-            $table->integer('remaining')->default(0);
-            $table->unsignedBigInteger('return_to')->nullable();
-            $table->string('status')->default('ordered');
             $table->integer('created_by');
             $table->integer('updated_by');
             $table->timestamp('deleted_at')->nullable();
@@ -31,8 +29,6 @@ return new class extends Migration
             $table->foreign('client_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
             $table->foreign('stocker_id')->references('id')->on('warehouses')->onDelete('cascade');
-            $table->foreign('return_to')->references('id')->on('warehouses')->onDelete('cascade');
-
             $table->timestamps();
         });
     }
@@ -44,6 +40,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('reserve_orders');
     }
 };

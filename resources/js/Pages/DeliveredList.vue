@@ -22,70 +22,100 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>2022/12/24</td>
-                            <td>小田切健太郎</td>
-                            <td>テキストテ...</td>
-                            <td>テキストテ...</td>
-                            <td>テキストテ...</td>
-                            <td>123456789…</td>
-                            <td>123456789…</td>
-                            <td>123456789…</td>
-                            <td>テキストテ…</td>
-                            <td>123456789…</td>
+                        <tr v-for="(order, index) in list" :key="index">
+                            <td>{{order.order_date}}</td>
+                            <td>{{order.orderer.user_name}}</td>
+                            <td>{{order.item.category}}</td>
+                            <td>{{order.item.manufacturer}}</td>
+                            <td>{{order.item.item_name}}</td>
+                            <td>{{order.item.item_number}}</td>
+                            <td>{{order.amount}}</td>
+                            <td>{{order.job.job_number}}</td>
+                            <td>{{order.job.site_name}}</td>
+                            <td>{{order.stocker.warehouse_name}}</td>
                             <td>
                                 <div class="btn-rev-del">
-                                    <a type="button" class="taking-btn" value="登録">持ち出し</a>
-                               
+                                    <a type="button" @click="moveToUse(order.id)" class="taking-btn" value="登録">持ち出し</a>
+                                    <!-- <a v-if="order.status == 'using'" type="button" @click="moveToUse(order.id)" class="taking-btn" value="登録">持ち出し</a>
+                                    <a v-else class="taking-btn" >持ち出し完了</a> -->
                                 </div>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-        
         </div>
     </div>
 </template>
-
 <script>
+    import axios from "axios";
     export default {
-        mounted() {
-            $(document).ready(function () {
-                $('#waiting_list_table').DataTable({
-                    "columnDefs": [
-    { className: 
-                  "order_date",
-                  "targets": [ 10 ]
-                 }
-  ],
-                    // "responsive": {
-                    //     breakpoints: [{
-                    //             name: 'desktop',
-                    //             width: Infinity
-                    //         },
-                    //         {
-                    //             name: 'tablet',
-                    //             width: 1024
-                      
-                    //         },
-                    //         {
-                    //             name: 'phone',
-                    //             width: 320,
-                        
-                    //         }
-                    //     ]
-                    // },
-                    "searching": false,
-                    "info": false,
-                    "autoWidth": true,
-                    "lengthChange": false,
-                });
-            });
+        data() {
+            return {
+                list: [],
+                warehouse: [],
+                record: {
+                    warehouse_id: '',
+                    order_id: '',
+                }
+            }
+        },
+        created() {
+            this.getDeliveryList();
+            this.getWarehouse();
+        },
+        methods: {
+            moveToUse(id) {
+                axios.get('/api/move-to-use-list/' + id )
+                    .then((response) => {
+                        if (response.data.success == false) {
+                            Swal.close()
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Something went wrong please reload the page and try again. Thanks',
+                            })
+                        } else {
+                            Swal.close()
+                            Swal.fire({
+                                icon: 'success',
+                                title: 'Order has been updated successfully.',
+                            })
+                            this.getDeliveryList();
+                        }
+                    })
+                    .error((error) => {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Something went wrong please reload the page and try again. Thanks',
+                        })
+                    });
+            },
+            getWarehouse() {
+                axios.get('/api/warehouse')
+                .then((res) => {
+                    this.warehouse = res.data
+                })
+            },
+            getDeliveryList() {
+                axios.get("/api/orders/" + "deliverd")
+                    .then((response) => {
+                        this.list = response.data
+                        if(this.list.length){
+                            $(document).ready(function () {
+                                $('#waiting_list_table').DataTable({
+                                    "columnDefs": [{
+                                        className: "order_date",
+                                        "targets": [10]
+                                    }],
+                                    "searching": false,
+                                    "info": false,
+                                    "autoWidth": true,
+                                    "lengthChange": false,
+                                });
+                            });
+                        }
+                    })
+            }
         },
     }
 </script>
-
-<style>
-
-</style>

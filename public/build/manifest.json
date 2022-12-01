@@ -1,0 +1,140 @@
+{
+  "resources/js/app.js": {
+    "file": "assets/app.80c482f1.js",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/Pages/Order.vue",
+      "resources/js/Pages/WaitingList.vue",
+      "resources/js/Pages/DeliveredList.vue",
+      "resources/js/Pages/TakeoutList.vue",
+      "resources/js/Pages/InventoryList.vue",
+      "resources/js/Pages/ConstructionHistory.vue",
+      "resources/js/Pages/Registration.vue",
+      "resources/js/Pages/WarehouseRegistration.vue",
+      "resources/js/Pages/SupplierRegisration.vue",
+      "resources/js/Pages/SiteRegistration.vue",
+      "resources/js/Pages/GmMasterRegisteration.vue",
+      "resources/js/Components/Login.vue",
+      "resources/js/Pages/PageNotFound.vue"
+    ],
+    "css": [
+      "assets/app.17ef61bf.css"
+    ]
+  },
+  "resources/js/Pages/Order.vue": {
+    "file": "assets/Order.31a434dd.js",
+    "src": "resources/js/Pages/Order.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/Pages/WaitingList.vue": {
+    "file": "assets/WaitingList.bbbdabf4.js",
+    "src": "resources/js/Pages/WaitingList.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/Pages/DeliveredList.vue": {
+    "file": "assets/DeliveredList.1dc3ac7c.js",
+    "src": "resources/js/Pages/DeliveredList.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/Pages/TakeoutList.vue": {
+    "file": "assets/TakeoutList.cdb9489d.js",
+    "src": "resources/js/Pages/TakeoutList.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/Pages/InventoryList.vue": {
+    "file": "assets/InventoryList.51480efd.js",
+    "src": "resources/js/Pages/InventoryList.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/InventoryList.4da5261b.css"
+    ]
+  },
+  "resources/js/Pages/ConstructionHistory.vue": {
+    "file": "assets/ConstructionHistory.9b8bd0bc.js",
+    "src": "resources/js/Pages/ConstructionHistory.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/Pages/Registration.vue": {
+    "file": "assets/Registration.871114b3.js",
+    "src": "resources/js/Pages/Registration.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/Pages/WarehouseRegistration.vue": {
+    "file": "assets/WarehouseRegistration.b22771ef.js",
+    "src": "resources/js/Pages/WarehouseRegistration.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/Pages/SupplierRegisration.vue": {
+    "file": "assets/SupplierRegisration.8117adcf.js",
+    "src": "resources/js/Pages/SupplierRegisration.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/Pages/SiteRegistration.vue": {
+    "file": "assets/SiteRegistration.eac1ce81.js",
+    "src": "resources/js/Pages/SiteRegistration.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/Pages/GmMasterRegisteration.vue": {
+    "file": "assets/GmMasterRegisteration.496232a8.js",
+    "src": "resources/js/Pages/GmMasterRegisteration.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/Components/Login.vue": {
+    "file": "assets/Login.951a496d.js",
+    "src": "resources/js/Components/Login.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/Pages/PageNotFound.vue": {
+    "file": "assets/PageNotFound.e4d9605d.js",
+    "src": "resources/js/Pages/PageNotFound.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/app.css": {
+    "file": "assets/app.17ef61bf.css",
+    "src": "resources/js/app.css"
+  },
+  "resources/js/Pages/InventoryList.css": {
+    "file": "assets/InventoryList.4da5261b.css",
+    "src": "resources/js/Pages/InventoryList.css"
+  }
+}
