@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Warehouse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -75,7 +76,15 @@ class WarehouseController extends Controller
         return Warehouse::latest()->get();
     }
     public function destroy($id){
+        $status = ['ordered', 'using'];
         if($warehouse = Warehouse::find($id)){
+            $isExist = Order::where(['status'=>$status, 'stocker_id'=>$id])->first();
+            if($isExist){
+                return response()->json([
+                    'success'   => false,
+                    'message' => 'inUse'
+                ]);
+            }
             $warehouse->delete();
             return response()->json([
                 'success'   => true,

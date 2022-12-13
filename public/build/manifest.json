@@ -1,6 +1,6 @@
 {
   "resources/js/app.js": {
-    "file": "assets/app.80c482f1.js",
+    "file": "assets/app.864d5ab7.js",
     "src": "resources/js/app.js",
     "isEntry": true,
     "dynamicImports": [
@@ -15,6 +15,7 @@
       "resources/js/Pages/SupplierRegisration.vue",
       "resources/js/Pages/SiteRegistration.vue",
       "resources/js/Pages/GmMasterRegisteration.vue",
+      "resources/js/Pages/Error.vue",
       "resources/js/Components/Login.vue",
       "resources/js/Pages/PageNotFound.vue"
     ],
@@ -23,7 +24,7 @@
     ]
   },
   "resources/js/Pages/Order.vue": {
-    "file": "assets/Order.31a434dd.js",
+    "file": "assets/Order.367dc4c5.js",
     "src": "resources/js/Pages/Order.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -31,7 +32,7 @@
     ]
   },
   "resources/js/Pages/WaitingList.vue": {
-    "file": "assets/WaitingList.bbbdabf4.js",
+    "file": "assets/WaitingList.6c4b2bdf.js",
     "src": "resources/js/Pages/WaitingList.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -39,7 +40,7 @@
     ]
   },
   "resources/js/Pages/DeliveredList.vue": {
-    "file": "assets/DeliveredList.1dc3ac7c.js",
+    "file": "assets/DeliveredList.d5be735d.js",
     "src": "resources/js/Pages/DeliveredList.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -47,7 +48,7 @@
     ]
   },
   "resources/js/Pages/TakeoutList.vue": {
-    "file": "assets/TakeoutList.cdb9489d.js",
+    "file": "assets/TakeoutList.db02df75.js",
     "src": "resources/js/Pages/TakeoutList.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -55,18 +56,15 @@
     ]
   },
   "resources/js/Pages/InventoryList.vue": {
-    "file": "assets/InventoryList.51480efd.js",
+    "file": "assets/InventoryList.49710b4f.js",
     "src": "resources/js/Pages/InventoryList.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js"
-    ],
-    "css": [
-      "assets/InventoryList.4da5261b.css"
     ]
   },
   "resources/js/Pages/ConstructionHistory.vue": {
-    "file": "assets/ConstructionHistory.9b8bd0bc.js",
+    "file": "assets/ConstructionHistory.40baed68.js",
     "src": "resources/js/Pages/ConstructionHistory.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -74,7 +72,7 @@
     ]
   },
   "resources/js/Pages/Registration.vue": {
-    "file": "assets/Registration.871114b3.js",
+    "file": "assets/Registration.a6bfbe82.js",
     "src": "resources/js/Pages/Registration.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -82,7 +80,7 @@
     ]
   },
   "resources/js/Pages/WarehouseRegistration.vue": {
-    "file": "assets/WarehouseRegistration.b22771ef.js",
+    "file": "assets/WarehouseRegistration.19ba9846.js",
     "src": "resources/js/Pages/WarehouseRegistration.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -90,7 +88,7 @@
     ]
   },
   "resources/js/Pages/SupplierRegisration.vue": {
-    "file": "assets/SupplierRegisration.8117adcf.js",
+    "file": "assets/SupplierRegisration.f54804f3.js",
     "src": "resources/js/Pages/SupplierRegisration.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -98,7 +96,7 @@
     ]
   },
   "resources/js/Pages/SiteRegistration.vue": {
-    "file": "assets/SiteRegistration.eac1ce81.js",
+    "file": "assets/SiteRegistration.d6973f50.js",
     "src": "resources/js/Pages/SiteRegistration.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -106,15 +104,26 @@
     ]
   },
   "resources/js/Pages/GmMasterRegisteration.vue": {
-    "file": "assets/GmMasterRegisteration.496232a8.js",
+    "file": "assets/GmMasterRegisteration.6312673c.js",
     "src": "resources/js/Pages/GmMasterRegisteration.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js"
     ]
   },
+  "resources/js/Pages/Error.vue": {
+    "file": "assets/Error.c741fadd.js",
+    "src": "resources/js/Pages/Error.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/Error.93d46ca3.css"
+    ]
+  },
   "resources/js/Components/Login.vue": {
-    "file": "assets/Login.951a496d.js",
+    "file": "assets/Login.5285909e.js",
     "src": "resources/js/Components/Login.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -122,7 +131,7 @@
     ]
   },
   "resources/js/Pages/PageNotFound.vue": {
-    "file": "assets/PageNotFound.e4d9605d.js",
+    "file": "assets/PageNotFound.87267a41.js",
     "src": "resources/js/Pages/PageNotFound.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -133,8 +142,8 @@
     "file": "assets/app.17ef61bf.css",
     "src": "resources/js/app.css"
   },
-  "resources/js/Pages/InventoryList.css": {
-    "file": "assets/InventoryList.4da5261b.css",
-    "src": "resources/js/Pages/InventoryList.css"
+  "resources/js/Pages/Error.css": {
+    "file": "assets/Error.93d46ca3.css",
+    "src": "resources/js/Pages/Error.css"
   }
 }

@@ -275,11 +275,19 @@
                                     )
                                     this.getList()
                                 } else {
-                                    Swal.fire(
-                                        'Error!',
-                                        'Item not found. Please reload the page and try agian. Thanks',
-                                        'error'
-                                    )
+                                    if(response.data.message == 'inUse'){
+                                        Swal.close()
+                                        Swal.fire({
+                                            icon: 'info',
+                                            title: "Item can't delete because its in use.",
+                                        })
+                                    }else{
+                                        Swal.fire(
+                                            'Error!',
+                                            'Item not found. Please reload the page and try agian. Thanks',
+                                            'error'
+                                        )
+                                    }
                                 }
 
                             })

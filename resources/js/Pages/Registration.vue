@@ -24,7 +24,7 @@
                                 <div class="account-input-content">
                                     <div class="account-reg-lablel"> <label for="">アカウントID</label></div>
                                     <div class="account-reg-input">
-                                        <input type="number" name="login_id" v-model="user.login_id" placeholder="テキスト">
+                                        <input type="number" name="login_id" v-model="user.login_id" placeholder="123" min="0">
                                         <small>
                                             <span v-if="errors.login_id != null" class="text-danger float-left">
                                                 {{errors.login_id[0]}}
@@ -211,11 +211,20 @@
                                     )
                                     this.getList()
                                 } else {
-                                    Swal.fire(
-                                        'Error!',
-                                        'User not found. Please reload the page and try agian. Thanks',
-                                        'error'
-                                    )
+                                    if(response.data.message == 'inUse'){
+                                        Swal.close()
+                                        Swal.fire({
+                                            icon: 'info',
+                                            title: "User can't delete because User has some orders.",
+                                        })
+                                    }else{
+                                        Swal.close()
+                                        Swal.fire(
+                                            'Error!',
+                                            'User not found. Please reload the page and try agian. Thanks',
+                                            'error'
+                                        )
+                                    }
                                 }
 
                             })

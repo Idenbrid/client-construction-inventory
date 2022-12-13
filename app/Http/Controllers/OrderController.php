@@ -67,6 +67,7 @@ class OrderController extends Controller
                     $request->request->add([
                         'status' => 'ordered',
                         'job_id' => $request->job_number['id'],
+                        'job_no' => $request->job_number['job_number'],
                         'created_by' => Auth::id(),
                         'updated_by' => Auth::id(),
                     ]);
@@ -140,7 +141,7 @@ class OrderController extends Controller
         return Order::where(['status'=>$type, 'created_by'=> Auth::id()])->with(['Job', 'Orderer', 'Item', 'Stocker'])->get();
     }
     public function getOrderUsedUsing(){
-        return Order::where(['status'=> ['using', 'used']], ['created_by'=> Auth::id()])->with(['Job', 'Orderer', 'Item', 'Stocker'])->get();
+        return Order::where(['status'=> 'using', 'created_by'=>Auth::id()])->with(['Job', 'Orderer', 'Item', 'Stocker'])->get();
     }
     public function edit($id){
         return Order::with('Job')->find($id);
@@ -278,7 +279,7 @@ class OrderController extends Controller
         }
     }
     public function getRemainingList(){
-        return Order::where('status', 'return')->with(['Job', 'Orderer', 'Item', 'Stocker'])->get();
+        return Order::where(['status'=> 'return', 'created_by'=>Auth::id()])->with(['Job', 'Orderer', 'Item', 'Stocker'])->get();
     }
     public function reserveOrders($order_id){
         return ReserveOrder::where('order_id', $order_id)->with(['Job', 'Orderer', 'Item', 'Stocker'])->get();
@@ -306,5 +307,11 @@ class OrderController extends Controller
             }
         });
         return $transaction;
+    }
+    public function allOrders(){
+        return Order::where(['status'=> 'used', 'created_by'=> Auth::id()])->with(['Job', 'Orderer', 'Item', 'Stocker'])->get();
+    }
+    public function jobSearch($job_no){
+        return Order::where(['job_no'=> $job_no, 'created_by'=> Auth::id()])->with(['Job', 'Orderer', 'Item', 'Stocker'])->get();
     }
 }

@@ -100,9 +100,9 @@
                 axios.get("/api/orders/" + "deliverd")
                     .then((response) => {
                         this.list = response.data
-                        if(this.list.length){
+                        if(this.list.length > 0 ){
                             $(document).ready(function () {
-                                $('#waiting_list_table').DataTable({
+                                $('#delivered_list_table').DataTable({
                                     "columnDefs": [{
                                         className: "order_date",
                                         "targets": [10]

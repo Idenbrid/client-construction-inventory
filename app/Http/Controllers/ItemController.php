@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Validator;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Item;
+use App\Models\Order;
 
 class ItemController extends Controller
 {
@@ -91,7 +92,15 @@ class ItemController extends Controller
         return Item::latest()->get();
     }
     public function destroy($id){
+        $status = ['ordered', 'using'];
         if($item = Item::find($id)){
+            $isExist = Order::where(['status'=>$status, 'item_id'=>$id])->first();
+            if($isExist){
+                return response()->json([
+                    'success'   => false,
+                    'message' => 'inUse'
+                ]);
+            }
             $item->delete();
             return response()->json([
                 'success'   => true,

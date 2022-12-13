@@ -11,7 +11,7 @@
                             <div class="account-input-content">
                                 <div class="account-reg-lablel"><label>JOB番号</label></div>
                                 <div class="account-reg-input">
-                                    <input class="master-reg-input" v-model="site.job_number" type="text" name="JOB番号"
+                                    <input class="master-reg-input" v-model="site.job_number" type="number" name="JOB番号" min="0"
                                         id="JOB番号" placeholder="テキスト">
                                     <small>
                                         <span v-if="errors.job_number != null" class="text-danger float-left">
@@ -181,11 +181,19 @@
                                     )
                                     this.getList()
                                 } else {
-                                    Swal.fire(
-                                        'Error!',
-                                        'Site not found. Please reload the page and try agian. Thanks',
-                                        'error'
-                                    )
+                                    if(response.data.message == 'inUse'){
+                                        Swal.close()
+                                        Swal.fire({
+                                            icon: 'info',
+                                            title: "Warehouse can't delete because its in use.",
+                                        })
+                                    }else{
+                                        Swal.fire(
+                                            'Error!',
+                                            'Site not found. Please reload the page and try agian. Thanks',
+                                            'error'
+                                        )
+                                    }
                                 }
 
                             })

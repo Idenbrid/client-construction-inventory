@@ -26,7 +26,7 @@
                                     </ul>
                                     <!-- ON OFF BUTTONS END-->
                                     <li class="form-fields">
-                                        <div class="register-label align-items-center">JOB番号（選択）</div>
+                                        <div class="register-label align-items-center">JOB番号</div>
                                         <div class="order-input-field">
                                             <select v-model="order.job_number" class="input-border" name="cars"
                                                 id="cars">
@@ -92,7 +92,7 @@
                                     <li class="form-fields ">
                                         <div class="register-label">order date（カレンダー）</div>
                                         <div class="date">
-                                            <input type="date" v-model="order.order_date" id="date" name="datebirth"
+                                            <input type="date" v-model="order.order_date" id="date" name="datebirth" :min="new Date().toJSON().slice(0,10).replace(/-/g,'-')"
                                                 class="form-control input-border">
                                             <small>
                                                 <span v-if="errors.order_date != null" class="text-danger float-left">
@@ -220,7 +220,7 @@
                                     <li class="form-fields">
                                         <div class="register-label" bis_skin_checked="1">数量（数字入力）</div>
                                         <div class="order-input-field">
-                                            <input type="number" id="fname" v-model="order.amount" name="fname"
+                                            <input type="number" id="fname" v-model="order.amount" name="fname" min="1"
                                                 placeholder="テキスト" class="form-control input-border">
                                             <small>
                                                 <span v-if="errors.amount != null" class="text-danger float-left">

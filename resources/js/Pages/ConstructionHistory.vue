@@ -10,10 +10,10 @@
                             <div class="job-form-fields">
                                 <div class="job-search-field">
                                     <div class="field-label">JOB番号入力</div>
-                                    <input type="number" id="fname" name="fname" placeholder="テキスト"
-                                        class="job-form-control input-border">
+                                    <input type="number" v-model="jobNo" id="fname" name="fname" placeholder="テキスト" class="job-form-control input-border">
                                 </div>
-                                <button type="button" class="construction-btn">検索</button>
+                                <button @click.prevent="searchJob()" type="button" class="construction-btn">検索</button>
+                                <button @click.prevent="getAllOrders()" type="button" class="construction-btn">Clear</button>
                             </div>
                         </div>
                     </div>
@@ -36,34 +36,18 @@
                             </tr>
                         </thead>
                         <tbody>
-
-                            <tr>
-                                <td>2022/12/24</td>
-                                <td>小田切健太郎</td>
-                                <td>テキストテ...</td>
-                                <td>テキストテ...</td>
-                                <td>テキストテ...</td>
-                                <td>123456789…</td>
-                                <td>123456789…</td>
-                                <td>123456789…</td>
-                                <td>テキストテ…</td>
-                                <td>123456789…</td>
-
+                            <tr v-for="(order, index) in list" :key="index">
+                                <td>{{order.order_date}}</td>
+                                <td>{{order.orderer.user_name}}</td>
+                                <td>{{order.item.category}}</td>
+                                <td>{{order.item.manufacturer}}</td>
+                                <td>{{order.item.item_name}}</td>
+                                <td>{{order.item.item_number}}</td>
+                                <td>{{order.amount}}</td>
+                                <td>{{order.job.job_number}}</td>
+                                <td>{{order.job.site_name}}</td>
+                                <td>{{order.stocker.warehouse_name}}</td>
                             </tr>
-                            <tr>
-                                <td>2022/12/24</td>
-                                <td>小田切健太郎</td>
-                                <td>テキストテ...</td>
-                                <td>テキストテ...</td>
-                                <td>テキストテ...</td>
-                                <td>123456789…</td>
-                                <td>123456789…</td>
-                                <td>123456789…</td>
-                                <td>テキストテ…</td>
-                                <td>123456789…</td>
-
-                            </tr>
-
                         </tbody>
                     </table>
                 </div>
@@ -72,18 +56,42 @@
         </div>
     </div>
 </template>
-
 <script>
+    import axios from "axios";
     export default {
-        mounted() {
-            $(document).ready(function () {
-                $('#history_list_table').DataTable({
-                    "searching": false,
-                    "info": false,
-                    "autoWidth": false,
-                    "lengthChange": false,
-                });
-            });
+        data() {
+            return {
+                list: [],
+                jobNo: ''
+            }
+        },
+        created() {
+            this.getAllOrders()
+        },
+        methods: {
+            getAllOrders() {
+                axios.get("/api/all-orders")
+                .then((response) => {
+                    this.jobNo = '';
+                    this.list = response.data
+                    if(this.list.length > 0 ){
+                        $(document).ready(function () {
+                            $('#history_list_table').DataTable({
+                                "searching": false,
+                                "info": false,
+                                "autoWidth": false,
+                                "lengthChange": false,
+                            });
+                        });
+                    }
+                })
+            },
+            searchJob(){
+                axios.get("/api/job-search/" + this.jobNo)
+                .then((response) => {
+                    this.list = response.data
+                })
+            }
         },
     }
 </script>

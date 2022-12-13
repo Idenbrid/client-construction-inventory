@@ -166,11 +166,19 @@
                                     )
                                     this.getList()
                                 } else {
-                                    Swal.fire(
-                                        'Error!',
-                                        'Warehouse not found. Please reload the page and try agian. Thanks',
-                                        'error'
-                                    )
+                                    if(response.data.message == 'inUse'){
+                                        Swal.close()
+                                        Swal.fire({
+                                            icon: 'info',
+                                            title: "Warehouse can't delete because its in use.",
+                                        })
+                                    }else{
+                                        Swal.fire(
+                                            'Error!',
+                                            'Warehouse not found. Please reload the page and try agian. Thanks',
+                                            'error'
+                                        )
+                                    }
                                 }
 
                             })

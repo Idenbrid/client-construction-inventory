@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Site;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +20,7 @@ class SiteController extends Controller
         $messages = [];
 
         $rules = [
-            'job_number' => 'required|unique:sites',
+            'job_number' => 'required|unique:sites,job_number,NULL,id,deleted_at,NULL',
             'site_name' => 'required',
         ];
 
@@ -79,7 +80,15 @@ class SiteController extends Controller
         return Site::latest()->get();
     }
     public function destroy($id){
+        $status = ['ordered', 'using'];
         if($site = Site::find($id)){
+            $isExist = Order::where(['status'=>$status, 'client_id'=>$id])->first();
+            if($isExist){
+                return response()->json([
+                    'success'   => false,
+                    'message' => 'inUse'
+                ]);
+            }
             $site->delete();
             return response()->json([
                 'success'   => true,

@@ -1151,10 +1151,10 @@ tbody tr td {
 #delivered_list_table_wrapper .paginate_button.current,
 #waiting_list_table_wrapper,
 .paginate_button.current {
-    background-color: #BEA000;
+    /* background-color: #BEA000; */
     color: #fff !important;
-    border: 1px solid #BEA000;
-    padding: 5px 12px;
+    /* border: 1px solid #BEA000; */
+    /* padding: 5px 12px; */
 }
 
 #history_list_table_wrapper .paginate_button.current:hover,

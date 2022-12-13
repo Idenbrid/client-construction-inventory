@@ -28,6 +28,7 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::post('/update', 'update');
         Route::get('/list', 'list');
         Route::get('/delete/{user_id}', 'delete');
+        Route::get('/current-user', 'currentUser');
     });
     Route::resource('site', SiteController::class);
     Route::resource('item', ItemController::class);
@@ -48,6 +49,8 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::post('/reserve-order', 'reserveOrder');
         Route::get('/get-related-reserve-orders/{order_id}', 'reserveOrders');
         Route::post('/reserve-to-using', 'reserveToUsing');
+        Route::get('/all-orders', 'allOrders');
+        Route::get('/job-search/{job_no}', 'jobSearch');
     });
 
 });

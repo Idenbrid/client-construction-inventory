@@ -8,10 +8,10 @@
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
                                 data-toggle="dropdown" aria-expanded="false">{{is_login == 'manager' ? 'マネジャー' : 'メンバー'}}</a>
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#!">ログアウト <i class="fa fa-sign-in" aria-hidden="true"></i></a>
+                                <a class="dropdown-item" @click="handleLogout()">ログアウト <i class="fa fa-sign-in" aria-hidden="true"></i></a>
                             </div>
                         </li>
-                        <li class="nav-items"><a class="nav-link" @click="handleLogout()">山田 太郎 </a></li>
+                        <li class="nav-items"><a class="nav-link">{{user.user_name}}</a></li>
                         <li class="nav-items dropdown mbile-top-nav-setting">
                             <a class="nav-link dropdown-toggle setting-toggle" id="navbarDropdown" href="#" role="button"
                                 data-toggle="dropdown" aria-expanded="false">設定
@@ -43,9 +43,19 @@
 		data() {
 			return {
 				is_login : $("meta[name='role']").attr("content"),
+                user: '',
 			}
 		},
+        created() {
+            this.getCurrentUser()
+        },
 		methods: {
+			getCurrentUser() {
+				axios.get("/api/user/current-user")
+				.then((response)=>{
+                    this.user = response.data
+				})
+			},
 			handleLogout() {
 				axios.get("/api/user/logout")
 				.then((response)=>{

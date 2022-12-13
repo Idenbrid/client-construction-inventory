@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Validator;
@@ -23,7 +24,7 @@ class AuthenticationController extends Controller
 
         $rules = [
             'user_name' => 'required',
-            'login_id' => 'required|min:6|unique:users',
+            'login_id' => 'required|min:6|unique:users,login_id,NULL,id,deleted_at,NULL',
             'login_password' => 'required|min:6',
             'type' => 'required',
         ];
@@ -37,12 +38,20 @@ class AuthenticationController extends Controller
                 'errors' => $validator->errors(),
             ]);
         } else {
-            $request->request->add([
-                'password' => Hash::make($request->login_password),
-                'created_by' => Auth::id(),
-                'updated_by' => Auth::id(),
-            ]);
-            $user = User::create($request->all());
+            $user = new User();
+            $user->user_name = $request->user_name;
+            $user->login_id = $request->login_id;
+            $user->type = $request->type;
+            $user->password = $request->login_password;
+            $user->created_by = Auth::id();
+            $user->updated_by = Auth::id();
+            $user->save();
+            // $request->request->add([
+            //     'password' => Hash::make($request->login_password),
+            //     'created_by' => Auth::id(),
+            //     'updated_by' => Auth::id(),
+            // ]);
+            // $user = User::create($request->all());
             return response()->json([
                 'success' => true,
                 'user' => Auth::user(),
@@ -59,7 +68,7 @@ class AuthenticationController extends Controller
         $messages = [];
 
         $rules = [
-            'login_id' => 'required|min:6|integer',
+            'login_id' => 'required|min:6',
             'login_password' => 'required|min:6',
         ];
 
@@ -159,7 +168,15 @@ class AuthenticationController extends Controller
         return User::where('id', '!=', Auth::id())->latest()->get();
     }
     public function delete($id){
+        $status = ['ordered', 'using'];
         if($user = User::find($id)){
+            $isExist = Order::where(['status'=>$status, 'created_by'=>$id])->first();
+            if($isExist){
+                return response()->json([
+                    'success'   => false,
+                    'message' => 'inUse'
+                ]);
+            }
             $user->delete();
             return response()->json([
                 'success'   => true,
@@ -169,5 +186,8 @@ class AuthenticationController extends Controller
                 'success'   => false,
             ]);
         }
+    }
+    public function currentUser(){
+        return Auth::user();
     }
 }
