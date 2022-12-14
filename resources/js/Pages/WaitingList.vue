@@ -33,8 +33,8 @@
                             <td>
                                 <div class="btn-rev-del">
                                     <a type="button" class="delivery-btn" @click.prevent="record.order_id = order.id" value="登録" data-toggle="modal" data-target="#staticBackdrop">納品</a>
-                                    <router-link :to="{ name: 'Home', params: { id: order.id }}" type="submit" class="revision-btn" value="登録">修正</router-link>
-                                    <a type="button" class="copy-content-btn disabled" value="登録">内容コピー</a>
+                                    <router-link :to="{ name: 'Home', params: { id: order.id, type: 'update' }}" type="submit" class="revision-btn" value="登録">修正</router-link>
+                                    <router-link :to="{ name: 'Home', params: { id: order.id, type: 'duplicate' }}" type="button"  class="copy-content-btn disabled" value="登録">内容コピー</router-link>
                                 </div>
                             </td>
                         </tr>

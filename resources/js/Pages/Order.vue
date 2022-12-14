@@ -265,6 +265,26 @@
                 list: [],
             }
         },
+        updated() {
+            if(this.$route.params.id == ''){
+                this.order = {
+                    job_number: {},
+                    site_name: '',
+                    order_date: '',
+                    client_id: '',
+                    // supplier_id: '',
+                    item_id: '',
+                    stocker_id: '',
+                    amount: '',
+                };
+                this.sites= [];
+                this.items= [];
+                this.warehouses= [];
+                this.users= [];
+                this.errors= [];
+                this.list= [];
+            }
+        },
         created() {
             this.getSettings()
             if (this.$route.params.id != '') {
@@ -280,39 +300,49 @@
                     },
                 })
                 if (this.$route.params.id != '') {
-                    axios.patch("/api/order", this.order)
-                        .then((response) => {
-                            if (response.data.success == false) {
-                                Swal.close()
-                                this.errors = response.data.errors
-                            } else {
-                                Swal.close()
-                                this.clear()
-                                this.errors = [];
-                                Swal.fire({
-                                    icon: 'success',
-                                    title: 'Order has been updated successfully.',
-                                })
-                                this.$router.push('/waiting-list')
-                            }
-                        })
+                    if(this.$route.params.type == 'update'){
+                        this.updateOrder()
+                    }else if(this.$route.params.type == 'duplicate'){
+                        this.newOrder()
+                    }
                 } else {
-                    axios.post("/api/order", this.order)
-                        .then((response) => {
-                            if (response.data.success == false) {
-                                Swal.close()
-                                this.errors = response.data.errors
-                            } else {
-                                Swal.close()
-                                this.clear()
-                                this.errors = [];
-                                Swal.fire({
-                                    icon: 'success',
-                                    title: 'Order has been registered successfully.',
-                                })
-                            }
-                        })
+                    this.newOrder()  
                 }
+            },
+            updateOrder(){
+                axios.patch("/api/order", this.order)
+                .then((response) => {
+                    if (response.data.success == false) {
+                        Swal.close()
+                        this.errors = response.data.errors
+                    } else {
+                        Swal.close()
+                        this.clear()
+                        this.errors = [];
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Order has been updated successfully.',
+                        })
+                        this.$router.push('/waiting-list')
+                    }
+                })
+            },
+            newOrder(){
+                axios.post("/api/order", this.order)
+                .then((response) => {
+                    if (response.data.success == false) {
+                        Swal.close()
+                        this.errors = response.data.errors
+                    } else {
+                        Swal.close()
+                        this.clear()
+                        this.errors = [];
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Order has been registered successfully.',
+                        })
+                    }
+                })
             },
             clear() {
                 this.order = {

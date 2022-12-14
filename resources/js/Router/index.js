@@ -143,7 +143,7 @@ export const routes = [
     },
     {
         name: 'Home',
-        path: '/order/:id?',
+        path: '/order/:id?/:type?',
         component: Home,
         meta: {
             auth: true,
