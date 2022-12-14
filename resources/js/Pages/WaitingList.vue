@@ -60,7 +60,7 @@
                             </div>
                         </div>
                         <div class="modal-footer border-0 justify-content-center">
-                            <button @click.prevent="moveToDelivery()" type="button" class="complete-btn" data-dismiss="modal">納品済み</button>
+                            <button @click.prevent="moveToDelivery()" type="button" class="complete-btn">納品済み</button>
                         </div>
                     </div>
                 </div>
@@ -93,12 +93,8 @@
                         Swal.close()
                         Swal.fire({
                             icon: 'error',
-                            title: 'Something went wrong please reload the page and try again. Thanks',
+                            title: 'Something went wrong',
                         })
-                        this.record = {
-                            warehouse_id: '',
-                            order_id: '',
-                        };
                     } else {
                         Swal.close()
                         Swal.fire({
@@ -110,6 +106,7 @@
                             order_id: '',
                         };
                         this.getWaitingList();
+                        $('#staticBackdrop').modal('hide')
                     }
                 })
                 .error((error) => {
