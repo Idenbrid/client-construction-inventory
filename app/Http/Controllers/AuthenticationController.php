@@ -190,4 +190,15 @@ class AuthenticationController extends Controller
     public function currentUser(){
         return Auth::user();
     }
+    public function authLogin(){
+        if(Auth::check()){
+            return response()->json([
+                'success'   => true,
+            ]);
+        }else{
+            return response()->json([
+                'success'   => false,
+            ]);
+        }
+    }
 }

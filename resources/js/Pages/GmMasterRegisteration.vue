@@ -134,7 +134,7 @@
                                     <th>メーカー</th>
                                     <th>品名</th>
                                     <th>型番</th>
-
+                                    <th>単位</th>
                                     <th></th>
                                 </tr>
                                 <tr v-for="(item, index) in list" :key="index">
@@ -143,6 +143,7 @@
                                     <td>{{item.manufacturer}}</td>
                                     <td>{{item.item_name}}</td>
                                     <td>{{item.item_number}}</td>
+                                    <td>{{item.unit}}</td>
                                     <td>
                                         <div class="btn-grouped">
                                             <a class="btn" @click="deleteItem(item.id)"><i

@@ -76,9 +76,9 @@ class WarehouseController extends Controller
         return Warehouse::latest()->get();
     }
     public function destroy($id){
-        $status = ['ordered', 'using'];
+        // $status = ['ordered', 'using'];
         if($warehouse = Warehouse::find($id)){
-            $isExist = Order::where(['status'=>$status, 'stocker_id'=>$id])->first();
+            $isExist = Order::where('stocker_id', $id)->first();
             if($isExist){
                 return response()->json([
                     'success'   => false,

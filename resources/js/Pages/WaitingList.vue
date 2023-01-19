@@ -93,7 +93,7 @@
                         Swal.close()
                         Swal.fire({
                             icon: 'error',
-                            title: 'Something went wrong',
+                            title: 'Please select warehouse!',
                         })
                     } else {
                         Swal.close()

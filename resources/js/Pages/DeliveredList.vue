@@ -35,9 +35,9 @@
                             <td>{{order.stocker.warehouse_name}}</td>
                             <td>
                                 <div class="btn-rev-del">
-                                    <a type="button" @click="moveToUse(order.id)" class="taking-btn" value="登録">持ち出し</a>
-                                    <!-- <a v-if="order.status == 'using'" type="button" @click="moveToUse(order.id)" class="taking-btn" value="登録">持ち出し</a>
-                                    <a v-else class="taking-btn" >持ち出し完了</a> -->
+                                    <!-- <a type="button" @click="moveToUse(order.id)" class="taking-btn" value="登録">持ち出し</a> -->
+                                    <a v-if="order.status == 'deliverd'" type="button" @click="moveToUse(order.id)" class="taking-btn" value="登録">持ち出し</a>
+                                    <a v-else class="taking-btn" style="background: white;color: #bea000;border: 1px solid #bea000">持ち出し完了</a>
                                 </div>
                             </td>
                         </tr>
@@ -97,7 +97,7 @@
                 })
             },
             getDeliveryList() {
-                axios.get("/api/orders/" + "deliverd")
+                axios.get("/api/get-delivered-list")
                     .then((response) => {
                         this.list = response.data
                         if(this.list.length > 0 ){

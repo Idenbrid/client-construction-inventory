@@ -9,11 +9,13 @@
                         <div class="col-sm-12 col-md-12 col-lg-8 mx-auto">
                             <div class="job-form-fields">
                                 <div class="job-search-field">
-                                    <div class="field-label">JOB番号入力</div>
-                                    <input type="number" v-model="jobNo" id="fname" name="fname" placeholder="テキスト" class="job-form-control input-border">
+                                    <!-- <div class="field-label">JOB番号入力</div> -->
+                                    <div class="field-label">サイト名を入力</div>
+                                    <!-- <input type="number" v-model="jobNo" id="fname" name="fname" placeholder="テキスト" class="job-form-control input-border"> -->
+                                    <input type="text" v-model="site_name"  name="site_name" placeholder="テキスト" class="job-form-control input-border">
                                 </div>
                                 <button @click.prevent="searchJob()" type="button" class="construction-btn">検索</button>
-                                <button @click.prevent="getAllOrders()" type="button" class="construction-btn">Clear</button>
+                                <button @click.prevent="getAllOrders()" type="button" class="construction-btn" style="width: fit-content">検索をリセット</button>
                             </div>
                         </div>
                     </div>
@@ -62,7 +64,8 @@
         data() {
             return {
                 list: [],
-                jobNo: ''
+                jobNo: '',
+                site_name: '',
             }
         },
         created() {
@@ -70,7 +73,7 @@
         },
         methods: {
             getAllOrders() {
-                axios.get("/api/all-orders")
+                axios.get("api/all-orders")
                 .then((response) => {
                     this.jobNo = '';
                     this.list = response.data
@@ -87,7 +90,7 @@
                 })
             },
             searchJob(){
-                axios.get("/api/job-search/" + this.jobNo)
+                axios.get('api/job-search/' + this.site_name)
                 .then((response) => {
                     this.list = response.data
                 })

@@ -8,7 +8,7 @@
 
                     <thead>
                         <tr>
-                            <th>発注年月日</th>
+                            <th>使用日</th>
                             <th>発注者</th>
                             <th>分類</th>
                             <th>メーカー</th>
@@ -22,7 +22,7 @@
                     </thead>
                     <tbody>
                         <tr v-for="(order, index) in list" :key="index">
-                            <td>{{order.order_date}}</td>
+                            <td>{{ dateTime(order.updated_at) }}</td>
                             <td>{{order.orderer.user_name}}</td>
                             <td>{{order.item.category}}</td>
                             <td>{{order.item.manufacturer}}</td>
@@ -36,7 +36,7 @@
                                 <div class="btn-rev-del" v-if="order.status != 'used'">
                                     <a type="button" @click="allUsed(order.id)" class="delivery-btn" value="登録">使い終り</a>
                                     <a type="button" @click.prevent="record.order_id = order.id" class="revision-btn" value="登録" data-toggle="modal" data-target="#reminder">余り</a>
-                                    <a type="button" class="copy-content-btn disabled" value="登録">取消</a>
+                                    <a type="button" class="copy-content-btn disabled" @click="cancleOrder(order.id)" value="登録">取消</a>
                                 </div>
                                 <div class="btn-rev-del" v-else>
                                     <a class="delivery-btn">持ち出し完了</a>
@@ -79,6 +79,8 @@
 </template>
 <script>
     import axios from "axios";
+    import moment from 'moment';
+
     export default {
         data() {
             return {
@@ -96,6 +98,34 @@
             this.getWarehouse();
         },
         methods: {
+            dateTime(value) {
+                return moment(value).format('YYYY-MM-DD');
+            },
+            cancleOrder(id){
+                axios.get('/api/cancle-move-to-delivered/' + id)
+                .then((response) => {
+                    if (response.data.success == false) {
+                        Swal.close()
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Something went wrong please reload the page and try again. Thanks',
+                        })
+                    } else {
+                        Swal.close()
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Order has been updated successfully.',
+                        })
+                        this.getUsedList();
+                    }
+                })
+                .error((error) => {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Something went wrong please reload the page and try again. Thanks',
+                    })
+                });
+            },
             saveRemaining(){
                 axios.post('/api/save-remaining', this.record)
                 .then((response) => {
@@ -110,13 +140,8 @@
                             Swal.close()
                             Swal.fire({
                                 icon: 'error',
-                                title: 'Something went wrong please reload the page and try again. Thanks',
+                                title: 'Please Select required information.',
                             })
-                            this.record = {
-                                warehouse_id: '',
-                                order_id: '',
-                                amount: '',
-                            };
                         }
                     } else {
                         Swal.close()
@@ -141,28 +166,28 @@
             },
             allUsed(id) {
                 axios.get('/api/all-used/' + id)
-                    .then((response) => {
-                        if (response.data.success == false) {
-                            Swal.close()
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'Something went wrong please reload the page and try again. Thanks',
-                            })
-                        } else {
-                            Swal.close()
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Order has been updated successfully.',
-                            })
-                            this.getUsedList();
-                        }
-                    })
-                    .error((error) => {
+                .then((response) => {
+                    if (response.data.success == false) {
+                        Swal.close()
                         Swal.fire({
                             icon: 'error',
                             title: 'Something went wrong please reload the page and try again. Thanks',
                         })
-                    });
+                    } else {
+                        Swal.close()
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Order has been updated successfully.',
+                        })
+                        this.getUsedList();
+                    }
+                })
+                .error((error) => {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Something went wrong please reload the page and try again. Thanks',
+                    })
+                });
             },
             getWarehouse() {
                 axios.get('/api/warehouse')
