@@ -110,7 +110,7 @@
                         </div>
                         <div class="modal-body pt-0">
                             <div class="booking-content">
-                                <table class="w-100">
+                                <table class="w-100 nowrap">
                                     <thead>
                                         <tr>
                                             <th>使用年月日</th>

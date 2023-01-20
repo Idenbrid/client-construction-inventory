@@ -72,7 +72,7 @@
                             </div>
                         </div>
                         <div class="table-col">
-                            <table class="registration-table">
+                            <table class="registration-table nowrap">
                                 <tr class="f-12-regular">
                                     <th>#</th>
                                     <th>アカウント名</th>
