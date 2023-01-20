@@ -80,9 +80,9 @@ class SiteController extends Controller
         return Site::latest()->get();
     }
     public function destroy($id){
-        $status = ['ordered', 'using'];
+        // $status = ['ordered', 'using'];
         if($site = Site::find($id)){
-            $isExist = Order::where(['status'=>$status, 'client_id'=>$id])->first();
+            $isExist = Order::where('client_id', $id)->first();
             if($isExist){
                 return response()->json([
                     'success'   => false,

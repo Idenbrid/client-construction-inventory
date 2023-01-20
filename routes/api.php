@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::post('/login', [App\Http\Controllers\AuthenticationController::class, 'login']);
+Route::get('/auth-login', [App\Http\Controllers\AuthenticationController::class, 'authLogin']);
  /* Authenticated Routes  **/
 Route::middleware('auth:sanctum')->group(function () {
     Route::controller(AuthenticationController::class)->prefix('/user')->group(function () {
@@ -37,7 +38,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::controller(OrderController::class)->group(function () {
         Route::get('/get-settings', 'getSettings');
         Route::get('/orders/{orderd}', 'list');
+        Route::get('/get-delivered-list', 'deliveredList');
         Route::get('/order/{orderd_id}', 'edit');
+        Route::get('/cancle-move-to-delivered/{orderd_id}', 'cancleOrder');
         Route::post('/order', 'postOrder');
         Route::patch('/order', 'updateOrder');
         Route::post('/move-to-delivery-list', 'moveToDelivery');
@@ -50,7 +53,7 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::get('/get-related-reserve-orders/{order_id}', 'reserveOrders');
         Route::post('/reserve-to-using', 'reserveToUsing');
         Route::get('/all-orders', 'allOrders');
-        Route::get('/job-search/{job_no}', 'jobSearch');
+        Route::get('/job-search/{site_name}', 'jobSearch');
     });
 
 });

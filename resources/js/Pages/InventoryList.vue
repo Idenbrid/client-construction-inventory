@@ -121,7 +121,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr v-for="(reserve, index) in reserveOrders" :key="index">
+                                        <tr v-for="(reserve, index) in reserveOrders" :key="index" :style="reserve.order_date <= new Date().toJSON().slice(0,10).replace(/-/g,'-') ? 'background:#f1d2d2' : ''">
                                             <t>{{reserve.order_date}}</t>
                                             <td>{{reserve.orderer.user_name}}</td>
                                             <td>{{reserve.amount}}</td>
@@ -298,7 +298,7 @@
                     this.list = response.data
                     if (this.list.length > 0) {
                         $(document).ready(function () {
-                            $('#waiting_list_table').DataTable({
+                            $('#inventory_list_table').DataTable({
                                 "columnDefs": [{
                                     "width": "90px",
                                     "targets": [0, 1, 2, 3, 4, 5, 6, 7, 8],

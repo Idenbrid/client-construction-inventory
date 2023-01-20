@@ -15,6 +15,7 @@ class Order extends Model
         'client_id',
         'item_id',
         'stocker_id',
+        'site_name',
         'order_date',
         'amount',
         'created_by',
@@ -24,18 +25,18 @@ class Order extends Model
     protected $dates = ['deleted_at'];
     Public function Job()
     {
-        return $this->belongsTo(Site::class,);
+        return $this->belongsTo(Site::class)->withDefault();
     }
     Public function Orderer()
     {
-        return $this->belongsTo(User::class, 'client_id');
+        return $this->belongsTo(User::class, 'client_id')->withDefault();
     }
     Public function Item()
     {
-        return $this->belongsTo(Item::class,);
+        return $this->belongsTo(Item::class)->withDefault();
     }
     Public function Stocker()
     {
-        return $this->belongsTo(Warehouse::class, 'stocker_id');
+        return $this->belongsTo(Warehouse::class, 'stocker_id')->withDefault();
     }
 }

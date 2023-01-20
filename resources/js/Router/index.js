@@ -2,6 +2,7 @@ import {
     createWebHistory,
     createRouter
 } from "vue-router";
+import axios from "axios";
 
 /*
 WEBSITE 
@@ -33,7 +34,17 @@ export const routes = [
         component: Login,
         meta: {
             title: "Login",
-        }
+        },
+        beforeEnter: (to, from, next) => {
+            axios.get('/api/auth-login')
+            .then((response) => {
+                if (response.data.success == true) {
+                    next('/order')
+                } else {
+                    next()
+                }
+            });
+        },
     },
     {
         name: 'WaitingList',

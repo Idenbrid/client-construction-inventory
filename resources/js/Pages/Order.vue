@@ -90,7 +90,7 @@
                                     </ul>
                                     <!-- ON OFF BUTTONS END-->
                                     <li class="form-fields ">
-                                        <div class="register-label">order date（カレンダー）</div>
+                                        <div class="register-label">発注日（カレンダー）</div>
                                         <div class="date">
                                             <input type="date" v-model="order.order_date" id="date" name="datebirth" :min="new Date().toJSON().slice(0,10).replace(/-/g,'-')"
                                                 class="form-control input-border">
@@ -185,7 +185,7 @@
                                     </ul>
                                     <!-- ON OFF BUTTONS END-->
                                     <li class="form-fields">
-                                        <div class="register-label">warehouses</div>
+                                        <div class="register-label">資材置き場</div>
                                         <div class="order-input-field">
                                             <select class="input-border" v-model="order.stocker_id" name="cars"
                                                 id="cars">
@@ -265,24 +265,21 @@
                 list: [],
             }
         },
-        updated() {
-            if(this.$route.params.id == ''){
-                this.order = {
-                    job_number: {},
-                    site_name: '',
-                    order_date: '',
-                    client_id: '',
-                    // supplier_id: '',
-                    item_id: '',
-                    stocker_id: '',
-                    amount: '',
-                };
-                this.sites= [];
-                this.items= [];
-                this.warehouses= [];
-                this.users= [];
-                this.errors= [];
-                this.list= [];
+        watch: {
+            '$route' (to, from) {
+                if(to !== from ) {
+                    this.order = {
+                        job_number: {},
+                        site_name: '',
+                        order_date: '',
+                        client_id: '',
+                        // supplier_id: '',
+                        item_id: '',
+                        stocker_id: '',
+                        amount: '',
+                    };
+                    this.errors= [];
+                }
             }
         },
         created() {
@@ -341,6 +338,7 @@
                             icon: 'success',
                             title: 'Order has been registered successfully.',
                         })
+                        this.$router.push('/waiting-list');
                     }
                 })
             },

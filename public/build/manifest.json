@@ -1,6 +1,6 @@
 {
   "resources/js/app.js": {
-    "file": "assets/app.864d5ab7.js",
+    "file": "assets/app.07cafa55.js",
     "src": "resources/js/app.js",
     "isEntry": true,
     "dynamicImports": [
@@ -24,7 +24,7 @@
     ]
   },
   "resources/js/Pages/Order.vue": {
-    "file": "assets/Order.367dc4c5.js",
+    "file": "assets/Order.e59b9f91.js",
     "src": "resources/js/Pages/Order.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -32,7 +32,7 @@
     ]
   },
   "resources/js/Pages/WaitingList.vue": {
-    "file": "assets/WaitingList.6c4b2bdf.js",
+    "file": "assets/WaitingList.ec824f0b.js",
     "src": "resources/js/Pages/WaitingList.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -40,7 +40,7 @@
     ]
   },
   "resources/js/Pages/DeliveredList.vue": {
-    "file": "assets/DeliveredList.d5be735d.js",
+    "file": "assets/DeliveredList.37a87898.js",
     "src": "resources/js/Pages/DeliveredList.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -48,7 +48,7 @@
     ]
   },
   "resources/js/Pages/TakeoutList.vue": {
-    "file": "assets/TakeoutList.db02df75.js",
+    "file": "assets/TakeoutList.ed497c56.js",
     "src": "resources/js/Pages/TakeoutList.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -56,7 +56,7 @@
     ]
   },
   "resources/js/Pages/InventoryList.vue": {
-    "file": "assets/InventoryList.49710b4f.js",
+    "file": "assets/InventoryList.8c6fdb8d.js",
     "src": "resources/js/Pages/InventoryList.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -64,7 +64,7 @@
     ]
   },
   "resources/js/Pages/ConstructionHistory.vue": {
-    "file": "assets/ConstructionHistory.40baed68.js",
+    "file": "assets/ConstructionHistory.53b3270a.js",
     "src": "resources/js/Pages/ConstructionHistory.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -72,7 +72,7 @@
     ]
   },
   "resources/js/Pages/Registration.vue": {
-    "file": "assets/Registration.a6bfbe82.js",
+    "file": "assets/Registration.2cfe1084.js",
     "src": "resources/js/Pages/Registration.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -80,7 +80,7 @@
     ]
   },
   "resources/js/Pages/WarehouseRegistration.vue": {
-    "file": "assets/WarehouseRegistration.19ba9846.js",
+    "file": "assets/WarehouseRegistration.165e522a.js",
     "src": "resources/js/Pages/WarehouseRegistration.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -88,7 +88,7 @@
     ]
   },
   "resources/js/Pages/SupplierRegisration.vue": {
-    "file": "assets/SupplierRegisration.f54804f3.js",
+    "file": "assets/SupplierRegisration.6cd9d053.js",
     "src": "resources/js/Pages/SupplierRegisration.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -96,7 +96,7 @@
     ]
   },
   "resources/js/Pages/SiteRegistration.vue": {
-    "file": "assets/SiteRegistration.d6973f50.js",
+    "file": "assets/SiteRegistration.1021752f.js",
     "src": "resources/js/Pages/SiteRegistration.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -104,7 +104,7 @@
     ]
   },
   "resources/js/Pages/GmMasterRegisteration.vue": {
-    "file": "assets/GmMasterRegisteration.6312673c.js",
+    "file": "assets/GmMasterRegisteration.83a6f9f7.js",
     "src": "resources/js/Pages/GmMasterRegisteration.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -112,7 +112,7 @@
     ]
   },
   "resources/js/Pages/Error.vue": {
-    "file": "assets/Error.c741fadd.js",
+    "file": "assets/Error.3b1c0f21.js",
     "src": "resources/js/Pages/Error.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -123,7 +123,7 @@
     ]
   },
   "resources/js/Components/Login.vue": {
-    "file": "assets/Login.5285909e.js",
+    "file": "assets/Login.3403983c.js",
     "src": "resources/js/Components/Login.vue",
     "isDynamicEntry": true,
     "imports": [
@@ -131,19 +131,19 @@
     ]
   },
   "resources/js/Pages/PageNotFound.vue": {
-    "file": "assets/PageNotFound.87267a41.js",
+    "file": "assets/PageNotFound.ed0dc2f3.js",
     "src": "resources/js/Pages/PageNotFound.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js"
     ]
   },
-  "resources/js/app.css": {
-    "file": "assets/app.17ef61bf.css",
-    "src": "resources/js/app.css"
-  },
   "resources/js/Pages/Error.css": {
     "file": "assets/Error.93d46ca3.css",
     "src": "resources/js/Pages/Error.css"
+  },
+  "resources/js/app.css": {
+    "file": "assets/app.17ef61bf.css",
+    "src": "resources/js/app.css"
   }
 }

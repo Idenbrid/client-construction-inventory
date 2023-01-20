@@ -7,7 +7,7 @@
 						<img src="/assets/images/logo.png" class="login-logo">
 					</span>
 					<div class="wrap-input100">
-						<span class="label-input100">会社ID</span>
+						<span class="label-input100">個人ID</span>
 						<input class="input100" type="text" name="username" required v-model="user.login_id">
 						<small>
 							<span v-if="errors.login_id != null" class="text-danger float-left">

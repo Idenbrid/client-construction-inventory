@@ -68,6 +68,7 @@ class OrderController extends Controller
                         'status' => 'ordered',
                         'job_id' => $request->job_number['id'],
                         'job_no' => $request->job_number['job_number'],
+                        'site_name' => $request->site_name,
                         'created_by' => Auth::id(),
                         'updated_by' => Auth::id(),
                     ]);
@@ -140,6 +141,10 @@ class OrderController extends Controller
     public function list($type){
         return Order::where(['status'=>$type, 'created_by'=> Auth::id()])->with(['Job', 'Orderer', 'Item', 'Stocker'])->get();
     }
+    public function deliveredList(){
+        $array = ['deliverd', 'ordered'];
+        return Order::where('created_by', Auth::id())->whereIn('status', ['deliverd', 'ordered', 'using'])->with(['Job', 'Orderer', 'Item', 'Stocker'])->get();
+    }
     public function getOrderUsedUsing(){
         return Order::where(['status'=> 'using', 'created_by'=>Auth::id()])->with(['Job', 'Orderer', 'Item', 'Stocker'])->get();
     }
@@ -159,6 +164,21 @@ class OrderController extends Controller
             //throw $th;
             return response()->json([
                 'success' => false,
+            ]);
+        }
+    }
+    public function cancleOrder($order_id){
+        try {
+            $order = Order::find($order_id);
+            $order->status = 'deliverd';
+            $order->update();
+            return response()->json([
+                'success' => true,
+            ]);
+        } catch (\Throwable $th) {
+            return response()->json([
+                'success' => false,
+                'error' => $th,
             ]);
         }
     }
@@ -311,7 +331,11 @@ class OrderController extends Controller
     public function allOrders(){
         return Order::where(['status'=> 'used', 'created_by'=> Auth::id()])->with(['Job', 'Orderer', 'Item', 'Stocker'])->get();
     }
-    public function jobSearch($job_no){
-        return Order::where(['job_no'=> $job_no, 'created_by'=> Auth::id()])->with(['Job', 'Orderer', 'Item', 'Stocker'])->get();
+    public function jobSearch($site_name){
+        if($site_name == '' || $site_name == null){
+            return Order::where('created_by', Auth::id())->with(['Job', 'Orderer', 'Item', 'Stocker'])->get();
+        }else{
+            return Order::where(['site_name'=> $site_name, 'created_by'=> Auth::id()])->with(['Job', 'Orderer', 'Item', 'Stocker'])->get();
+        }
     }
 }

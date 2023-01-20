@@ -92,9 +92,9 @@ class ItemController extends Controller
         return Item::latest()->get();
     }
     public function destroy($id){
-        $status = ['ordered', 'using'];
+        // $status = ['ordered', 'using'];
         if($item = Item::find($id)){
-            $isExist = Order::where(['status'=>$status, 'item_id'=>$id])->first();
+            $isExist = Order::where('item_id', $id)->first();
             if($isExist){
                 return response()->json([
                     'success'   => false,
