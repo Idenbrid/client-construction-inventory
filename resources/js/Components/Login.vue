@@ -16,7 +16,7 @@
 						</small>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<span class="label-input100">個人ID(password)</span>
+						<span class="label-input100">パスワード</span>
 						<input class="input100" type="password" name="password" v-model="user.login_password">
 						<small>
 							<span v-if="errors.login_password != null" class="text-danger float-left">

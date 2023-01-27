@@ -6,7 +6,7 @@
                     <ul class="custom-top-nav-navbar ms-auto mt-2 mt-lg-0">
                         <li class="nav-items dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
-                                data-toggle="dropdown" aria-expanded="false">{{is_login == 'manager' ? '管理者' : '一般'}}</a>
+                                data-toggle="dropdown" aria-expanded="false">{{is_login == 'manager' ? 'マネジャー' : 'メンバー'}}</a>
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" @click="handleLogout()">ログアウト <i class="fa fa-sign-in" aria-hidden="true"></i></a>
                             </div>
