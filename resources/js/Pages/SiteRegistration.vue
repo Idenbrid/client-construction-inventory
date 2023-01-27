@@ -42,7 +42,7 @@
                         </div>
                         <div class="table-col">
                             <div class="master-registration-right-contet">
-                                <table class="registration-table">
+                                <table class="registration-table nowrap">
                                     <thead>
                                         <tr class="f-12-regular">
                                             <th>#</th>

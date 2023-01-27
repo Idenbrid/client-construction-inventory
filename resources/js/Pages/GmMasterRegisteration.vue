@@ -127,7 +127,7 @@
                             </div>
                         </div>
                         <div class="table-col">
-                            <table class="registration-table">
+                            <table class="registration-table nowrap">
                                 <tr>
                                     <!-- <th>#</th> -->
                                     <th>分類</th>
