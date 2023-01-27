@@ -53,12 +53,12 @@
                                             <div class="mr-1">
                                                 <input type="radio" class="btn-check" value="manager"
                                                     v-model="user.type" name="type" id="job-on" autocomplete="on">
-                                                <label class="on-radio-btn-reg" for="job-on">管理者</label>
+                                                <label class="on-radio-btn-reg" for="job-on">マネジャー</label>
                                             </div>
                                             <div class="mr-1">
                                                 <input type="radio" class="btn-check" value="normal" v-model="user.type"
                                                     name="type" id="job-off" autocomplete="off">
-                                                <label class="off-radio-btn-reg" for="job-off">一般</label>
+                                                <label class="off-radio-btn-reg" for="job-off">メンバー</label>
                                             </div>
                                         </li>
                                     </ul>
